@@ -1,0 +1,26 @@
+{
+  "name": "ese",
+  "version": "1.0.0",
+  "authors": [
+    "Jabali"
+  ],
+  "description": "Material Design Jabali Theme",
+  "keywords": [
+    "material",
+    "design",
+    "jabali",
+    "theme"
+  ],
+  "license": "MIT",
+  "homepage": "http://mtaandao.co.ke",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": null
+  }
+}

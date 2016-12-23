@@ -1,0 +1,97 @@
+.page-template-page-login {
+	.site-header,
+	.mdl-mega-footer {
+		display: none;
+	}
+}
+
+.login-card {
+	width: 330px;
+	margin: 0 auto;
+	padding-top: 8%; 
+
+	.mdl-button {
+		float: right;
+	}
+
+	.mdlf-login-card {
+		min-width: 330px;
+	}
+
+	.mdl-card__title {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.mdl-card__actions {
+		margin-top: 10px;
+		padding: 12px;
+
+		.mdlf_lost_password,
+		.mdlf_new_register {
+			text-transform: uppercase;
+			font-size: 12px;
+			display: inline-block;
+
+			a {
+				color: #b2b2b2;
+				font-weight: 300;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+			}
+		}
+
+		.mdlf_new_register {
+			float: right;
+			margin-top: 4px;
+		}
+	}	
+}
+
+
+.mdlf-error {
+
+	.mdl-textfield__input {
+		border-color: #de3226;
+		box-shadow: none;
+		outline: none;
+
+		&:focus {
+			border-bottom: none;
+			outline: none;
+			box-shadow: none;
+		}
+	}
+
+	.mdl-textfield__label {
+		color: #de3226;
+	}
+
+	.mdl-textfield__error {
+		visibility: visible;
+	}
+
+	&.is-focused {
+		.mdl-textfield__label {
+			@extend .mdl-textfield__label;
+		}
+
+		.mdl-textfield__input {
+			@extend .mdl-textfield__input;
+			outline: none;
+		}
+	}
+}
+
+#lostpasswordform {
+	.mdl-textfield {
+		margin-bottom: 10px;
+	}
+}

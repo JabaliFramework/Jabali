@@ -1,0 +1,19 @@
+.material-social {
+	color: #fff;
+}
+
+.social-btn {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 50px;
+
+    a {
+    	display: block;
+    	color: #fff;
+
+    	&.fb {
+		    color: rgb(59, 89, 152);
+		}
+    }
+}

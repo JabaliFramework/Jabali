@@ -1,0 +1,19 @@
+/* line 1, stdin */
+.material-social {
+  color: #fff; }
+
+/* line 5, stdin */
+.social-btn {
+  display: none;
+  position: absolute;
+  right: 16px;
+  top: 50px; }
+  /* line 11, stdin */
+  .social-btn a {
+    display: block;
+    color: #fff; }
+    /* line 15, stdin */
+    .social-btn a.fb {
+      color: #3b5998; }
+
+/*# sourceMappingURL=sass */
