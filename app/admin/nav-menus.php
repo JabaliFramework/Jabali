@@ -568,7 +568,7 @@ endif;
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Appearance_Menus_Screen">Documentation on Menus</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Appearance_Menus_Screen">Documentation on Menus</a>') . '</p>' .
 	'<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>'
 );
 

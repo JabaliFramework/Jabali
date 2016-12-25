@@ -2,7 +2,7 @@
 /**
  * The template part for displaying a message that posts cannot be found.
  *
- * Learn more: http://codex.jabali.github.io/Template_Hierarchy
+ * Learn more: http://jabali.github.io/Docs/Template_Hierarchy
  *
  * @package Ese
  */

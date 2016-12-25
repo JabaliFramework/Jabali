@@ -581,7 +581,7 @@ class WC_Product {
 	 * @return string
 	 */
 	public function single_add_to_cart_text() {
-		return apply_filters( 'banda_product_single_add_to_cart_text', __( 'Add to cart', 'banda' ), $this );
+		return apply_filters( 'banda_product_single_add_to_cart_text', __( 'Buy Now', 'banda' ), $this );
 	}
 
 	/**

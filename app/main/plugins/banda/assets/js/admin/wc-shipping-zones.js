@@ -172,7 +172,7 @@
 						} );
 					}
 
-					// List shipping methods
+					// List delivery methods
 					view.renderShippingMethods( rowData.zone_id, rowData.shipping_methods );
 
 					// Make the row function

@@ -178,9 +178,9 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://codex.jabali.github.io/Administration_Screens#Comments">Documentation on Comments</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://codex.jabali.github.io/Comment_Spam">Documentation on Comment Spam</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://codex.jabali.github.io/Keyboard_Shortcuts">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://jabali.github.io/Docs/Administration_Screens#Comments">Documentation on Comments</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://jabali.github.io/Docs/Comment_Spam">Documentation on Comment Spam</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://jabali.github.io/Docs/Keyboard_Shortcuts">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://jabali.github.io/support/">Support Forums</a>' ) . '</p>'
 );
 

@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	https://docs.mtaandao.co.ke/document/template-structure/
+ * @see 	https://mtaandao.co.ke/docs/banda/document/template-structure/
  * @author  Jabali
  * @package Banda/Templates
  * @version 2.5.0

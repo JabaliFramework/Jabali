@@ -1,6 +1,6 @@
 <?php
 /**
- * Shipping Methods Display
+ * delivery methods Display
  *
  * In 2.1 we show methods per package. This allows for multiple methods per order if so desired.
  *
@@ -12,7 +12,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.mtaandao.co.ke/document/template-structure/
+ * @see 	    https://mtaandao.co.ke/docs/banda/document/template-structure/
  * @author 		Jabali
  * @package 	Banda/Templates
  * @version     2.5.0
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php elseif ( ! WC()->customer->has_calculated_shipping() ) : ?>
 			<?php echo wpautop( __( 'Shipping costs will be calculated once you have provided your address.', 'banda' ) ); ?>
 		<?php else : ?>
-			<?php echo apply_filters( is_cart() ? 'banda_cart_no_shipping_available_html' : 'banda_no_shipping_available_html', wpautop( __( 'There are no shipping methods available. Please double check your address, or contact us if you need any help.', 'banda' ) ) ); ?>
+			<?php echo apply_filters( is_cart() ? 'banda_cart_no_shipping_available_html' : 'banda_no_shipping_available_html', wpautop( __( 'There are no delivery methods available. Please double check your address, or contact us if you need any help.', 'banda' ) ) ); ?>
 		<?php endif; ?>
 
 		<?php if ( $show_package_details ) : ?>

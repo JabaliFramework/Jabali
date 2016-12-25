@@ -10,10 +10,10 @@ function set_ub_url($base) {
 
 	if(defined('WPMU_PLUGIN_URL') && defined('WPMU_PLUGIN_DIR') && file_exists(WPMU_PLUGIN_DIR . '/' . basename($base))) {
 		$UB_url = trailingslashit(WPMU_PLUGIN_URL);
-	} elseif(defined('includes_url()') && defined('RES') && file_exists(RES . '/ultimate-branding/' . basename($base))) {
-		$UB_url = trailingslashit(includes_url() . '/ultimate-branding');
+	} elseif(defined('res_url()') && defined('RES') && file_exists(RES . '/ultimate-branding/' . basename($base))) {
+		$UB_url = trailingslashit(res_url() . '/ultimate-branding');
 	} else {
-		$UB_url = trailingslashit(includes_url() . '/ultimate-branding');
+		$UB_url = trailingslashit(res_url() . '/ultimate-branding');
 	}
 
 }

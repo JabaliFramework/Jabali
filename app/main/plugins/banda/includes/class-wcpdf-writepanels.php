@@ -48,7 +48,7 @@ if ( !class_exists( 'Banda_PDF_Invoices_Writepanels' ) ) {
 					Banda_PDF_Invoices::$version
 				);
 
-				if ( version_compare( WOOCOMMERCE_VERSION, '2.1' ) >= 0 ) {
+				if ( version_compare( BANDA_VERSION, '2.1' ) >= 0 ) {
 					// WC 2.1 or newer (MP6) is used: bigger buttons
 					wp_enqueue_style(
 						'wpo-wcpdf-buttons',

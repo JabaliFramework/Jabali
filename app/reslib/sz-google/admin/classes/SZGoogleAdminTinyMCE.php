@@ -53,7 +53,7 @@ if (!class_exists('SZGoogleAdminTinyMCE'))
 
 		function register_tinymce_plugin($plugin_array) {
 			$plugin_array['sz_google_mce_button'] = 
-				plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/mce/plugins/sz-google-mce.js';
+				ABSPATH . 'reslib/sz-google'.'/admin/mce/plugins/sz-google-mce.js';
 			return $plugin_array;
 		}
 

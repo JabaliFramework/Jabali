@@ -167,7 +167,7 @@ if (!class_exists('SZGoogleWidgetYoutubePlaylist'))
 			// Setting any of the default parameters for the
 			// fields that contain invalid values ​​or inconsistent
 
-			$DEFAULT = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/sz_google_options_youtube.php");
+			$DEFAULT = include(ABSPATH . 'reslib/sz-google'."/options/sz_google_options_youtube.php");
 
 			if (!in_array($theme,array('light','dark')))    $theme = 'dark';
 			if (!in_array($cover,array('local','youtube'))) $cover = 'local';
@@ -199,8 +199,8 @@ if (!class_exists('SZGoogleWidgetYoutubePlaylist'))
 			// Calling the template for displaying the part 
 			// that concerns the administration panel (admin)
 
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidget.php');
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/' .__CLASS__.'.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidget.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/' .__CLASS__.'.php');
 		}
 	}
 }

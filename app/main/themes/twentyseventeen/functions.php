@@ -75,7 +75,7 @@ function twentyseventeen_setup() {
 	/*
 	 * Enable support for Post Formats.
 	 *
-	 * See: https://codex.jabali.github.io/Post_Formats
+	 * See: https://jabali.github.io/Docs/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',

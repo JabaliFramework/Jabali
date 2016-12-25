@@ -80,18 +80,19 @@ class WC_Gateway_Mobile extends WC_Payment_Gateway {
 				'title'       => __( 'Description', 'banda' ),
 				'type'        => 'textarea',
 				'description' => __( 'Payment method description that the customer will see on your website.', 'banda' ),
-				'default'     => __( 'Instanteneous purchase with mobile money payment.', 'banda' ),
+				'default'     => __( '<button style="background-color:#66ad45"><a href="../pay" style="none" ><img src="../pay/l.png" alt="" ></a></button>', 'banda' ),
+				//'css'               => 'background: #21b68e;',
 				'desc_tip'    => true,
 			),
 			'instructions' => array(
 				'title'       => __( 'Instructions', 'banda' ),
 				'type'        => 'textarea',
 				'description' => __( 'Instructions that will be added to the thank you page.', 'banda' ),
-				'default'     => __( 'Pay with MPesa or other mobile money service providers.', 'banda' ),
+				'default'     => __( '<img src="../../../pay/mpesa.png">', 'banda' ),
 				'desc_tip'    => true,
 			),
 			'enable_for_methods' => array(
-				'title'             => __( 'Enable for shipping methods', 'banda' ),
+				'title'             => __( 'Enable for delivery methods', 'banda' ),
 				'type'              => 'multiselect',
 				'class'             => 'wc-enhanced-select',
 				'css'               => 'width: 450px;',
@@ -100,7 +101,7 @@ class WC_Gateway_Mobile extends WC_Payment_Gateway {
 				'options'           => $shipping_methods,
 				'desc_tip'          => true,
 				'custom_attributes' => array(
-					'data-placeholder' => __( 'Select shipping methods', 'banda' )
+					'data-placeholder' => __( 'Select delivery methods', 'banda' )
 				)
 			),
 			'enable_for_virtual' => array(
@@ -126,14 +127,14 @@ class WC_Gateway_Mobile extends WC_Payment_Gateway {
 			'title'       => __( 'Paybill Number', 'banda' ),
 			'type'        => 'text',
 			'description' => __( 'Your Paybill number, supplied by Safaricom.', 'banda' ),
-			'default'     => __( '80117', 'banda' ),
+			'default'     => __( '898998', 'banda' ),
 			'desc_tip'    => true,
 			),
 			'mpesa_sag' => array(
-			'title'       => __( 'M-Pesa SAG Password', 'banda' ),
+			'title'       => __( 'M-Pesa SAG Passkey', 'banda' ),
 			'type'        => 'text',
-			'description' => __( 'Your Safaricom Access Gateway, supplied during registration.', 'banda' ),
-			'default'     => __( 'fhff0f44/4m;fflf[;;s/', 'banda' ),
+			'description' => __( 'Your Safaricom Access Gatewaypassword issued on creation of the merchant account.', 'banda' ),
+			'default'     => __( 'ZmRmZDYwYzIzZDQxZDc5ODYwMTIzYjUxNzNkZDMwMDRjNGRkZTY2ZDQ3ZTI0YjVjODc4ZTExNTNjMDA1YTcwNw==', 'banda' ),
 			'desc_tip'    => true,
 			)
 	   );

@@ -65,5 +65,5 @@ if (!class_exists('SZGoogleModuleAnalytics'))
 	 * The functions have the same parameters of shortcodes, see the documentation.
 	 */
 
-	@require_once(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/functions/SZGoogleFunctionsAnalytics.php');
+	@require_once(ABSPATH . 'reslib/sz-google'.'/functions/SZGoogleFunctionsAnalytics.php');
 }

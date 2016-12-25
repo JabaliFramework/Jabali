@@ -157,9 +157,9 @@ if (!class_exists('SZGoogleAdminDocumentation'))
 			if (isset($_GET['help'])) 
 			{
 				$LANGUAGE = get_bloginfo('language');
-				$FILENAM1 = dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/help/'.$LANGUAGE.'/'.trim($_GET['help']);
-				$FILENAM2 = dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/help/'.substr($LANGUAGE,0,2).'/'.trim($_GET['help']);
-				$FILENAM3 = dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/help/en/'.trim($_GET['help']);
+				$FILENAM1 = ABSPATH . 'reslib/sz-google'.'/admin/help/'.$LANGUAGE.'/'.trim($_GET['help']);
+				$FILENAM2 = ABSPATH . 'reslib/sz-google'.'/admin/help/'.substr($LANGUAGE,0,2).'/'.trim($_GET['help']);
+				$FILENAM3 = ABSPATH . 'reslib/sz-google'.'/admin/help/en/'.trim($_GET['help']);
 
 				if (is_readable($FILENAM1)) { @include($FILENAM1); return; }
 				if (is_readable($FILENAM2)) { @include($FILENAM2); return; }
@@ -184,7 +184,7 @@ if (!class_exists('SZGoogleAdminDocumentation'))
 			foreach ($options as $key => $value) 
 			{
 				echo '<div class="help-items">';
-				echo '<div class="help-image"><a href="'.menu_page_url($this->menuslug,false).'&amp;help='.$value['slug'].'"><img src="'.plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/images/help/'.basename($value['slug'],".php").'.jpg" alt=""></a></div>';
+				//echo '<div class="help-image"><a href="'.menu_page_url($this->menuslug,false).'&amp;help='.$value['slug'].'"><img src="''/reslib/sz-google'.'/admin/files/images/help/'.basename($value['slug'],".php").'.jpg" alt=""></a></div>';
 				echo '<div class="help-title"><a href="'.menu_page_url($this->menuslug,false).'&amp;help='.$value['slug'].'">'.ucwords($value['title']).'</a></div>';
 				echo '</div>';
 			}
@@ -340,7 +340,7 @@ if (!class_exists('SZGoogleAdminDocumentation'))
 		 */
 
 		function moduleAddHelpReviews() {
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/templates/sz-google-template-reviews.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/templates/sz-google-template-reviews.php');
 		}
 
 		/**
@@ -349,7 +349,7 @@ if (!class_exists('SZGoogleAdminDocumentation'))
 		 */
 
 		function moduleAddHelpModules() {
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/templates/sz-google-template-modules.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/templates/sz-google-template-modules.php');
 		}
 
 		/**

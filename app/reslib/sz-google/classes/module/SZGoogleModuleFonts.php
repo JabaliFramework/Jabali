@@ -170,5 +170,5 @@ if (!class_exists('SZGoogleModuleFonts'))
 	 * The functions have the same parameters of shortcodes, see the documentation.
 	 */
 
-	@require_once(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/functions/SZGoogleFunctionsFonts.php');
+	@require_once(ABSPATH . 'reslib/sz-google'.'/functions/SZGoogleFunctionsFonts.php');
 }

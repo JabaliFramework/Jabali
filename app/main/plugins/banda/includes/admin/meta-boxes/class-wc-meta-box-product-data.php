@@ -394,7 +394,7 @@ class WC_Meta_Box_Product_Data {
 						'selected'         => $current_shipping_class,
 						'class'            => 'select short'
 					);
-					?><p class="form-field dimensions_field"><label for="product_shipping_class"><?php _e( 'Shipping class', 'banda' ); ?></label> <?php wp_dropdown_categories( $args ); ?> <?php echo wc_help_tip( __( 'Shipping classes are used by certain shipping methods to group similar products.', 'banda' ) ); ?></p><?php
+					?><p class="form-field dimensions_field"><label for="product_shipping_class"><?php _e( 'Shipping class', 'banda' ); ?></label> <?php wp_dropdown_categories( $args ); ?> <?php echo wc_help_tip( __( 'Shipping classes are used by certain delivery methods to group similar products.', 'banda' ) ); ?></p><?php
 
 					do_action( 'banda_product_options_shipping' );
 
@@ -613,7 +613,7 @@ class WC_Meta_Box_Product_Data {
 				<div id="message" class="inline notice banda-message">
 					<p><?php _e( 'Before you can add a variation you need to add some variation attributes on the <strong>Attributes</strong> tab.', 'banda' ); ?></p>
 					<p>
-						<a class="button-primary" href="<?php echo esc_url( apply_filters( 'banda_docs_url', 'https://docs.mtaandao.co.ke/document/variable-product/', 'product-variations' ) ); ?>" target="_blank"><?php _e( 'Learn more', 'banda' ); ?></a>
+						<a class="button-primary" href="<?php echo esc_url( apply_filters( 'banda_docs_url', 'https://mtaandao.co.ke/docs/banda/document/variable-product/', 'product-variations' ) ); ?>" target="_blank"><?php _e( 'Learn more', 'banda' ); ?></a>
 					</p>
 				</div>
 

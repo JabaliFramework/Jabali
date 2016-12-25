@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <h2>
 	<?php _e( 'Shipping Zones', 'banda' ); ?>
-	<?php echo wc_help_tip( __( 'A shipping zone is a geographic region where a certain set of shipping methods and rates apply.', 'banda' ) . ' ' . __( 'Banda will automatically choose the correct shipping zone based on your customer&lsquo;s shipping address and present the shipping methods within that zone to them.', 'banda' ) ); ?>
+	<?php echo wc_help_tip( __( 'A shipping zone is a geographic region where a certain set of delivery methods and rates apply.', 'banda' ) . ' ' . __( 'Banda will automatically choose the correct shipping zone based on your customer&lsquo;s shipping address and present the delivery methods within that zone to them.', 'banda' ) ); ?>
 </h2>
 
 <table class="wc-shipping-zones widefat">
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<a href="admin.php?page=wc-settings&amp;tab=shipping&amp;zone_id={{ data.zone_id }}"><?php _e( 'View', 'banda' ); ?></a>
 				</div>
 			</td>
-			<td class="wc-shipping-zone-region"><?php esc_html_e( 'This zone is used for shipping addresses that aren&lsquo;t included in any other shipping zone. Adding shipping methods to this zone is optional.', 'banda' ); ?></td>
+			<td class="wc-shipping-zone-region"><?php esc_html_e( 'This zone is used for shipping addresses that aren&lsquo;t included in any other shipping zone. Adding delivery methods to this zone is optional.', 'banda' ); ?></td>
 			<td class="wc-shipping-zone-methods">
 				<ul>
 					<?php
@@ -49,10 +49,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 								echo '<li class="wc-shipping-zone-method"><a href="admin.php?page=wc-settings&amp;tab=shipping&amp;instance_id=' . absint( $method->instance_id ) . '" class="' . esc_attr( $class_name ) . '">' . esc_html( $method->get_title() ) . '</a></li>';
 							}
 						} else {
-							echo '<li class="wc-shipping-zone-method">' . __( 'No shipping methods offered to this zone.', 'banda' ) . '</li>';
+							echo '<li class="wc-shipping-zone-method">' . __( 'No delivery methods offered to this zone.', 'banda' ) . '</li>';
 						}
 					?>
-					<li class="wc-shipping-zone-methods-add-row"><a href="#" class="add_shipping_method tips" data-tip="<?php esc_attr_e( 'Add shipping method', 'banda' ); ?>" data-disabled-tip="<?php esc_attr_e( 'Save changes to continue adding shipping methods to this zone', 'banda' ); ?>"><?php _e( 'Add shipping method', 'banda' ); ?></a></li>
+					<li class="wc-shipping-zone-methods-add-row"><a href="#" class="add_shipping_method tips" data-tip="<?php esc_attr_e( 'Add shipping method', 'banda' ); ?>" data-disabled-tip="<?php esc_attr_e( 'Save changes to continue adding delivery methods to this zone', 'banda' ); ?>"><?php _e( 'Add shipping method', 'banda' ); ?></a></li>
 				</ul>
 			</td>
 		</tr>
@@ -63,7 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php if ( 0 === $method_count ) : ?>
 		<tr>
 			<td class="wc-shipping-zones-blank-state" colspan="4">
-				<p class="main"><?php _e( 'A shipping zone is a geographic region where a certain set of shipping methods and rates apply.', 'banda' ); ?></p>
+				<p class="main"><?php _e( 'A shipping zone is a geographic region where a certain set of delivery methods and rates apply.', 'banda' ); ?></p>
 				<p><?php _e( 'For example:', 'banda' ); ?></p>
 				<ul>
 					<li><?php _e( 'Local Zone = California ZIP 90210 = Local pickup', 'banda' ); ?>
@@ -126,7 +126,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<td class="wc-shipping-zone-methods">
 			<div>
 				<ul>
-					<li class="wc-shipping-zone-methods-add-row"><a href="#" class="add_shipping_method tips" data-tip="<?php esc_attr_e( 'Add shipping method', 'banda' ); ?>" data-disabled-tip="<?php esc_attr_e( 'Save changes to continue adding shipping methods to this zone', 'banda' ); ?>"><?php _e( 'Add shipping method', 'banda' ); ?></a></li>
+					<li class="wc-shipping-zone-methods-add-row"><a href="#" class="add_shipping_method tips" data-tip="<?php esc_attr_e( 'Add shipping method', 'banda' ); ?>" data-disabled-tip="<?php esc_attr_e( 'Save changes to continue adding delivery methods to this zone', 'banda' ); ?>"><?php _e( 'Add shipping method', 'banda' ); ?></a></li>
 				</ul>
 			</div>
 		</td>
@@ -146,7 +146,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<article>
 					<form action="" method="post">
 						<div class="wc-shipping-zone-method-selector">
-							<p><?php esc_html_e( 'Choose the shipping method you wish to add. Only shipping methods which support zones are listed.', 'banda' ); ?></p>
+							<p><?php esc_html_e( 'Choose the shipping method you wish to add. Only delivery methods which support zones are listed.', 'banda' ); ?></p>
 
 							<select name="add_method_id">
 								<?php

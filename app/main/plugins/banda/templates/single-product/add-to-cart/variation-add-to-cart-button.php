@@ -2,7 +2,7 @@
 /**
  * Single variation cart button
  *
- * @see 	https://docs.mtaandao.co.ke/document/template-structure/
+ * @see 	https://mtaandao.co.ke/docs/banda/document/template-structure/
  * @author  Jabali
  * @package Banda/Templates
  * @version 2.5.0

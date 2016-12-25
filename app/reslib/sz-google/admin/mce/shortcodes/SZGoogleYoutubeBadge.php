@@ -40,6 +40,6 @@ if (!ctype_digit($height) or $height == 0) { $height = 'auto'; $height_auto = '1
 // Loading ADMIN template for composition using
 // shortcodes in many cases the same code Widget
 
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidgetYoutubeBadge.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseFooter.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidgetYoutubeBadge.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseFooter.php');

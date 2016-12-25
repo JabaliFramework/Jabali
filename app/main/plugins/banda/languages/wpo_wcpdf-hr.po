@@ -25,7 +25,7 @@ msgstr ""
 
 #. Name of the plugin
 msgid "Banda PDF Invoices & Packing Slips"
-msgstr "WooCOmmerce PDF Računi & Paketni Slipovi"
+msgstr "BANDA PDF Računi & Paketni Slipovi"
 
 #. URI of the plugin
 msgid "http://www.wpovernight.com"
@@ -555,7 +555,7 @@ msgstr ""
 
 #: ../includes/wcpdf-extensions.php:49
 msgid "Get Banda PDF Invoices & Packing Slips to dropbox!"
-msgstr "Povucite WooCOmmerce Račune i paketne slipove u dropbox!"
+msgstr "Povucite BANDA Račune i paketne slipove u dropbox!"
 
 #: ../includes/wcpdf-extensions.php:61
 msgid ""
@@ -575,7 +575,7 @@ msgstr ""
 
 #: ../includes/wcpdf-extensions.php:68
 msgid "Banda Automatic Order Printing"
-msgstr "WooCOmmerce Ispis Automatske narudžbe"
+msgstr "BANDA Ispis Automatske narudžbe"
 
 #: ../includes/wcpdf-extensions.php:82
 msgid "Advanced, customizable templates"

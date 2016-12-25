@@ -217,15 +217,9 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.' );
 	));
 
 	// First Page
-	$first_page = sprintf( __( "This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:
+	$first_page = sprintf( __( "This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an <a href=\"%2s\">About</a> or a <a href=\"%3s\">Contact</a> page that introduces them to potential site visitors.
 
-<blockquote>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</blockquote>
-
-...or something like this:
-
-<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>
-
-As a new Jabali user, you should go to <a href=\"%s\">your dashboard</a> to delete this page and create new pages for your content. Have fun!" ), admin_url() );
+As a new Jabali user, you should go to <a href=\"%s\">your dashboard</a> to edit or delete this page and create new pages for your content. Have fun!" ), home_url('/contact'), home_url('/contactabout'), admin_url() );
 	if ( is_multisite() )
 		$first_page = get_site_option( 'first_page', $first_page );
 	$first_post_guid = get_option('home') . '/?page_id=2';
@@ -238,7 +232,7 @@ As a new Jabali user, you should go to <a href=\"%s\">your dashboard</a> to dele
 		'comment_status' => 'closed',
 		'post_title' => __( 'Sample Page' ),
 		/* translators: Default page slug */
-		'post_name' => __( 'sample-page' ),
+		'post_name' => __( 'home' ),
 		'post_modified' => $now,
 		'post_modified_gmt' => $now_gmt,
 		'guid' => $first_post_guid,
@@ -248,6 +242,66 @@ As a new Jabali user, you should go to <a href=\"%s\">your dashboard</a> to dele
 		'post_content_filtered' => ''
 	));
 	$wpdb->insert( $wpdb->postmeta, array( 'post_id' => 2, 'meta_key' => '_wp_page_template', 'meta_value' => 'default' ) );
+
+// About Page
+	$about_page = sprintf( __( "This is a sample about page. It can be something like this:
+
+<blockquote>Hi there! I'm a web developer by day, lucid dreamer by night, and this is my website. I write dope code.</blockquote>
+
+...or something like this:
+
+<blockquote>Mtaandao Digital was founded in 2016, and has been providing quality digital services ever since. Located in Mombasa, Kenya, Mtaandao ensures you don't have to break the bank to get quality work done..</blockquote>
+
+As a new Jabali user, you should go to <a href=\"%s\">your dashboard</a> to edit or delete this page and create new pages for your content. Have fun!" ), admin_url() );
+	if ( is_multisite() )
+		$about_page = get_site_option( 'about_page', $app_page );
+	$first_post_guid = get_option('home') . '/?page_id=3';
+	$wpdb->insert( $wpdb->posts, array(
+		'post_author' => $user_id,
+		'post_date' => $now,
+		'post_date_gmt' => $now_gmt,
+		'post_content' => $about_page,
+		'post_excerpt' => '',
+		'comment_status' => 'closed',
+		'post_title' => __( 'About' ),
+		/* translators: Default page slug */
+		'post_name' => __( 'about' ),
+		'post_modified' => $now,
+		'post_modified_gmt' => $now_gmt,
+		'guid' => $first_post_guid,
+		'post_type' => 'page',
+		'to_ping' => '',
+		'pinged' => '',
+		'post_content_filtered' => ''
+	));
+	$wpdb->insert( $wpdb->postmeta, array( 'post_id' => 3, 'meta_key' => '_wp_page_template', 'meta_value' => 'default' ) );
+
+	// Contact Page
+	$contact_page = sprintf( __( "<form></form>
+
+As a new Jabali user, you should go to <a href=\"%s\">your dashboard</a> to edit or delete this page and create new pages for your content. Have fun!" ), admin_url() );
+	if ( is_multisite() )
+		$contact_page = get_site_option( 'contact_page', $app_page );
+	$first_post_guid = get_option('home') . '/?page_id=4';
+	$wpdb->insert( $wpdb->posts, array(
+		'post_author' => $user_id,
+		'post_date' => $now,
+		'post_date_gmt' => $now_gmt,
+		'post_content' => $contact_page,
+		'post_excerpt' => '',
+		'comment_status' => 'closed',
+		'post_title' => __( 'Contact' ),
+		/* translators: Default page slug */
+		'post_name' => __( 'contact' ),
+		'post_modified' => $now,
+		'post_modified_gmt' => $now_gmt,
+		'guid' => $first_post_guid,
+		'post_type' => 'page',
+		'to_ping' => '',
+		'pinged' => '',
+		'post_content_filtered' => ''
+	));
+	$wpdb->insert( $wpdb->postmeta, array( 'post_id' => 4, 'meta_key' => '_wp_page_template', 'meta_value' => 'default' ) );
 
 	// Set up default widgets for default theme.
 	update_option( 'widget_search', array ( 2 => array ( 'title' => '' ), '_multiwidget' => 1 ) );

@@ -278,5 +278,5 @@ if (!class_exists('SZGoogleModuleMaps'))
 	 * The functions have the same parameters of shortcodes, see the documentation.
 	 */
 
-	@require_once(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/functions/SZGoogleFunctionsMaps.php');
+	@require_once(ABSPATH . 'reslib/sz-google'.'/functions/SZGoogleFunctionsMaps.php');
 }

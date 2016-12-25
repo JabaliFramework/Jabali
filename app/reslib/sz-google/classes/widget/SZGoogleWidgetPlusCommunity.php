@@ -149,7 +149,7 @@ if (!class_exists('SZGoogleWidgetPlusCommunity'))
 			// Setting any of the default parameters for the
 			// fields that contain invalid values ​​or inconsistent
 
-			$DEFAULT = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/sz_google_options_plus.php");
+			$DEFAULT = include(ABSPATH . 'reslib/sz-google'."/options/sz_google_options_plus.php");
 
 			if (!in_array($photo ,array('true','false')))         $photo  = 'true';
 			if (!in_array($owner ,array('true','false')))         $owner  = 'false';
@@ -167,8 +167,8 @@ if (!class_exists('SZGoogleWidgetPlusCommunity'))
 			// Calling the template for displaying the part 
 			// that concerns the administration panel (admin)
 
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidget.php');
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/' .__CLASS__.'.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidget.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/' .__CLASS__.'.php');
 		}
 	}
 }

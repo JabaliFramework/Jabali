@@ -13,7 +13,7 @@
  * * Database table prefix
  * * ABSPATH
  *
- * @link https://codex.jabali.github.io/Editing_db.php
+ * @link https://jabali.github.io/Docs/Editing_db.php
  *
  * @package Jabali
  */
@@ -75,7 +75,7 @@ $table_prefix  = 'my_';
  * For information on other constants that can be used for debugging,
  * visit the Codex.
  *
- * @link https://codex.jabali.github.io/Debugging_in_Jabali
+ * @link https://jabali.github.io/Docs/Debugging_in_Jabali
  */
 define('WP_DEBUG', false);
 /* Multisite */

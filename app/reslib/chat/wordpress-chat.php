@@ -67,7 +67,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 			$this->_chat_options      = array();
 
 			$this->_chat_plugin_settings['plugin_path']    = dirname( __FILE__ );
-			$this->_chat_plugin_settings['plugin_url']     = includes_url( '/chat', __FILE__ );
+			$this->_chat_plugin_settings['plugin_url']     = res_url( '/chat', __FILE__ );
 			$this->_chat_plugin_settings['blocked_urls']   = array();
 			$this->_chat_plugin_settings['network_active'] = false;
 			$this->_chat_plugin_settings['config_file']    = dirname( __FILE__ ) . '/wpmudev-chat-config.php';
@@ -240,7 +240,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 		 *
 		 * Create tables if they don't exist and add plugin options
 		 *
-		 * @see        http://codex.jabali.github.io/Function_Reference/register_activation_hook
+		 * @see        http://jabali.github.io/Docs/Function_Reference/register_activation_hook
 		 *
 		 * @global    object $wpdb
 		 */
@@ -425,7 +425,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 		/**
 		 * Deactivation hook
 		 *
-		 * @see        http://codex.jabali.github.io/Function_Reference/register_deactivation_hook
+		 * @see        http://jabali.github.io/Docs/Function_Reference/register_deactivation_hook
 		 *
 		 * @global    object $wpdb
 		 */
@@ -1126,7 +1126,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 		/**
 		 * Initialize the plugin
 		 *
-		 * @see        http://codex.jabali.github.io/Plugin_API/Action_Reference
+		 * @see        http://jabali.github.io/Docs/Plugin_API/Action_Reference
 		 * @see        http://adambrown.info/p/wp_hooks/hook/init
 		 */
 		function init() {
@@ -1147,7 +1147,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 
 			$this->chat_localized['settings']                              = array();
 			$this->chat_localized['settings']['ajax_url']                  = admin_url( 'admin-ajax.php', 'relative' );
-			$this->chat_localized['settings']['plugin_url']                = includes_url( "/", __FILE__ );
+			$this->chat_localized['settings']['plugin_url']                = res_url( "/", __FILE__ );
 			$this->chat_localized['settings']['google_plus_text_sign_out'] = __( 'Sign out of Google+', $this->translation_domain );
 			$this->chat_localized['settings']['facebook_text_sign_out']    = __( 'Sign out of Facebook', $this->translation_domain );
 			$this->chat_localized['settings']['twitter_text_sign_out']     = __( 'Sign out of Twitter', $this->translation_domain );
@@ -1204,7 +1204,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 		/**
 		 * Load things into the HTML <head></head>
 		 *
-		 * @see        http://codex.jabali.github.io/Plugin_API/Action_Reference
+		 * @see        http://jabali.github.io/Docs/Plugin_API/Action_Reference
 		 * @see        http://adambrown.info/p/wp_hooks/hook/wp_head
 		 * Here we are loafing both the front-end and admin header hooks. This cuts down on duplicate coding.
 		 */
@@ -1407,15 +1407,15 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 			}
 
 			//Register All the styles
-			wp_register_style( 'wpmudev-chat-style', includes_url( '/chat/css/wpmudev-chat-style.css', __FILE__ ), array(), $this->chat_current_version );
+			wp_register_style( 'wpmudev-chat-style', res_url( '/chat/css/wpmudev-chat-style.css', __FILE__ ), array(), $this->chat_current_version );
 			wp_register_style( 'wpmudev-chat-jquery-ui-datepicker-css', $css_url, false, '1.0.0' );
 
 			//Admin Styles
-			wp_register_style( 'wpmudev-chat-wpadminbar-style', includes_url( '/chat/css/wpmudev-chat-wpadminbar.css', __FILE__ ), array(), $this->chat_current_version );
-			wp_register_style( 'wpmudev-chat-admin-css', includes_url( '/chat/css/wpmudev-chat-admin.css', __FILE__ ), array(), $this->chat_current_version );
+			wp_register_style( 'wpmudev-chat-wpadminbar-style', res_url( '/chat/css/wpmudev-chat-wpadminbar.css', __FILE__ ), array(), $this->chat_current_version );
+			wp_register_style( 'wpmudev-chat-admin-css', res_url( '/chat/css/wpmudev-chat-admin.css', __FILE__ ), array(), $this->chat_current_version );
 
 			if ( ! version_compare( $wp_version, '3.7.1', '>' ) ) {
-				wp_register_style( 'wpmudev-chat-wpadminbar-style-pre-38', includes_url( '/chat/css/wpmudev-chat-wpadminbar-pre-38.css', __FILE__ ), array(), $this->chat_current_version );
+				wp_register_style( 'wpmudev-chat-wpadminbar-style-pre-38', res_url( '/chat/css/wpmudev-chat-wpadminbar-pre-38.css', __FILE__ ), array(), $this->chat_current_version );
 			}
 
 			if ( ( isset( $_GET['page'] ) ) && ( $_GET['page'] == 'chat_session_logs' ) ) {
@@ -1424,19 +1424,19 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 			}
 
 			//Register all the Scripts
-			wp_register_script( 'wpmudev-chat-admin-js', includes_url( '/chat/js/wpmudev-chat-admin.js', __FILE__ ), array(
+			wp_register_script( 'wpmudev-chat-admin-js', res_url( '/chat/js/wpmudev-chat-admin.js', __FILE__ ), array(
 				'jquery',
 				'jquery-ui-core',
 				'jquery-ui-tabs'
 			), $this->chat_current_version );
-			wp_register_script( 'jquery-cookie', includes_url( '/chat/js/jquery-cookie.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
-			wp_register_script( 'wpmudev-chat-admin-farbtastic-js', includes_url( '/chat/js/wpmudev-chat-admin-farbtastic.js', __FILE__ ), array(), $this->chat_current_version, true );
-			wp_register_script( 'wpmudev-chat-admin-js', includes_url( '/chat/js/wpmudev-chat-admin.js', __FILE__ ), array(
+			wp_register_script( 'jquery-cookie', res_url( '/chat/js/jquery-cookie.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
+			wp_register_script( 'wpmudev-chat-admin-farbtastic-js', res_url( '/chat/js/wpmudev-chat-admin-farbtastic.js', __FILE__ ), array(), $this->chat_current_version, true );
+			wp_register_script( 'wpmudev-chat-admin-js', res_url( '/chat/js/wpmudev-chat-admin.js', __FILE__ ), array(
 				'jquery',
 				'jquery-ui-core',
 				'jquery-ui-tabs'
 			), $this->chat_current_version );
-			wp_register_script( 'wpmudev-chat-js', includes_url( '/chat/js/wpmudev-chat.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
+			wp_register_script( 'wpmudev-chat-js', res_url( '/chat/js/wpmudev-chat.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
 
 			$screen = get_current_screen();
 
@@ -1581,18 +1581,18 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 			}
 
 			//Register Styles And Scripts
-			wp_register_style( 'wpmudev-chat-style', includes_url( '/chat/css/wpmudev-chat-style.css', __FILE__ ), array(), $this->chat_current_version );
-			wp_register_style( 'wpmudev-chat-admin-css', includes_url( '/chat/css/wpmudev-chat-admin.css', __FILE__ ), array(), $this->chat_current_version );
-			wp_register_style( 'wpmudev-chat-wpadminbar-style', includes_url( '/chat/css/wpmudev-chat-wpadminbar.css', __FILE__ ), array(), $this->chat_current_version );
+			wp_register_style( 'wpmudev-chat-style', res_url( '/chat/css/wpmudev-chat-style.css', __FILE__ ), array(), $this->chat_current_version );
+			wp_register_style( 'wpmudev-chat-admin-css', res_url( '/chat/css/wpmudev-chat-admin.css', __FILE__ ), array(), $this->chat_current_version );
+			wp_register_style( 'wpmudev-chat-wpadminbar-style', res_url( '/chat/css/wpmudev-chat-wpadminbar.css', __FILE__ ), array(), $this->chat_current_version );
 
 			if ( ! version_compare( $wp_version, '3.7.1', '>' ) ) {
-				wp_register_style( 'wpmudev-chat-wpadminbar-style-pre-38', includes_url( '/chat/css/wpmudev-chat-wpadminbar-pre-38.css', __FILE__ ), array(), $this->chat_current_version );
+				wp_register_style( 'wpmudev-chat-wpadminbar-style-pre-38', res_url( '/chat/css/wpmudev-chat-wpadminbar-pre-38.css', __FILE__ ), array(), $this->chat_current_version );
 			}
 
 			//Register scripts
-			wp_register_script( 'wpmudev-chat-js', includes_url( '/chat/js/wpmudev-chat.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
-			wp_register_script( 'wpmudev-chat-admin-js', includes_url( '/chat/js/wpmudev-chat-admin.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
-			wp_register_script( 'wpmudev-chat-admin-farbtastic-js', includes_url( '/chat/js/wpmudev-chat-admin-farbtastic.js', __FILE__ ), array(), $this->chat_current_version, true );
+			wp_register_script( 'wpmudev-chat-js', res_url( '/chat/js/wpmudev-chat.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
+			wp_register_script( 'wpmudev-chat-admin-js', res_url( '/chat/js/wpmudev-chat-admin.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
+			wp_register_script( 'wpmudev-chat-admin-farbtastic-js', res_url( '/chat/js/wpmudev-chat-admin-farbtastic.js', __FILE__ ), array(), $this->chat_current_version, true );
 
 			//Facebook Script
 			$locale = get_locale();
@@ -1857,7 +1857,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 		function set_chat_localized() {
 			if ( $this->get_option( 'session_poll_type', 'global' ) == "plugin" ) {
 				if ( wpmudev_chat_validate_config_file( $this->_chat_plugin_settings['config_file'], 'ABSPATH' ) === true ) {
-					$this->chat_localized['settings']["ajax_url"] = includes_url( '/chat/wpmudev-chat-ajax.php', __FILE__ );
+					$this->chat_localized['settings']["ajax_url"] = res_url( '/chat/wpmudev-chat-ajax.php', __FILE__ );
 				} else {
 					//$this->chat_localized['settings']["ajax_url"] 		= site_url()."/admin/admin-ajax.php?xyz";
 					$this->chat_localized['settings']["ajax_url"] = admin_url( 'admin-ajax.php', 'relative' );
@@ -1874,9 +1874,9 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 			$this->chat_localized['settings']['REQUEST_URI'] = base64_encode( $_SERVER['REQUEST_URI'] );
 			$this->chat_localized['settings']['is_admin']    = is_admin() ? true : false;
 
-			//$this->chat_localized['settings']['soundManager-js'] 	= includes_url('/js/soundmanager2-nodebug-jsmin.js', __FILE__);
-			$this->chat_localized['settings']['soundManager-js'] = includes_url( '/chat/js/buzz.min.js', __FILE__ );
-			//$this->chat_localized['settings']['cookie-js'] 			= includes_url('/js/jquery-cookie.js', __FILE__);
+			//$this->chat_localized['settings']['soundManager-js'] 	= res_url('/js/soundmanager2-nodebug-jsmin.js', __FILE__);
+			$this->chat_localized['settings']['soundManager-js'] = res_url( '/chat/js/buzz.min.js', __FILE__ );
+			//$this->chat_localized['settings']['cookie-js'] 			= res_url('/js/jquery-cookie.js', __FILE__);
 
 			// Need to disable legacy setting.
 			$this->chat_localized['settings']['box_resizable'] = false;
@@ -1990,7 +1990,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 		 * @param    none
 		 *
 		 * @return    none
-		 * @see        http://codex.jabali.github.io/Adding_Administration_Menus
+		 * @see        http://jabali.github.io/Docs/Adding_Administration_Menus
 		 */
 		function admin_menu() {
 
@@ -2388,7 +2388,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 				require_once( dirname( __FILE__ ) . '/lib/class_wd_help_tooltips.php' );
 			}
 			$this->tips = new WpmuDev_HelpTooltips();
-			$this->tips->set_icon_url( includes_url( '/chat/images/information.png', __FILE__ ) );
+			$this->tips->set_icon_url( res_url( '/chat/images/information.png', __FILE__ ) );
 		}
 
 		/**
@@ -2399,7 +2399,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 		 * @param    none
 		 *
 		 * @return    none
-		 * @see        http://codex.jabali.github.io/Adding_Administration_Menus
+		 * @see        http://jabali.github.io/Docs/Adding_Administration_Menus
 		 */
 		function process_panel_actions() {
 			global $wp_roles;
@@ -2589,31 +2589,31 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 			wp_enqueue_script( 'jquery' );
 			wp_enqueue_script( 'farbtastic' );
 
-			wp_enqueue_script( 'tiny_mce_popup.js', includes_url() . 'js/tinymce/tiny_mce_popup.js', array(), $wp_version );
-			wp_enqueue_script( 'mctabs.js', includes_url() . 'js/tinymce/utils/mctabs.js', array(), $wp_version );
-			wp_enqueue_script( 'validate.js', includes_url() . 'js/tinymce/utils/validate.js', array(), $wp_version );
+			wp_enqueue_script( 'tiny_mce_popup.js', res_url() . 'js/tinymce/tiny_mce_popup.js', array(), $wp_version );
+			wp_enqueue_script( 'mctabs.js', res_url() . 'js/tinymce/utils/mctabs.js', array(), $wp_version );
+			wp_enqueue_script( 'validate.js', res_url() . 'js/tinymce/utils/validate.js', array(), $wp_version );
 
-			wp_enqueue_script( 'form_utils.js', includes_url() . 'js/tinymce/utils/form_utils.js', array(), $wp_version );
-			wp_enqueue_script( 'editable_selects.js', includes_url() . 'js/tinymce/utils/editable_selects.js', array(), $wp_version );
+			wp_enqueue_script( 'form_utils.js', res_url() . 'js/tinymce/utils/form_utils.js', array(), $wp_version );
+			wp_enqueue_script( 'editable_selects.js', res_url() . 'js/tinymce/utils/editable_selects.js', array(), $wp_version );
 
 
 			// Enqueue the Chat specific things
-			wp_register_style( 'wpmudev-chat-admin-css', includes_url( '/chat/css/wpmudev-chat-admin.css', __FILE__ ),
+			wp_register_style( 'wpmudev-chat-admin-css', res_url( '/chat/css/wpmudev-chat-admin.css', __FILE__ ),
 				array(), $this->chat_current_version );
 			$this->_registered_styles['wpmudev-chat-admin-css'] = 'wpmudev-chat-admin-css';
 
-			//echo includes_url('/js/jquery-cookie.js', dirname(__FILE__));
-			wp_enqueue_script( 'jquery-cookie', includes_url( '/chat/js/jquery-cookie.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version );
+			//echo res_url('/js/jquery-cookie.js', dirname(__FILE__));
+			wp_enqueue_script( 'jquery-cookie', res_url( '/chat/js/jquery-cookie.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version );
 			$this->_registered_scripts['jquery-cookie'] = 'jquery-cookie';
 
-			wp_enqueue_script( 'wpmudev-chat-admin-js', includes_url( '/chat/js/wpmudev-chat-admin.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
+			wp_enqueue_script( 'wpmudev-chat-admin-js', res_url( '/chat/js/wpmudev-chat-admin.js', __FILE__ ), array( 'jquery' ), $this->chat_current_version, true );
 			$this->_registered_scripts['wpmudev-chat-admin-js'] = 'wpmudev-chat-admin-js';
 
-			wp_enqueue_script( 'wpmudev-chat-admin-tinymce-js', includes_url( '/chat/js/wpmudev-chat-admin-tinymce.js', __FILE__ ),
+			wp_enqueue_script( 'wpmudev-chat-admin-tinymce-js', res_url( '/chat/js/wpmudev-chat-admin-tinymce.js', __FILE__ ),
 				array( 'jquery', 'jquery-ui-core', 'jquery-ui-tabs', 'farbtastic' ), $this->chat_current_version );
 			$this->_registered_scripts['wpmudev-chat-admin-tinymce-js'] = 'wpmudev-chat-admin-tinymce-js';
 
-			wp_enqueue_script( 'wpmudev-chat-admin-farbtastic-js', includes_url( '/chat/js/wpmudev-chat-admin-farbtastic.js', __FILE__ ), array(
+			wp_enqueue_script( 'wpmudev-chat-admin-farbtastic-js', res_url( '/chat/js/wpmudev-chat-admin-farbtastic.js', __FILE__ ), array(
 				'jquery',
 				'farbtastic'
 			), $this->chat_current_version, true );
@@ -2624,7 +2624,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 				require_once( dirname( __FILE__ ) . '/lib/class_wd_help_tooltips.php' );
 			}
 			$this->tips = new WpmuDev_HelpTooltips();
-			$this->tips->set_icon_url( includes_url( '/chat/images/information.png', __FILE__ ) );
+			$this->tips->set_icon_url( res_url( '/chat/images/information.png', __FILE__ ) );
 
 			include_once( dirname( __FILE__ ) . '/lib/wpmudev_chat_form_sections.php' );
 			include_once( dirname( __FILE__ ) . '/lib/wpmudev_chat_admin_panels_help.php' );
@@ -4116,10 +4116,10 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 
 				if ( $chat_session['box_sound'] == "enabled" ) {
 					$content .= '<li class="wpmudev-chat-action-menu-item-sound-on"><a href="#" class="wpmudev-chat-action-sound" title="' .
-					            __( 'Turn chat sound of', $this->translation_domain ) . '"><img height="16" width="16" src="' . includes_url( '/chat/images/sound-on.png', __FILE__ ) . '" alt="' . __( 'Turn chat sound off', $this->translation_domain ) . '" class="wpmudev-chat-sound-on" title="' . __( 'Turn chat sound off', $this->translation_domain ) . '" /></a></li>';
+					            __( 'Turn chat sound of', $this->translation_domain ) . '"><img height="16" width="16" src="' . res_url( '/chat/images/sound-on.png', __FILE__ ) . '" alt="' . __( 'Turn chat sound off', $this->translation_domain ) . '" class="wpmudev-chat-sound-on" title="' . __( 'Turn chat sound off', $this->translation_domain ) . '" /></a></li>';
 
 					$content .= '<li class="wpmudev-chat-action-menu-item-sound-off"><a href="#" class="wpmudev-chat-action-sound" title="' .
-					            __( 'Turn chat sound on', $this->translation_domain ) . '"><img height="16" width="16" src="' . includes_url( '/chat/images/sound-off.png', __FILE__ ) . '" alt="' . __( 'Turn chat sound on', $this->translation_domain ) . '" class="wpmudev-chat-sound-off" title="' . __( 'Turn chat sound on', $this->translation_domain ) . '" /></a></li>';
+					            __( 'Turn chat sound on', $this->translation_domain ) . '"><img height="16" width="16" src="' . res_url( '/chat/images/sound-off.png', __FILE__ ) . '" alt="' . __( 'Turn chat sound on', $this->translation_domain ) . '" class="wpmudev-chat-sound-off" title="' . __( 'Turn chat sound on', $this->translation_domain ) . '" /></a></li>';
 				}
 
 
@@ -4551,8 +4551,8 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 			$chat_header_actions = '<div class="wpmudev-chat-module-header-actions"><ul class="wpmudev-chat-actions-menu">';
 
 			if ( $chat_session['session_type'] != "bp-group" ) {
-				$chat_header_images .= '<img class="wpmudev-chat-min" src="' . includes_url( '/chat/images/16-square-blue-remove.png', __FILE__ ) . '" alt="-" width="16" height="16" style="' . $chat_style_min . '" title="' . __( 'Minimize Chat', $this->translation_domain ) . '" />';
-				$chat_header_images .= '<img class="wpmudev-chat-max" src="' . includes_url( '/chat/images/16-square-green-add.png', __FILE__ ) . '" alt="+" width="16" height="16" style="' . $chat_style_max . '" title="' . __( 'Maximize Chat', $this->translation_domain ) . '" />';
+				$chat_header_images .= '<img class="wpmudev-chat-min" src="' . res_url( '/chat/images/16-square-blue-remove.png', __FILE__ ) . '" alt="-" width="16" height="16" style="' . $chat_style_min . '" title="' . __( 'Minimize Chat', $this->translation_domain ) . '" />';
+				$chat_header_images .= '<img class="wpmudev-chat-max" src="' . res_url( '/chat/images/16-square-green-add.png', __FILE__ ) . '" alt="+" width="16" height="16" style="' . $chat_style_max . '" title="' . __( 'Maximize Chat', $this->translation_domain ) . '" />';
 				$chat_header_actions .= '<li class="wpmudev-chat-action-item wpmudev-chat-min-max"><a href="#">' . $chat_header_images . '</a></li>';
 			}
 			if ( $this->chat_user[ $chat_session['id'] ]['status_max_min'] == "max" ) {
@@ -4561,7 +4561,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 				$chat_style_settings = "display:none;";
 			}
 
-			$chat_header_actions .= '<li class="wpmudev-chat-action-item wpmudev-chat-actions-settings" style="' . $chat_style_settings . '"><a href="#" class="wpmudev-chat-actions-settings-button"><img src="' . includes_url( '/chat/images/gear_icon.png', __FILE__ ) . '" alt="' . __( 'Chat Settings', $this->translation_domain ) . '" width="16" height="16" title="' . __( 'Chat Settings', $this->translation_domain ) . '" /></a>' . $chat_action_menu . '</li>';
+			$chat_header_actions .= '<li class="wpmudev-chat-action-item wpmudev-chat-actions-settings" style="' . $chat_style_settings . '"><a href="#" class="wpmudev-chat-actions-settings-button"><img src="' . res_url( '/chat/images/gear_icon.png', __FILE__ ) . '" alt="' . __( 'Chat Settings', $this->translation_domain ) . '" width="16" height="16" title="' . __( 'Chat Settings', $this->translation_domain ) . '" /></a>' . $chat_action_menu . '</li>';
 
 			//$transient_key = "chat-session-". $chat_session['blog_id'] ."-". $chat_session['id'] .'-'. $chat_session['session_type'];
 			$transient_key = "chat-session-" . $chat_session['id'] . '-' . $chat_session['session_type'];
@@ -4842,7 +4842,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 				//if (($chat_session['session_type'] != "log") && ($row->moderator != "yes")) {
 				if ( $chat_session['session_type'] != "log" ) {
 
-					$row_text .= '<li class="wpmudev-chat-admin-actions-item wpmudev-chat-user-invite"><a class="wpmudev-chat-user-invite" rel="' . $row->auth_hash . '" title="' . __( 'Invite user to private chat:', $this->translation_domain ) . ' ' . $row->name . '" href="#"><span class="action"><img height="10" src="' . includes_url( '/chat/images/padlock-icon-th.png', __FILE__ ) . '" alt=""/></span></a></li>';
+					$row_text .= '<li class="wpmudev-chat-admin-actions-item wpmudev-chat-user-invite"><a class="wpmudev-chat-user-invite" rel="' . $row->auth_hash . '" title="' . __( 'Invite user to private chat:', $this->translation_domain ) . ' ' . $row->name . '" href="#"><span class="action"><img height="10" src="' . res_url( '/chat/images/padlock-icon-th.png', __FILE__ ) . '" alt=""/></span></a></li>';
 
 					$row_text .= '<li class="wpmudev-chat-admin-actions-item wpmudev-chat-admin-actions-item-delete"><a class="wpmudev-chat-admin-actions-item-delete" title="' . __( 'moderate this message', $this->translation_domain ) . '" href="#"><span  class="action">' . $this->chat_localized['settings']["row_delete_text"] . '</span></a></li>';
 
@@ -5079,7 +5079,7 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 		}
 
 		/**
-		 * @see        http://codex.jabali.github.io/TinyMCE_Custom_Buttons
+		 * @see        http://jabali.github.io/Docs/TinyMCE_Custom_Buttons
 		 */
 		function tinymce_register_button( $buttons ) {
 			array_push( $buttons, "separator", "chat" );
@@ -5088,19 +5088,19 @@ if ( ! class_exists( 'WPMUDEV_Chat' ) ) {
 		}
 
 		/**
-		 * @see        http://codex.jabali.github.io/TinyMCE_Custom_Buttons
+		 * @see        http://jabali.github.io/Docs/TinyMCE_Custom_Buttons
 		 */
 		function tinymce_load_langs( $langs ) {
-			$langs["chat"] = includes_url( '/chat/tinymce/langs/langs.php', __FILE__ );
+			$langs["chat"] = res_url( '/chat/tinymce/langs/langs.php', __FILE__ );
 
 			return $langs;
 		}
 
 		/**
-		 * @see        http://codex.jabali.github.io/TinyMCE_Custom_Buttons
+		 * @see        http://jabali.github.io/Docs/TinyMCE_Custom_Buttons
 		 */
 		function tinymce_add_plugin( $plugin_array ) {
-			$plugin_array['chat'] = includes_url( '/chat/tinymce/editor_plugin.js', __FILE__ );
+			$plugin_array['chat'] = res_url( '/chat/tinymce/editor_plugin.js', __FILE__ );
 
 			return $plugin_array;
 		}

@@ -5,7 +5,7 @@
  * The query API attempts to get which part of Jabali the user is on. It
  * also provides functionality for getting URL query information.
  *
- * @link https://codex.jabali.github.io/The_Loop More information on The Loop.
+ * @link https://jabali.github.io/Docs/The_Loop More information on The Loop.
  *
  * @package Jabali
  * @subpackage Query
@@ -740,7 +740,7 @@ function is_main_query() {
 			'<code>pre_get_posts</code>',
 			'<code>WP_Query->is_main_query()</code>',
 			'<code>is_main_query()</code>',
-			__( 'https://codex.jabali.github.io/Function_Reference/is_main_query' )
+			__( 'https://jabali.github.io/Docs/Function_Reference/is_main_query' )
 		);
 		_doing_it_wrong( __FUNCTION__, $message, '3.7.0' );
 	}

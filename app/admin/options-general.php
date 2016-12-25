@@ -42,7 +42,7 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Settings_General_Screen">Documentation on General Settings</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Settings_General_Screen">Documentation on General Settings</a>') . '</p>' .
 	'<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>'
 );
 
@@ -74,7 +74,7 @@ include( ABSPATH . 'admin/admin-header.php' );
 <th scope="row"><label for="home"><?php _e('Site Address (URL)') ?></label></th>
 <td><input name="home" type="url" id="home" aria-describedby="home-description" value="<?php form_option( 'home' ); ?>"<?php disabled( defined( 'WP_HOME' ) ); ?> class="regular-text code<?php if ( defined( 'WP_HOME' ) ) echo ' disabled' ?>" />
 <?php if ( ! defined( 'WP_HOME' ) ) : ?>
-<p class="description" id="home-description"><?php _e( 'Enter the address here if you <a href="https://codex.jabali.github.io/Giving_Jabali_Its_Own_Directory">want your site home page to be different from your Jabali installation directory.</a>' ); ?></p></td>
+<p class="description" id="home-description"><?php _e( 'Enter the address here if you <a href="https://jabali.github.io/Docs/Giving_Jabali_Its_Own_Directory">want your site home page to be different from your Jabali installation directory.</a>' ); ?></p></td>
 <?php endif; ?>
 </tr>
 <tr>
@@ -295,7 +295,7 @@ if ( empty($tzstring) ) { // Create a UTC+- zone if no timezone string exists
 		'<span class="screen-reader-text">' . __( 'example:' ) . ' </span> <span class="example">' . date_i18n( get_option( 'time_format' ) ) . '</span>' .
 		"<span class='spinner'></span>\n";
 
-	echo "\t<p class='date-time-doc'>" . __('<a href="https://codex.jabali.github.io/Formatting_Date_and_Time">Documentation on date and time formatting</a>.') . "</p>\n";
+	echo "\t<p class='date-time-doc'>" . __('<a href="https://jabali.github.io/Docs/Formatting_Date_and_Time">Documentation on date and time formatting</a>.') . "</p>\n";
 ?>
 	</fieldset>
 </td>

@@ -146,9 +146,9 @@ We'll be using the Theme Editor included in Jabali for sake of ease in this guid
 
 If you want to obtain a better understanding of:
 
-*  Custom Post Types and their power, you can go through this article on Codex.Jabali.org: http://codex.jabali.github.io/Custom_Post_Types
-* Custom Taxonomies and their application you can go through this article on Codex.Jabali.org: http://codex.jabali.github.io/Custom_Taxonomies
-* Custom Fields and their application you can go through this article on Codex.Jabali.org: http://codex.jabali.github.io/Custom_Fields
+*  Custom Post Types and their power, you can go through this article on Codex.Jabali.org: http://jabali.github.io/Docs/Custom_Post_Types
+* Custom Taxonomies and their application you can go through this article on Codex.Jabali.org: http://jabali.github.io/Docs/Custom_Taxonomies
+* Custom Fields and their application you can go through this article on Codex.Jabali.org: http://jabali.github.io/Docs/Custom_Fields
 
 
 133620-1422153856-au

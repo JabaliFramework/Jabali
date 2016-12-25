@@ -51,7 +51,7 @@ class WC_Settings_Shipping extends WC_Settings_Page {
 		);
 
 		if ( ! defined( 'WC_INSTALLING' ) ) {
-			// Load shipping methods so we can show any global options they may have
+			// Load delivery methods so we can show any global options they may have
 			$shipping_methods = WC()->shipping->load_shipping_methods();
 
 			foreach ( $shipping_methods as $method ) {
@@ -124,7 +124,7 @@ class WC_Settings_Shipping extends WC_Settings_Page {
 	public function output() {
 		global $current_section, $hide_save_button;
 
-		// Load shipping methods so we can show any global options they may have
+		// Load delivery methods so we can show any global options they may have
 		$shipping_methods = WC()->shipping->load_shipping_methods();
 
 		if ( '' === $current_section ) {
@@ -241,7 +241,7 @@ class WC_Settings_Shipping extends WC_Settings_Page {
 			'strings'       => array(
 				'unload_confirmation_msg'     => __( 'Your changed data will be lost if you leave this page without saving.', 'banda' ),
 				'save_failed'                 => __( 'Your changes were not saved. Please retry.', 'banda' ),
-				'no_shipping_methods_offered' => __( 'No shipping methods offered to this zone.', 'banda' ),
+				'no_shipping_methods_offered' => __( 'No delivery methods offered to this zone.', 'banda' ),
 			),
 		) );
 		wp_enqueue_script( 'wc-shipping-zones' );

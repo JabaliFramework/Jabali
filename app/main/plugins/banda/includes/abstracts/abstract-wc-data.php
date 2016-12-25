@@ -30,7 +30,7 @@ abstract class WC_Data {
 
 	/**
 	 * Meta type. This should match up with
-	 * the types avaiable at https://codex.jabali.github.io/Function_Reference/add_metadata.
+	 * the types avaiable at https://jabali.github.io/Docs/Function_Reference/add_metadata.
 	 * WP defines 'post', 'user', 'comment', and 'term'.
 	 */
 	protected $_meta_type = 'post';

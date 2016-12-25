@@ -71,12 +71,12 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Appearance_Widgets_Screen">Documentation on Widgets</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Appearance_Widgets_Screen">Documentation on Widgets</a>') . '</p>' .
 	'<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>'
 );
 
 if ( ! current_theme_supports( 'widgets' ) ) {
-	wp_die( __( 'The theme you are currently using isn&#8217;t widget-aware, meaning that it has no sidebars that you are able to change. For information on making your theme widget-aware, please <a href="https://codex.jabali.github.io/Widgetizing_Themes">follow these instructions</a>.' ) );
+	wp_die( __( 'The theme you are currently using isn&#8217;t widget-aware, meaning that it has no sidebars that you are able to change. For information on making your theme widget-aware, please <a href="https://jabali.github.io/Docs/Widgetizing_Themes">follow these instructions</a>.' ) );
 }
 
 // These are the widgets grouped by sidebar

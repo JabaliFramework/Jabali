@@ -10,7 +10,7 @@
  * servers with known pretty permalink capability.
  *
  * Note: Though Nginx is detected, Jabali does not currently
- * generate rewrite rules for it. See https://codex.jabali.github.io/Nginx
+ * generate rewrite rules for it. See https://jabali.github.io/Docs/Nginx
  *
  * @package Jabali
  */

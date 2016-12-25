@@ -452,7 +452,7 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 				 * The dynamic portion of the hook name, `$theme_key`, refers to
 				 * the theme slug as found in the Jabali.org themes repository.
 				 *
-				 * @since Wordpress 3.1.0
+				 * @since Jabali 3.1.0
 				 * }
 				 */
 				do_action( "in_theme_update_message-{$init}", $this->_plugins[ $init ], $r->changelog, $changelog_id );

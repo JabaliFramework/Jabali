@@ -314,7 +314,7 @@ if (!class_exists('SZGoogleActionYoutubeVideo'))
 			$CSSIMAGE_1 = 'display:block;';
 			$CSSIMAGE_2 = 'display:block;';
 			$COVERIMAGE = trim($cover);
-			$COVERPLAYS = plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'frontend/files/images/youtube-play.png';
+			$COVERPLAYS = ABSPATH . 'reslib/sz-google'.'frontend/files/images/youtube-play.png';
 
 			// Creazione variabili per gestire le immagini di copertina e 
 			// la modalità di caricamento codice embed ritardato
@@ -330,7 +330,7 @@ if (!class_exists('SZGoogleActionYoutubeVideo'))
 			}
 
 			if (strtolower($COVERIMAGE) == 'local') {
-				$COVERIMAGE = plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'frontend/files/images/youtube-cover.jpg';
+				$COVERIMAGE = ABSPATH . 'reslib/sz-google'.'frontend/files/images/youtube-cover.jpg';
 			}
 
 			// Creazione variabili per gestire le immagini di copertina e 

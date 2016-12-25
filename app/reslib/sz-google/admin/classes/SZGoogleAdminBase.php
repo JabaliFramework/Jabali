@@ -88,6 +88,8 @@ if (!class_exists('SZGoogleAdminBase'))
 			add_menu_page('Google for Jabali','Google','manage_options',
 				'sz-google-admin.php',array($this,'moduleCallbackStart'));
 
+		
+
 			// Definition of general values ​​for the creation of a menu associated 
 			// with the module options. Example slug, page title and menu title
 
@@ -187,7 +189,7 @@ if (!class_exists('SZGoogleAdminBase'))
 			// Registration of CSS files and JavaScript files to be
 			// loaded in the page according to the required function
 
-			$CSS = plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/css/sz-google-style-admin.css';
+			$CSS = '/reslib/sz-google'.'/admin/files/css/sz-google-style-admin.css';
 			wp_register_style('sz-google-style-admin',$CSS,array(),SZ_PLUGIN_GOOGLE_VERSION);
 
 			// Control the loading of the file based on the
@@ -220,8 +222,8 @@ if (!class_exists('SZGoogleAdminBase'))
 			// Registration of CSS files and JavaScript files to be
 			// loaded in the page according to the required function
 
-			$JS1 = plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/js/jquery.szgoogle.widgets.js';
-			$JS2 = plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/js/jquery.szgoogle.pages.js';
+			$JS1 = '/reslib/sz-google'.'/admin/files/js/jquery.szgoogle.widgets.js';
+			$JS2 = '/reslib/sz-google'.'/admin/files/js/jquery.szgoogle.pages.js';
 
 			wp_register_script('sz-google-javascript-widgets',$JS1);
 			wp_register_script('sz-google-javascript-pages',$JS2);

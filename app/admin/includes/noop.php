@@ -78,7 +78,7 @@ function home_url() {}
 /**
  * @ignore
  */
-function includes_url() {}
+function res_url() {}
 
 /**
  * @ignore

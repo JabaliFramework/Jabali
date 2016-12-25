@@ -30,16 +30,16 @@ get_current_screen()->add_help_tab( array(
 	<p id="newcontent-description">' . __( 'In the editing area the Tab key enters a tab character. To move below this area by pressing Tab, press the Esc key followed by the Tab key. In some cases the Esc key will need to be pressed twice before the Tab key will allow you to continue.' ) . '</p>
 	<p>' . __('After typing in your edits, click Update File.') . '</p>
 	<p>' . __('<strong>Advice:</strong> think very carefully about your site crashing if you are live-editing the theme currently in use.') . '</p>
-	<p>' . sprintf( __('Upgrading to a newer version of the same theme will override changes made here. To avoid this, consider creating a <a href="%s">child theme</a> instead.'), __('https://codex.jabali.github.io/Child_Themes') ) . '</p>' .
+	<p>' . sprintf( __('Upgrading to a newer version of the same theme will override changes made here. To avoid this, consider creating a <a href="%s">child theme</a> instead.'), __('https://jabali.github.io/Docs/Child_Themes') ) . '</p>' .
 	( is_network_admin() ? '<p>' . __('Any edits to files from this screen will be reflected on all sites in the network.') . '</p>' : '' )
 ) );
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Theme_Development">Documentation on Theme Development</a>') . '</p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Using_Themes">Documentation on Using Themes</a>') . '</p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Editing_Files">Documentation on Editing Files</a>') . '</p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Template_Tags">Documentation on Template Tags</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Theme_Development">Documentation on Theme Development</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Using_Themes">Documentation on Using Themes</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Editing_Files">Documentation on Editing Files</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Template_Tags">Documentation on Template Tags</a>') . '</p>' .
 	'<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>'
 );
 
@@ -276,7 +276,7 @@ else : ?>
 	if ( is_writeable( $file ) ) :
 		submit_button( __( 'Update File' ), 'primary', 'submit', true );
 	else : ?>
-<p><em><?php _e('You need to make this file writable before you can save your changes. See <a href="https://codex.jabali.github.io/Changing_File_Permissions">the Codex</a> for more information.'); ?></em></p>
+<p><em><?php _e('You need to make this file writable before you can save your changes. See <a href="https://jabali.github.io/Docs/Changing_File_Permissions">the Codex</a> for more information.'); ?></em></p>
 <?php endif; ?>
 		</div>
 	</form>

@@ -273,7 +273,7 @@ final class WP_Theme implements ArrayAccess {
 					/* translators: 1: index.php, 2: Codex URL, 3: style.css */
 					__( 'Template is missing. Standalone themes need to have a %1$s template file. <a href="%2$s">Child themes</a> need to have a Template header in the %3$s stylesheet.' ),
 					'<code>index.php</code>',
-					__( 'https://codex.jabali.github.io/Child_Themes' ),
+					__( 'https://jabali.github.io/Docs/Child_Themes' ),
 					'<code>style.css</code>'
 				);
 				$this->errors = new WP_Error( 'theme_no_index', $error_message );

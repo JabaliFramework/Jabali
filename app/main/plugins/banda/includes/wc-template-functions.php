@@ -61,7 +61,7 @@ function wc_template_redirect() {
 		// Buffer the checkout page
 		ob_start();
 
-		// Ensure gateways and shipping methods are loaded early
+		// Ensure gateways and delivery methods are loaded early
 		WC()->payment_gateways();
 		WC()->shipping();
 	}
@@ -1350,7 +1350,7 @@ if ( ! function_exists( 'banda_cross_sell_display' ) ) {
 if ( ! function_exists( 'banda_button_proceed_to_checkout' ) ) {
 
 	/**
-	 * Output the proceed to checkout button.
+	 * Output the Checkout button.
 	 *
 	 * @subpackage	Cart
 	 */
@@ -1477,7 +1477,7 @@ if ( ! function_exists( 'banda_checkout_payment' ) ) {
 		wc_get_template( 'checkout/payment.php', array(
 			'checkout'           => WC()->checkout(),
 			'available_gateways' => $available_gateways,
-			'order_button_text'  => apply_filters( 'banda_order_button_text', __( 'Place order', 'banda' ) )
+			'order_button_text'  => apply_filters( 'banda_order_button_text', __( 'Pay Now', 'banda' ) )
 		) );
 	}
 }

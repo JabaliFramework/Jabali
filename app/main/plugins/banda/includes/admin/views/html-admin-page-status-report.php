@@ -12,7 +12,7 @@ global $wpdb;
 <div class="updated banda-message inline">
 	<p><?php _e( 'Please copy and paste this information in your ticket when contacting support:', 'banda' ); ?> </p>
 	<p class="submit"><a href="#" class="button-primary debug-report"><?php _e( 'Get System Report', 'banda' ); ?></a>
-	<a class="button-secondary docs" href="https://docs.mtaandao.co.ke/document/understanding-the-banda-system-status-report/" target="_blank"><?php _e( 'Understanding the Status Report', 'banda' ); ?></a></p>
+	<a class="button-secondary docs" href="https://mtaandao.co.ke/docs/banda/document/understanding-the-banda-system-status-report/" target="_blank"><?php _e( 'Understanding the Status Report', 'banda' ); ?></a></p>
 	<div id="debug-report">
 		<textarea readonly="readonly"></textarea>
 		<p class="submit"><button id="copy-for-support" class="button-primary" href="#" data-tip="<?php esc_attr_e( 'Copied!', 'banda' ); ?>"><?php _e( 'Copy for Support', 'banda' ); ?></button></p>
@@ -74,7 +74,7 @@ global $wpdb;
 				}
 
 				if ( $memory < 67108864 ) {
-					echo '<mark class="error"><span class="dashicons dashicons-warning"></span> ' . sprintf( __( '%s - We recommend setting memory to at least 64MB. See: %s', 'banda' ), size_format( $memory ), '<a href="https://codex.jabali.github.io/Editing_wp-config.php#Increasing_memory_allocated_to_PHP" target="_blank">' . __( 'Increasing memory allocated to PHP', 'banda' ) . '</a>' ) . '</mark>';
+					echo '<mark class="error"><span class="dashicons dashicons-warning"></span> ' . sprintf( __( '%s - We recommend setting memory to at least 64MB. See: %s', 'banda' ), size_format( $memory ), '<a href="https://jabali.github.io/Docs/Editing_wp-config.php#Increasing_memory_allocated_to_PHP" target="_blank">' . __( 'Increasing memory allocated to PHP', 'banda' ) . '</a>' ) . '</mark>';
 				} else {
 					echo '<mark class="yes">' . size_format( $memory ) . '</mark>';
 				}
@@ -130,7 +130,7 @@ global $wpdb;
 					$php_version = phpversion();
 
 					if ( version_compare( $php_version, '5.6', '<' ) ) {
-						echo '<mark class="error"><span class="dashicons dashicons-warning"></span> ' . sprintf( __( '%s - We recommend a minimum PHP version of 5.6. See: %s', 'banda' ), esc_html( $php_version ), '<a href="https://docs.mtaandao.co.ke/document/how-to-update-your-php-version/" target="_blank">' . __( 'How to update your PHP version', 'banda' ) . '</a>' ) . '</mark>';
+						echo '<mark class="error"><span class="dashicons dashicons-warning"></span> ' . sprintf( __( '%s - We recommend a minimum PHP version of 5.6. See: %s', 'banda' ), esc_html( $php_version ), '<a href="https://mtaandao.co.ke/docs/banda/document/how-to-update-your-php-version/" target="_blank">' . __( 'How to update your PHP version', 'banda' ) . '</a>' ) . '</mark>';
 					} else {
 						echo '<mark class="yes">' . esc_html( $php_version ) . '</mark>';
 					}
@@ -301,7 +301,7 @@ global $wpdb;
 			$posting['wp_remote_get']['name'] = __( 'Remote Get', 'banda');
 			$posting['wp_remote_get']['help'] = wc_help_tip( __( 'Banda plugins may use this method of communication when checking for plugin updates.', 'banda' ) );
 
-			$response = wp_safe_remote_get( 'https://mtaandao.co.ke/wc-api/product-key-api?request=ping&network=' . ( is_multisite() ? '1' : '0' ) );
+			$response = wp_safe_remote_get( 'http://mtaandao.co.ke/wc-api/product-key-api?request=ping&network=' . ( is_multisite() ? '1' : '0' ) );
 
 			if ( ! is_wp_error( $response ) && $response['response']['code'] >= 200 && $response['response']['code'] < 300 ) {
 				$posting['wp_remote_get']['success'] = true;
@@ -577,7 +577,7 @@ global $wpdb;
 					echo '<mark class="error"><span class="dashicons dashicons-warning"></span> ' . __( 'Page ID is set, but the page does not exist', 'banda' ) . '</mark>';
 					$error = true;
 				} else if ( get_post_status( $page_id ) !== 'publish' ) {
-					echo '<mark class="error"><span class="dashicons dashicons-warning"></span> ' . sprintf( __( 'Page visibility should be %spublic%s', 'banda' ), '<a href="https://codex.jabali.github.io/Content_Visibility" target="_blank">', '</a>' ) . '</mark>';
+					echo '<mark class="error"><span class="dashicons dashicons-warning"></span> ' . sprintf( __( 'Page visibility should be %spublic%s', 'banda' ), '<a href="https://jabali.github.io/Docs/Content_Visibility" target="_blank">', '</a>' ) . '</mark>';
 					$error = true;
 				} else {
 
@@ -667,7 +667,7 @@ global $wpdb;
 			<td data-export-label="Child Theme"><?php _e( 'Child Theme', 'banda' ); ?>:</td>
 			<td class="help"><?php echo wc_help_tip( __( 'Displays whether or not the current theme is a child theme.', 'banda' ) ); ?></td>
 			<td><?php
-				echo is_child_theme() ? '<mark class="yes"><span class="dashicons dashicons-yes"></span></mark>' : '<span class="dashicons dashicons-no-alt"></span> &ndash; ' . sprintf( __( 'If you\'re modifying Banda on a parent theme you didn\'t build personally, then we recommend using a child theme. See: <a href="%s" target="_blank">How to create a child theme</a>', 'banda' ), 'https://codex.jabali.github.io/Child_Themes' );
+				echo is_child_theme() ? '<mark class="yes"><span class="dashicons dashicons-yes"></span></mark>' : '<span class="dashicons dashicons-no-alt"></span> &ndash; ' . sprintf( __( 'If you\'re modifying Banda on a parent theme you didn\'t build personally, then we recommend using a child theme. See: <a href="%s" target="_blank">How to create a child theme</a>', 'banda' ), 'https://jabali.github.io/Docs/Child_Themes' );
 			?></td>
 		</tr>
 		<?php
@@ -788,7 +788,7 @@ global $wpdb;
 				<tr>
 					<td>&nbsp;</td>
 					<td class="help">&nbsp;</td>
-					<td><a href="https://docs.mtaandao.co.ke/document/fix-outdated-templates-banda/" target="_blank"><?php _e( 'Learn how to update outdated templates', 'banda' ) ?></a></td>
+					<td><a href="https://mtaandao.co.ke/docs/banda/document/fix-outdated-templates-banda/" target="_blank"><?php _e( 'Learn how to update outdated templates', 'banda' ) ?></a></td>
 				</tr>
 				<?php
 			}

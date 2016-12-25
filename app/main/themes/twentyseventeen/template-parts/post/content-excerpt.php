@@ -4,7 +4,7 @@
  *
  * Used in Search Results and for Recent Posts in Front Page panels.
  *
- * @link https://codex.jabali.github.io/Template_Hierarchy
+ * @link https://jabali.github.io/Docs/Template_Hierarchy
  *
  * @package Jabali
  * @subpackage Twenty_Seventeen

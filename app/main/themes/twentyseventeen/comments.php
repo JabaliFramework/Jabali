@@ -5,7 +5,7 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://codex.jabali.github.io/Template_Hierarchy
+ * @link https://jabali.github.io/Docs/Template_Hierarchy
  *
  * @package Jabali
  * @subpackage Twenty_Seventeen

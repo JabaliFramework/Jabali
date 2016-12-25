@@ -177,7 +177,7 @@ final class Members_Plugin {
 
 		// Main plugin directory path and URI.
 		$this->dir_path = trailingslashit( dirname(  __FILE__ ). '/');
-		$this->dir_uri  = trailingslashit( includes_url( '/members/' ) );
+		$this->dir_uri  = trailingslashit( res_url( '/members/' ) );
 
 		// Plugin directory paths.
 		$this->inc_dir       = trailingslashit( $this->dir_path . 'inc'       );

@@ -150,7 +150,7 @@ class WC_Admin_Setup_Wizard {
 			<?php do_action( 'admin_head' ); ?>
 		</head>
 		<body class="wc-setup wp-core-ui">
-			<h1 id="wc-logo"><a href="https://mtaandao.co.ke/"><img src="<?php echo WC()->plugin_url(); ?>/assets/images/banda_logo.png" alt="Banda" /></a></h1>
+			<h1 id="wc-logo"><a href="http://mtaandao.co.ke/"><img src="<?php echo WC()->plugin_url(); ?>/assets/images/banda_logo.png" alt="Banda" /></a></h1>
 		<?php
 	}
 
@@ -203,11 +203,11 @@ class WC_Admin_Setup_Wizard {
 	public function wc_setup_introduction() {
 		?>
 		<h1><?php _e( 'Welcome to Banda Ecommerce!', 'banda' ); ?></h1>
-		<p><?php _e( 'Banda helps you set up and deploy your online store in a few easy steps and receive payments conveniently..</strong>', 'banda' ); ?></p>
-		<p><?php _e( 'If you don’t want to set up Banda now, you can skip and return to the Jabali dashboard.!', 'banda' ); ?></p>
+		<p><?php _e( 'Banda helps you set up and deploy your online store in a few easy steps and receive payments conveniently.</strong>', 'banda' ); ?></p>
+		<p><?php _e( 'If you wish to set up Banda later, you can skip and return to the Jabali dashboard!', 'banda' ); ?></p>
 		<p class="wc-setup-actions step">
 			<a href="<?php echo esc_url( $this->get_next_step_link() ); ?>" class="button-primary button button-large button-next"><?php _e( 'Let\'s Roll!', 'banda' ); ?></a>
-			<a href="<?php echo esc_url( admin_url() ); ?>" class="button button-large"><?php _e( 'Later, man', 'banda' ); ?></a>
+			<a href="<?php echo esc_url( admin_url() ); ?>" class="button button-large"><?php _e( 'Later, man.', 'banda' ); ?></a>
 		</p>
 		<?php
 	}
@@ -217,9 +217,9 @@ class WC_Admin_Setup_Wizard {
 	 */
 	public function wc_setup_pages() {
 		?>
-		<h1><?php _e( 'Page Setup', 'banda' ); ?></h1>
+		<center><h1><?php _e( 'Page Setup', 'banda' ); ?></h1></center>
 		<form method="post">
-			<p><?php printf( __( 'Your store needs a few essential %spages%s. The following will be created automatically (if they do not already exist):', 'banda' ), '<a href="' . esc_url( admin_url( 'edit.php?post_type=page' ) ) . '" target="_blank">', '</a>' ); ?></p>
+			<p><?php printf( __( 'The following essential %spages%s will be created automatically if they do not already exist:', 'banda' ), '<a href="' . esc_url( admin_url( 'edit.php?post_type=page' ) ) . '" target="_blank">', '</a>' ); ?></p>
 			<table class="wc-setup-pages" cellspacing="0">
 				<thead>
 					<tr>
@@ -229,8 +229,8 @@ class WC_Admin_Setup_Wizard {
 				</thead>
 				<tbody>
 					<tr>
-						<td class="page-name"><?php echo _x( 'Shop', 'Page title', 'banda' ); ?></td>
-						<td><?php _e( 'The shop page will display your products.', 'banda' ); ?></td>
+						<td class="page-name"><?php echo _x( 'Showcase', 'Page title', 'banda' ); ?></td>
+						<td><?php _e( 'The showcase page will display your products.', 'banda' ); ?></td>
 					</tr>
 					<tr>
 						<td class="page-name"><?php echo _x( 'Cart', 'Page title', 'banda' ); ?></td>
@@ -245,7 +245,7 @@ class WC_Admin_Setup_Wizard {
 					<tr>
 						<td class="page-name"><?php echo _x( 'Pay', 'Page title', 'banda' ); ?></td>
 						<td>
-							<?php _e( 'The payment page will be where the customers go to pay for their items.', 'banda' ); ?>
+							<?php _e( 'The payment page will be where the customers go to process payment for their items.', 'banda' ); ?>
 						</td>
 					</tr>
 					<tr>
@@ -254,10 +254,14 @@ class WC_Admin_Setup_Wizard {
 							<?php _e( 'Registered customers will be able to manage their account details and view past orders on this page.', 'banda' ); ?>
 						</td>
 					</tr>
+					<tr>
+						<td class="page-name"><?php echo _x( 'Terms & Conditions', 'Page title', 'banda' ); ?></td>
+						<td>
+							<?php _e( 'You will edit this to show terms and conditions for your online store.', 'banda' ); ?>
+						</td>
+					</tr>
 				</tbody>
 			</table>
-
-			<p><?php printf( __( 'Once created, these pages can be managed from your admin dashboard on the %sPages screen%s. You can control which pages are shown on your website via %sAppearance > Menus%s.', 'banda' ), '<a href="' . esc_url( admin_url( 'edit.php?post_type=page' ) ) . '" target="_blank">', '</a>', '<a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" target="_blank">', '</a>' ); ?></p>
 
 			<p class="wc-setup-actions step">
 				<input type="submit" class="button-primary button button-large button-next" value="<?php esc_attr_e( 'Continue', 'banda' ); ?>" name="save_step" />
@@ -289,7 +293,7 @@ class WC_Admin_Setup_Wizard {
 		$state          = 'KE' === $country && '*' === $state ? '1' : $state;
 
 		// Defaults
-		$currency       = get_option( 'banda_currency', 'GBP' );
+		$currency       = get_option( 'banda_currency', 'KSH' );
 		$currency_pos   = get_option( 'banda_currency_pos', 'left' );
 		$decimal_sep    = get_option( 'banda_price_decimal_sep', '.' );
 		$num_decimals   = get_option( 'banda_price_num_decimals', '2' );
@@ -297,7 +301,7 @@ class WC_Admin_Setup_Wizard {
 		$dimension_unit = get_option( 'banda_dimension_unit', 'cm' );
 		$weight_unit    = get_option( 'banda_weight_unit', 'kg' );
 		?>
-		<h1><?php _e( 'Your Location', 'banda' ); ?></h1>
+		<center><h1><?php _e( 'Your Location', 'banda' ); ?></h1></center>
 		<form method="post">
 			<table class="form-table">
 				<tr>
@@ -319,7 +323,7 @@ class WC_Admin_Setup_Wizard {
 							}
 							?>
 						</select>
-						<span class="description"><?php printf( __( 'If your currency is not listed you can %sadd it later%s.', 'banda' ), '<a href="https://docs.mtaandao.co.ke/document/add-a-custom-currency-symbol/" target="_blank">', '</a>' ); ?></span>
+						<span class="description"><?php printf( __( 'If your currency is not listed you can %sadd it later%s.', 'banda' ), '<a href="https://mtaandao.co.ke/docs/banda/document/add-a-custom-currency-symbol/" target="_blank">', '</a>' ); ?></span>
 					</td>
 				</tr>
 				<tr>
@@ -417,15 +421,15 @@ class WC_Admin_Setup_Wizard {
 	 */
 	public function wc_setup_shipping_taxes() {
 		?>
-		<h1><?php _e( 'Shipping &amp; Tax Setup', 'banda' ); ?></h1>
+		<center><h1><?php _e( 'Deliveries &amp; Tax Setup', 'banda' ); ?></h1></center>
 		<form method="post">
-			<p><?php _e( 'If you will be charging sales tax, or shipping physical goods to customers, you can enable these below. This is optional and can be changed later.', 'banda' ); ?></p>
+			<p><?php _e( 'If you will be charging sales tax, or delivering physical goods to customers, you can enable these below. This is optional and can be changed later.', 'banda' ); ?></p>
 			<table class="form-table">
 				<tr>
-					<th scope="row"><label for="banda_calc_shipping"><?php _e( 'Will you be shipping products?', 'banda' ); ?></label></th>
+					<th scope="row"><label for="banda_calc_shipping"><?php _e( 'Will you be delivering products?', 'banda' ); ?></label></th>
 					<td>
 						<input type="checkbox" id="banda_calc_shipping" <?php checked( get_option( 'banda_ship_to_countries', '' ) !== 'disabled', true ); ?> name="banda_calc_shipping" class="input-checkbox" value="1" />
-						<label for="banda_calc_shipping"><?php _e( 'Yes, I will be shipping physical goods to customers', 'banda' ); ?></label>
+						<label for="banda_calc_shipping"><?php _e( 'Yes, I will be delivering physical goods to customers', 'banda' ); ?></label>
 					</td>
 				</tr>
 				<tr>
@@ -462,7 +466,7 @@ class WC_Admin_Setup_Wizard {
 						?>
 						<tr class="tax-rates">
 							<td colspan="2">
-								<p><?php printf( __( 'The following tax rates will be imported automatically for you. You can read more about taxes in %1$sour documentation%2$s.', 'banda' ), '<a href="https://docs.mtaandao.co.ke/document/setting-up-taxes-in-banda/" target="_blank">', '</a>' ); ?></p>
+								<p><?php printf( __( 'The following tax rates will be imported automatically for you. You can read more about taxes in %1$sour documentation%2$s.', 'banda' ), '<a href="https://mtaandao.co.ke/docs/banda/document/setting-up-taxes-in-banda/" target="_blank">', '</a>' ); ?></p>
 								<div class="importing-tax-rates">
 									<table class="tax-rates">
 										<thead>
@@ -584,16 +588,29 @@ class WC_Admin_Setup_Wizard {
 				'repo-slug'   => 'banda-gateway-paypal-express-checkout',
 			),
 			'stripe' => array(
-				'name'        => __( 'Stripe', 'banda' ),
+				'name'        => __( 'JamboPay', 'banda' ),
 				'image'       => WC()->plugin_url() . '/assets/images/stripe.png',
-				'description' => sprintf( __( 'A modern and robust way to accept credit card payments on your store. %sLearn more about Stripe%s.', 'banda' ), '<a href="https://jabali.github.io/plugins/banda-gateway-stripe/" target="_blank">', '</a>' ),
+				'description' => sprintf( __( 'A modern and robust way to accept credit card payments on your store. %sLearn more about JamboPay%s.', 'banda' ), '<a href="https://jambopay.com/" target="_blank">', '</a>' ),
+				'class'       => 'featured featured-row-last',
+			),
+			'mobile' => array(
+				'name'        => __( 'Mobile Payments', 'banda' ),
+				'image'       => WC()->plugin_url() . '/assets/images/mpesa.png',
+				'description' => sprintf( __( 'Pay using your mobile phone via MPesa, Airtel Money and more. %sLearn more about Lipa Na MPesa%s.', 'banda' ), '<a href="https://safaricom.co.ke/lipa-na-mpesa/" target="_blank">', '</a>' ),
 				'class'       => 'featured featured-row-first',
-				'repo-slug'   => 'banda-gateway-stripe',
+				//'repo-slug'   => 'banda-gateway-mobile',
+			),
+			'pesapal' => array(
+				'name'        => __( 'Pesapal Checkout', 'banda' ),
+				'image'       => WC()->plugin_url() . '/assets/images/paypal.png',
+				'description' => sprintf( __( 'Safe and secure payments using credit cards or your customer\'s Pesapal account. %sLearn more about Pesapal%s.', 'banda' ), '<a href="https://jabali.github.io/plugins/banda-gateway-paypal-express-checkout/" target="_blank">', '</a>' ),
+				'class'       => 'featured featured-row-last',
+				//'repo-slug'   => 'banda-gateway-pesapal',
 			),
 			'paypal' => array(
 				'name'        => __( 'PayPal Standard', 'banda' ),
 				'description' => __( 'Accept payments via PayPal using account balance or credit card.', 'banda' ),
-				'image'       => '',
+				'image'       => WC()->plugin_url() . '/assets/images/mpesa.png',
 				'class'       => '',
 				'settings'    => array(
 					'email' => array(
@@ -619,12 +636,6 @@ class WC_Admin_Setup_Wizard {
 			'cod' => array(
 				'name'        => __( 'Cash on Delivery', 'banda' ),
 				'description' => __( 'A simple offline gateway that lets you accept cash on delivery.', 'banda' ),
-				'image'       => '',
-				'class'       => '',
-			),
-			'mobile' => array(
-				'name'        => __( 'Mobile Payments', 'banda' ),
-				'description' => __( 'Pay via mobile phone via MPesa, Airtel Money and more.', 'banda' ),
 				'image'       => '',
 				'class'       => '',
 			)
@@ -757,7 +768,7 @@ class WC_Admin_Setup_Wizard {
 		$this->wc_setup_ready_actions();
 		shuffle( $this->tweets );
 		?>
-		<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://mtaandao.co.ke/" data-text="<?php echo esc_attr( $this->tweets[0] ); ?>" data-via="Banda" data-size="large">Tweet</a>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mtaandao.co.ke/" data-text="<?php echo esc_attr( $this->tweets[0] ); ?>" data-via="Banda" data-size="large">Tweet</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 		<h1><?php _e( 'Your Store is Ready!', 'banda' ); ?></h1>
@@ -772,7 +783,7 @@ class WC_Admin_Setup_Wizard {
 			<div class="wc-setup-next-steps-last">
 				<h2><?php _e( 'Learn More', 'banda' ); ?></h2>
 				<ul>
-					<li class="learn-more"><a href="https://mtaandao.co.ke/plugins/banda"><?php _e( 'Learn more about selling with Banda.', 'banda' ); ?></a></li>
+					<li class="learn-more"><a href="http://mtaandao.co.ke/plugins/banda"><?php _e( 'Learn more about selling with Banda.', 'banda' ); ?></a></li>
 				</ul>
 			</div>
 		</div>

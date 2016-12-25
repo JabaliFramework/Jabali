@@ -69,16 +69,16 @@ function list_core_update( $update ) {
 
 			if ( !$mysql_compat && !$php_compat )
 				/* translators: 1: Jabali version number, 2: Minimum required PHP version number, 3: Minimum required MySQL version number, 4: Current PHP version number, 5: Current MySQL version number */
-				$message = sprintf( __('You cannot update because <a href="https://codex.jabali.github.io/Version_%1$s">Jabali %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.'), $update->current, $update->php_version, $update->mysql_version, $php_version, $mysql_version );
+				$message = sprintf( __('You cannot update because <a href="https://jabali.github.io/Docs/Version_%1$s">Jabali %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.'), $update->current, $update->php_version, $update->mysql_version, $php_version, $mysql_version );
 			elseif ( !$php_compat )
 				/* translators: 1: Jabali version number, 2: Minimum required PHP version number, 3: Current PHP version number */
-				$message = sprintf( __('You cannot update because <a href="https://codex.jabali.github.io/Version_%1$s">Jabali %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.'), $update->current, $update->php_version, $php_version );
+				$message = sprintf( __('You cannot update because <a href="https://jabali.github.io/Docs/Version_%1$s">Jabali %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.'), $update->current, $update->php_version, $php_version );
 			elseif ( !$mysql_compat )
 				/* translators: 1: Jabali version number, 2: Minimum required MySQL version number, 3: Current MySQL version number */
-				$message = sprintf( __('You cannot update because <a href="https://codex.jabali.github.io/Version_%1$s">Jabali %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.'), $update->current, $update->mysql_version, $mysql_version );
+				$message = sprintf( __('You cannot update because <a href="https://jabali.github.io/Docs/Version_%1$s">Jabali %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.'), $update->current, $update->mysql_version, $mysql_version );
 			else
 				/* translators: 1: Jabali version number, 2: Jabali version number including locale if necessary */
-				$message = 	sprintf(__('You can update to <a href="https://codex.jabali.github.io/Version_%1$s">Jabali %2$s</a> automatically:'), $update->current, $version_string);
+				$message = 	sprintf(__('You can update to <a href="https://jabali.github.io/Docs/Version_%1$s">Jabali %2$s</a> automatically:'), $update->current, $version_string);
 			if ( !$mysql_compat || !$php_compat )
 				$show_buttons = false;
 		}
@@ -180,7 +180,7 @@ function core_upgrade_preamble() {
 		echo '</h2>';
 	} else {
 		echo '<div class="notice notice-warning"><p>';
-		_e('<strong>Important:</strong> before updating, please <a href="https://codex.jabali.github.io/Jabali_Backups">back up your database and files</a>. For help with updates, visit the <a href="https://codex.jabali.github.io/Updating_Jabali">Updating Jabali</a> Codex page.');
+		_e('<strong>Important:</strong> before updating, please <a href="https://jabali.github.io/Docs/Jabali_Backups">back up your database and files</a>. For help with updates, visit the <a href="https://jabali.github.io/Docs/Updating_Jabali">Updating Jabali</a> Codex page.');
 		echo '</p></div>';
 
 		echo '<h2 class="response">';
@@ -343,7 +343,7 @@ function list_theme_updates() {
 ?>
 <h2><?php _e( 'Themes' ); ?></h2>
 <p><?php _e( 'The following themes have new versions available. Check the ones you want to update and then click &#8220;Update Themes&#8221;.' ); ?></p>
-<p><?php printf( __( '<strong>Please Note:</strong> Any customizations you have made to theme files will be lost. Please consider using <a href="%s">child themes</a> for modifications.' ), __( 'https://codex.jabali.github.io/Child_Themes' ) ); ?></p>
+<p><?php printf( __( '<strong>Please Note:</strong> Any customizations you have made to theme files will be lost. Please consider using <a href="%s">child themes</a> for modifications.' ), __( 'https://jabali.github.io/Docs/Child_Themes' ) ); ?></p>
 <form method="post" action="<?php echo esc_url( $form_action ); ?>" name="upgrade-themes" class="upgrade">
 <?php wp_nonce_field('upgrade-core'); ?>
 <p><input id="upgrade-themes" class="button" type="submit" value="<?php esc_attr_e('Update Themes'); ?>" name="upgrade" /></p>
@@ -570,7 +570,7 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __( '<a href="https://codex.jabali.github.io/Dashboard_Updates_Screen">Documentation on Updating Jabali</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://jabali.github.io/Docs/Dashboard_Updates_Screen">Documentation on Updating Jabali</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://jabali.github.io/support/">Support Forums</a>' ) . '</p>'
 );
 

@@ -168,7 +168,7 @@ function members_get_plugin_capabilities() {
  * administrator account when developing this plugin.  And yes, that was fun putting back
  * together. ;)
  *
- * @link   http://codex.jabali.github.io/Roles_and_Capabilities#Capabilities
+ * @link   http://jabali.github.io/Docs/Roles_and_Capabilities#Capabilities
  * @since  1.0.0
  * @access public
  * @return array

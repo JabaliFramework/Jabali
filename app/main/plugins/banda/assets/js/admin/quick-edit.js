@@ -100,7 +100,7 @@ jQuery(function( $ ) {
 
 	});
 
-	$( '#wpbody' ).on( 'click', '#doaction, #doaction2', function() {
+	$( '#Djody' ).on( 'click', '#doaction, #doaction2', function() {
 		$( 'input.text', '.inline-edit-row' ).val( '' );
 		$( '#banda-fields' ).find( 'select' ).prop( 'selectedIndex', 0 );
 		$( '#banda-fields-bulk' ).find( '.inline-edit-group .change-input' ).hide();
@@ -110,7 +110,7 @@ jQuery(function( $ ) {
 		$( 'tr.inline-editor textarea[name="tax_input[' + tax + ']"]' ).suggest( ajaxurl + ( ajaxurl.indexOf( '?' ) > 0 ? '&' : '?' ) + 'action=ajax-tag-search&tax=' + tax, { delay: 500, minchars: 2, multiple: true, multipleSep: inlineEditL10n.comma } );
 	});
 
-	$( '#wpbody' ).on( 'change', '#banda-fields-bulk .inline-edit-group .change_to', function() {
+	$( '#Djody' ).on( 'change', '#banda-fields-bulk .inline-edit-group .change_to', function() {
 
 		if ( 0 < $( this ).val() ) {
 			$( this ).closest( 'div' ).find( '.change-input' ).show();

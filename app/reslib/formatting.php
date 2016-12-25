@@ -2792,7 +2792,7 @@ function translate_smiley( $matches ) {
 	 * @param string $img        Filename for the smiley image.
 	 * @param string $site_url   Site URL, as returned by site_url().
 	 */
-	$src_url = apply_filters( 'smilies_src', includes_url( "images/smilies/$img" ), $img, site_url() );
+	$src_url = apply_filters( 'smilies_src', res_url( "images/smilies/$img" ), $img, site_url() );
 
 	return sprintf( '<img src="%s" alt="%s" class="wp-smiley" style="height: 1em; max-height: 1em;" />', esc_url( $src_url ), esc_attr( $smiley ) );
 }
@@ -4242,7 +4242,7 @@ function sanitize_option( $option, $value ) {
 				$error = sprintf(
 					/* translators: %s: Codex URL */
 					__( 'A structure tag is required when using custom permalinks. <a href="%s">Learn more</a>' ),
-					__( 'https://codex.jabali.github.io/Using_Permalinks#Choosing_your_permalink_structure' )
+					__( 'https://jabali.github.io/Docs/Using_Permalinks#Choosing_your_permalink_structure' )
 				);
 			}
 			break;
@@ -4763,7 +4763,7 @@ function wp_basename( $path, $suffix = '' ) {
 }
 
 /**
- * Forever eliminate "Wordpress" from the planet (or at least the little bit we can influence).
+ * Forever eliminate "Jabali" from the planet (or at least the little bit we can influence).
  *
  * Violating our coding standards for a good function name.
  *
@@ -4778,14 +4778,14 @@ function capital_P_dangit( $text ) {
 	// Simple replacement for titles
 	$current_filter = current_filter();
 	if ( 'the_title' === $current_filter || 'wp_title' === $current_filter )
-		return str_replace( 'Wordpress', 'Jabali', $text );
+		return str_replace( 'Jabali', 'Jabali', $text );
 	// Still here? Use the more judicious replacement
 	static $dblq = false;
 	if ( false === $dblq ) {
 		$dblq = _x( '&#8220;', 'opening curly double quote' );
 	}
 	return str_replace(
-		array( ' Wordpress', '&#8216;Wordpress', $dblq . 'Wordpress', '>Wordpress', '(Wordpress' ),
+		array( ' Jabali', '&#8216;Jabali', $dblq . 'Jabali', '>Jabali', '(Jabali' ),
 		array( ' Jabali', '&#8216;Jabali', $dblq . 'Jabali', '>Jabali', '(Jabali' ),
 	$text );
 }
@@ -5040,9 +5040,9 @@ function _print_emoji_detection_script() {
 	if ( SCRIPT_DEBUG ) {
 		$settings['source'] = array(
 			/** This filter is documented in reslib/class.wp-scripts.php */
-			'wpemoji' => apply_filters( 'script_loader_src', includes_url( "js/wp-emoji.js?$version" ), 'wpemoji' ),
+			'wpemoji' => apply_filters( 'script_loader_src', res_url( "js/wp-emoji.js?$version" ), 'wpemoji' ),
 			/** This filter is documented in reslib/class.wp-scripts.php */
-			'twemoji' => apply_filters( 'script_loader_src', includes_url( "js/twemoji.js?$version" ), 'twemoji' ),
+			'twemoji' => apply_filters( 'script_loader_src', res_url( "js/twemoji.js?$version" ), 'twemoji' ),
 		);
 
 		?>
@@ -5054,7 +5054,7 @@ function _print_emoji_detection_script() {
 	} else {
 		$settings['source'] = array(
 			/** This filter is documented in reslib/class.wp-scripts.php */
-			'concatemoji' => apply_filters( 'script_loader_src', includes_url( "js/wp-emoji-release.min.js?$version" ), 'concatemoji' ),
+			'concatemoji' => apply_filters( 'script_loader_src', res_url( "js/wp-emoji-release.min.js?$version" ), 'concatemoji' ),
 		);
 
 		/*

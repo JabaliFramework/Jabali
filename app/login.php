@@ -67,6 +67,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	<head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<title><?php echo get_bloginfo( 'name', 'display' ) . $separator . $title; ?></title>
+	<link rel="stylesheet" media="screen" href="admin/css/style.css">
 	<?php
 
 	wp_enqueue_style( 'login' );
@@ -148,6 +149,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 
 	?>
 	</head>
+<!-- 	<div id="particles-js" ></div> -->
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<?php
 	/**
@@ -157,6 +159,13 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	 */
 	do_action( 'login_header' );
 	?>
+
+
+<!-- scripts -->
+<script src="admin/js/particles.min.js"></script>
+<script src="admin/js/app.js"></script>
+
+
 	<div id="login">
 		<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
 	<?php
@@ -815,12 +824,12 @@ default:
 		if ( headers_sent() ) {
 			/* translators: 1: Browser cookie documentation URL, 2: Support forums URL */
 			$user = new WP_Error( 'test_cookie', sprintf( __( '<strong>ERROR</strong>: Cookies are blocked due to unexpected output. For help, please see <a href="%1$s">this documentation</a> or try the <a href="%2$s">support forums</a>.' ),
-				__( 'https://codex.jabali.github.io/Cookies' ), __( 'https://jabali.github.io/support/' ) ) );
+				__( 'https://jabali.github.io/Docs/Cookies' ), __( 'https://jabali.github.io/support/' ) ) );
 		} elseif ( isset( $_POST['testcookie'] ) && empty( $_COOKIE[ TEST_COOKIE ] ) ) {
 			// If cookies are disabled we can't log in even with a valid user+pass
 			/* translators: 1: Browser cookie documentation URL */
 			$user = new WP_Error( 'test_cookie', sprintf( __( '<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href="%s">enable cookies</a> to use Jabali.' ),
-				__( 'https://codex.jabali.github.io/Cookies' ) ) );
+				__( 'https://jabali.github.io/Docs/Cookies' ) ) );
 		}
 	}
 

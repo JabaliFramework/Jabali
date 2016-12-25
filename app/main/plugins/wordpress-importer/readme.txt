@@ -19,7 +19,7 @@ The Jabali Importer will import the following content from a Jabali export file:
 * Categories, tags and terms from custom taxonomies
 * Authors
 
-For further information and instructions please see the [Codex page on Importing Content](http://codex.jabali.github.io/Importing_Content#Jabali)
+For further information and instructions please see the [Codex page on Importing Content](http://jabali.github.io/Docs/Importing_Content#Jabali)
 
 == Installation ==
 
@@ -99,7 +99,7 @@ A message like "Fatal error: Allowed memory size of 8388608 bytes exhausted" ind
 
 For those with shared hosting, the best alternative may be to consult hosting support to determine the safest approach for running the import. A host may be willing to temporarily lift the memory limit and/or run the process directly from their end.
 
--- [Jabali Codex: Importing Content](http://codex.jabali.github.io/Importing_Content#Before_Importing)
+-- [Jabali Codex: Importing Content](http://jabali.github.io/Docs/Importing_Content#Before_Importing)
 
 == Filters ==
 

@@ -152,8 +152,8 @@ if ( isset( $_REQUEST['action'] ) && 'update' === $_REQUEST['action'] ) {
 
 	get_current_screen()->set_help_sidebar(
 		'<p><strong>' . __('For more information:') . '</strong></p>' .
-		'<p>' . __('<a href="https://codex.jabali.github.io/Plugins_Editor_Screen">Documentation on Editing Plugins</a>') . '</p>' .
-		'<p>' . __('<a href="https://codex.jabali.github.io/Writing_a_Plugin">Documentation on Writing Plugins</a>') . '</p>' .
+		'<p>' . __('<a href="https://jabali.github.io/Docs/Plugins_Editor_Screen">Documentation on Editing Plugins</a>') . '</p>' .
+		'<p>' . __('<a href="https://jabali.github.io/Docs/Writing_a_Plugin">Documentation on Writing Plugins</a>') . '</p>' .
 		'<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>'
 	);
 
@@ -289,7 +289,7 @@ foreach ( $plugin_files as $plugin_file ) :
 	?>
 	</p>
 <?php else : ?>
-	<p><em><?php _e('You need to make this file writable before you can save your changes. See <a href="https://codex.jabali.github.io/Changing_File_Permissions">the Codex</a> for more information.'); ?></em></p>
+	<p><em><?php _e('You need to make this file writable before you can save your changes. See <a href="https://jabali.github.io/Docs/Changing_File_Permissions">the Codex</a> for more information.'); ?></em></p>
 <?php endif; ?>
 </form>
 <br class="clear" />

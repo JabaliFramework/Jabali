@@ -4,7 +4,7 @@
  *
  * These functions must be used within the Jabali Loop.
  *
- * @link https://codex.jabali.github.io/Author_Templates
+ * @link https://jabali.github.io/Docs/Author_Templates
  *
  * @package Jabali
  * @subpackage Template
@@ -49,7 +49,7 @@ function get_the_author($deprecated = '') {
  *
  * @since 0.71
  * @see get_the_author()
- * @link https://codex.jabali.github.io/Template_Tags/the_author
+ * @link https://jabali.github.io/Docs/Template_Tags/the_author
  *
  * @param string $deprecated Deprecated.
  * @param string $deprecated_echo Deprecated. Use get_the_author(). Echo the string or return it.
@@ -112,7 +112,7 @@ function the_modified_author() {
 
 /**
  * Retrieve the requested data of the author of the current post.
- * @link https://codex.jabali.github.io/Template_Tags/the_author_meta
+ * @link https://jabali.github.io/Docs/Template_Tags/the_author_meta
  * @since 2.8.0
  *
  * @global object $authordata The current author's DB object.
@@ -154,7 +154,7 @@ function get_the_author_meta( $field = '', $user_id = false ) {
 /**
  * Outputs the field from the user's DB object. Defaults to current post's author.
  *
- * @link https://codex.jabali.github.io/Template_Tags/the_author_meta
+ * @link https://jabali.github.io/Docs/Template_Tags/the_author_meta
  *
  * @since 2.8.0
  *
@@ -205,7 +205,7 @@ function get_the_author_link() {
  * If the author has a home page set, echo an HTML link, otherwise just echo the
  * author's name.
  *
- * @link https://codex.jabali.github.io/Template_Tags/the_author_link
+ * @link https://jabali.github.io/Docs/Template_Tags/the_author_link
  *
  * @since 2.1.0
  */
@@ -231,7 +231,7 @@ function get_the_author_posts() {
 /**
  * Display the number of posts by the author of the current post.
  *
- * @link https://codex.jabali.github.io/Template_Tags/the_author_posts
+ * @link https://jabali.github.io/Docs/Template_Tags/the_author_posts
  * @since 0.71
  */
 function the_author_posts() {
@@ -333,7 +333,7 @@ function get_author_posts_url( $author_id, $author_nicename = '' ) {
 /**
  * List all the authors of the site, with several options available.
  *
- * @link https://codex.jabali.github.io/Template_Tags/wp_list_authors
+ * @link https://jabali.github.io/Docs/Template_Tags/wp_list_authors
  *
  * @since 1.2.0
  *

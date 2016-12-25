@@ -1,8 +1,8 @@
 <?php
 /**
- * Proceed to checkout button
+ * Checkout button
  *
- * Contains the markup for the proceed to checkout button on the cart.
+ * Contains the markup for the Checkout button on the cart.
  *
  * This template can be overridden by copying it to yourtheme/banda/cart/proceed-to-checkout-button.php.
  *
@@ -12,7 +12,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.mtaandao.co.ke/document/template-structure/
+ * @see     https://mtaandao.co.ke/docs/banda/document/template-structure/
  * @author  Jabali
  * @package Banda/Templates
  * @version 2.4.0
@@ -24,5 +24,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <a href="<?php echo esc_url( wc_get_checkout_url() ) ;?>" class="checkout-button button alt wc-forward">
-	<?php echo __( 'Proceed to Checkout', 'banda' ); ?>
+	<?php echo __( 'Checkout', 'banda' ); ?>
 </a>

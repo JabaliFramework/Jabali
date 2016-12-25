@@ -1,7 +1,7 @@
 <?php
 /**
  * Sample implementation of the Custom Header feature
- * http://codex.jabali.github.io/Custom_Headers
+ * http://jabali.github.io/Docs/Custom_Headers
  *
  * You can add an optional custom header image to header.php like so ...
  *

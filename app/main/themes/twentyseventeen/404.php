@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @link https://codex.jabali.github.io/Creating_an_Error_404_Page
+ * @link https://jabali.github.io/Docs/Creating_an_Error_404_Page
  *
  * @package Jabali
  * @subpackage Twenty_Seventeen

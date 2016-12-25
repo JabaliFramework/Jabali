@@ -202,7 +202,7 @@ if (!class_exists('SZGoogleActionAuthenticatorProfile'))
 echo <<<ENDOFJS
 
 				// Evento CLICK sulla generazione del codice segreto con QR Code
-				// chiamata AJAX alla funzione Wordpress precedentemente definita
+				// chiamata AJAX alla funzione Jabali precedentemente definita
 
 				jQuery('#sz_google_authenticator_generate').bind('click', function() {
 
@@ -237,7 +237,7 @@ echo <<<ENDOFJS
 				}
 
 				// Evento CLICK sulla generazione dei codici segreti di emergenza
-				// chiamata AJAX alla funzione Wordpress precedentemente definita
+				// chiamata AJAX alla funzione Jabali precedentemente definita
 
 				jQuery('#sz_google_authenticator_codeg').bind('click', function() {
 
@@ -437,7 +437,7 @@ ENDOFJS;
 		{
 			if ($hook == 'profile.php' or $hook == 'user-edit.php') {
 				wp_enqueue_script('jquery');
-				wp_register_script('sz_google_qrcode_script',plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/js/jquery.qrcode.min.js',array('jquery'));
+				wp_register_script('sz_google_qrcode_script',ABSPATH . 'reslib/sz-google'.'/admin/files/js/jquery.qrcode.min.js',array('jquery'));
 				wp_enqueue_script('sz_google_qrcode_script');
 			}
 		}

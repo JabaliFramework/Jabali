@@ -94,7 +94,7 @@ unset( $help );
 
 $screen->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://codex.jabali.github.io/Dashboard_Screen">Documentation on Dashboard</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://jabali.github.io/Docs/Dashboard_Screen">Documentation on Dashboard</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://jabali.github.io/support/">Support Forums</a>' ) . '</p>'
 );
 

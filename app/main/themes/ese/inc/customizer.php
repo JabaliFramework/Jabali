@@ -28,7 +28,7 @@ function ese_customize_register( $wp_customize ) {
 	 * Uses a custom radio-image control to configure the Blog Layout setting.
 	 * 
 	 * @uses $wp_customize->add_setting() https://developer.jabali.github.io/reference/classes/wp_customize_manager/add_setting/
-	 * @link $wp_customize->add_setting() https://codex.jabali.github.io/Class_Reference/WP_Customize_Manager/add_setting
+	 * @link $wp_customize->add_setting() https://jabali.github.io/Docs/Class_Reference/WP_Customize_Manager/add_setting
 	 */
 	$wp_customize->add_setting(
 		// $id
@@ -49,7 +49,7 @@ function ese_customize_register( $wp_customize ) {
 	 * Uses a custom radio-image control to configure the Blog Layout setting.
 	 * 
 	 * @uses $wp_customize->add_setting() https://developer.jabali.github.io/reference/classes/wp_customize_manager/add_setting/
-	 * @link $wp_customize->add_setting() https://codex.jabali.github.io/Class_Reference/WP_Customize_Manager/add_setting
+	 * @link $wp_customize->add_setting() https://jabali.github.io/Docs/Class_Reference/WP_Customize_Manager/add_setting
 	 */
 	$wp_customize->add_setting(
 		// $id
@@ -127,7 +127,7 @@ function ese_customize_register( $wp_customize ) {
 	 * the Blog Posts Index Layout setting.
 	 * 
 	 * @uses $wp_customize->add_control() https://developer.jabali.github.io/reference/classes/wp_customize_manager/add_control/
-	 * @link $wp_customize->add_control() https://codex.jabali.github.io/Class_Reference/WP_Customize_Manager/add_control
+	 * @link $wp_customize->add_control() https://jabali.github.io/Docs/Class_Reference/WP_Customize_Manager/add_control
 	 */
 	$wp_customize->add_control(
 		new Ese_Custom_Radio_Image_Control( 
@@ -178,7 +178,7 @@ function ese_customize_register( $wp_customize ) {
 	 * the Blog Posts Index Layout setting.
 	 * 
 	 * @uses $wp_customize->add_control() https://developer.jabali.github.io/reference/classes/wp_customize_manager/add_control/
-	 * @link $wp_customize->add_control() https://codex.jabali.github.io/Class_Reference/WP_Customize_Manager/add_control
+	 * @link $wp_customize->add_control() https://jabali.github.io/Docs/Class_Reference/WP_Customize_Manager/add_control
 	 */
 	$wp_customize->add_control(
 		new Ese_Custom_Radio_Image_Control( 
@@ -368,7 +368,7 @@ function ese_sanitize_dropdown_pages( $page_id, $setting ) {
  * as a valid email address.
  * 
  * @see sanitize_email() https://developer.jabali.github.io/reference/functions/sanitize_key/
- * @link sanitize_email() https://codex.jabali.github.io/Function_Reference/sanitize_email
+ * @link sanitize_email() https://jabali.github.io/Docs/Function_Reference/sanitize_email
  *
  * @param string               $email   Email address to sanitize.
  * @param WP_Customize_Setting $setting Setting instance.

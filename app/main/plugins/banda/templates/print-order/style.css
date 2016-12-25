@@ -130,7 +130,10 @@ h2 {
 	font-size: 1.572em;
 }
 
-.order-branding,
+.order-branding,{
+	float: right;
+}
+
 .order-addresses,
 .order-info,
 .order-items,
@@ -148,11 +151,13 @@ h2 {
 /* Order Branding */
 .order-branding .company-logo {
 	margin-bottom: 1em;
+	float: right;
 }
 
 /* Order Addresses */
 .order-addresses {
 	margin-bottom: 6em;
+	float: right;
 }
 
 .order-addresses:after {

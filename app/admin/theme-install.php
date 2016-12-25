@@ -111,7 +111,7 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Using_Themes#Adding_New_Themes">Documentation on Adding New Themes</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Using_Themes#Adding_New_Themes">Documentation on Adding New Themes</a>') . '</p>' .
 	'<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>'
 );
 

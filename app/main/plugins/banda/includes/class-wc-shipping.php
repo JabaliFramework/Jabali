@@ -2,7 +2,7 @@
 /**
  * Banda Shipping Class
  *
- * Handles shipping and loads shipping methods via hooks.
+ * Handles shipping and loads delivery methods via hooks.
  *
  * @class 		WC_Shipping
  * @version		2.6.0
@@ -97,7 +97,7 @@ class WC_Shipping {
 	}
 
 	/**
-	 * Shipping methods register themselves by returning their main class name through the banda_shipping_methods filter.
+	 * delivery methods register themselves by returning their main class name through the banda_shipping_methods filter.
 	 * @return array
 	 */
 	public function get_shipping_method_class_names() {
@@ -108,7 +108,7 @@ class WC_Shipping {
 			'local_pickup'  => 'WC_Shipping_Local_Pickup',
 		);
 
-		// For backwards compatibility with 2.5.x we load any ENABLED legacy shipping methods here
+		// For backwards compatibility with 2.5.x we load any ENABLED legacy delivery methods here
 		$maybe_load_legacy_methods = array( 'flat_rate', 'free_shipping', 'international_delivery', 'local_delivery', 'local_pickup' );
 
 		foreach ( $maybe_load_legacy_methods as $method ) {
@@ -122,9 +122,9 @@ class WC_Shipping {
 	}
 
 	/**
-	 * Loads all shipping methods which are hooked in. If a $package is passed some methods may add themselves conditionally.
+	 * Loads all delivery methods which are hooked in. If a $package is passed some methods may add themselves conditionally.
 	 *
-	 * Loads all shipping methods which are hooked in.
+	 * Loads all delivery methods which are hooked in.
 	 * If a $package is passed some methods may add themselves conditionally and zones will be used.
 	 *
 	 * @param array $package
@@ -137,7 +137,7 @@ class WC_Shipping {
 			$this->shipping_methods = $shipping_zone->get_shipping_methods( true );
 
 			// Debug output
-			if ( ! empty( $status_options['shipping_debug_mode'] ) && ! defined( 'WOOCOMMERCE_CHECKOUT' ) && ! wc_has_notice( 'Customer matched zone "' . $shipping_zone->get_zone_name() . '"' ) ) {
+			if ( ! empty( $status_options['shipping_debug_mode'] ) && ! defined( 'BANDA_CHECKOUT' ) && ! wc_has_notice( 'Customer matched zone "' . $shipping_zone->get_zone_name() . '"' ) ) {
 				wc_add_notice( 'Customer matched zone "' . $shipping_zone->get_zone_name() . '"' );
 			}
 		} else {
@@ -175,14 +175,14 @@ class WC_Shipping {
 	}
 
 	/**
-	 * Unregister shipping methods.
+	 * Unregister delivery methods.
 	 */
 	public function unregister_shipping_methods() {
 		$this->shipping_methods = null;
 	}
 
 	/**
-	 * Returns all registered shipping methods for usage.
+	 * Returns all registered delivery methods for usage.
 	 *
 	 * @access public
 	 * @return array
@@ -255,7 +255,7 @@ class WC_Shipping {
 		 * Allow packages to be reorganized after calculate the shipping.
 		 *
 		 * This filter can be used to apply some extra manipulation after the shipping costs are calculated for the packages
-		 * but before Banda does anything with them. A good example of usage is to merge the shipping methods for multiple
+		 * but before Banda does anything with them. A good example of usage is to merge the delivery methods for multiple
 		 * packages for marketplaces.
 		 *
 		 * @since 2.6.0
@@ -329,7 +329,7 @@ class WC_Shipping {
 	/**
 	 * Calculate shipping rates for a package,
 	 *
-	 * Calculates each shipping methods cost. Rates are stored in the session based on the package hash to avoid re-calculation every page load.
+	 * Calculates each delivery methods cost. Rates are stored in the session based on the package hash to avoid re-calculation every page load.
 	 *
 	 * @param array $package cart items
 	 * @param int   $package_key Index of the package being calculated. Used to cache multiple package rates.

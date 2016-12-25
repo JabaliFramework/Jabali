@@ -292,7 +292,7 @@ class WC_Install {
 		$pages = apply_filters( 'banda_create_pages', array(
 			'shop' => array(
 				'name'    => _x( 'shop', 'Page slug', 'banda' ),
-				'title'   => _x( 'Shop', 'Page title', 'banda' ),
+				'title'   => _x( 'Showcase', 'Page title', 'banda' ),
 				'content' => ''
 			),
 			'cart' => array(
@@ -304,6 +304,16 @@ class WC_Install {
 				'name'    => _x( 'checkout', 'Page slug', 'banda' ),
 				'title'   => _x( 'Checkout', 'Page title', 'banda' ),
 				'content' => '[' . apply_filters( 'banda_checkout_shortcode_tag', 'banda_checkout' ) . ']'
+			),
+			'pay' => array(
+				'name'    => _x( 'pay', 'Page slug', 'banda' ),
+				'title'   => _x( 'Pay', 'Page title', 'banda' ),
+				'content' => '[' . apply_filters( 'banda_pay_shortcode_tag', 'banda_pay' ) . ']'
+			),
+			'tcs' => array(
+				'name'    => _x( 'tcs', 'Page slug', 'banda' ),
+				'title'   => _x( 'Terms and Conditions', 'Page title', 'banda' ),
+				'content' => '[' . apply_filters( 'banda_tcs_shortcode_tag', 'banda_tcs' ) . ']'
 			),
 			'myaccount' => array(
 				'name'    => _x( 'my-account', 'Page slug', 'banda' ),
@@ -543,6 +553,16 @@ CREATE TABLE {$wpdb->prefix}banda_shipping_zone_methods (
   is_enabled tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY  (instance_id)
 ) $collate;
+CREATE TABLE {$wpdb->prefix}payments (
+  payment_id bigint(20) NOT NULL auto_increment,
+  gateway_id varchar(255) NOT NULL,
+  payment text NOT NULL,
+  user_id bigint(20) NOT NULL DEFAULT '0',
+  type varchar(255) NOT NULL,
+  is_default tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY  (payment_id),
+  KEY user_id (user_id)
+)$collate;
 CREATE TABLE {$wpdb->prefix}banda_payment_tokens (
   token_id bigint(20) NOT NULL auto_increment,
   gateway_id varchar(255) NOT NULL,
@@ -845,8 +865,8 @@ CREATE TABLE {$wpdb->prefix}banda_termmeta (
 	public static function plugin_row_meta( $links, $file ) {
 		if ( $file == WC_PLUGIN_BASENAME ) {
 			$row_meta = array(
-				'docs'    => '<a href="' . esc_url( apply_filters( 'banda_docs_url', 'https://docs.mtaandao.co.ke/documentation/plugins/banda/' ) ) . '" title="' . esc_attr( __( 'View Banda Documentation', 'banda' ) ) . '">' . __( 'Docs', 'banda' ) . '</a>',
-				'apidocs' => '<a href="' . esc_url( apply_filters( 'banda_apidocs_url', 'https://docs.mtaandao.co.ke/wc-apidocs/' ) ) . '" title="' . esc_attr( __( 'View Banda API Docs', 'banda' ) ) . '">' . __( 'API Docs', 'banda' ) . '</a>',
+				'docs'    => '<a href="' . esc_url( apply_filters( 'banda_docs_url', 'https://mtaandao.co.ke/docs/banda/documentation/plugins/banda/' ) ) . '" title="' . esc_attr( __( 'View Banda Documentation', 'banda' ) ) . '">' . __( 'Docs', 'banda' ) . '</a>',
+				'apidocs' => '<a href="' . esc_url( apply_filters( 'banda_apidocs_url', 'https://mtaandao.co.ke/docs/banda/wc-apidocs/' ) ) . '" title="' . esc_attr( __( 'View Banda API Docs', 'banda' ) ) . '">' . __( 'API Docs', 'banda' ) . '</a>',
 				'support' => '<a href="' . esc_url( apply_filters( 'banda_support_url', 'https://www.mtaandao.co.ke/my-account/tickets/' ) ) . '" title="' . esc_attr( __( 'Visit Premium Customer Support Forum', 'banda' ) ) . '">' . __( 'Premium Support', 'banda' ) . '</a>',
 			);
 

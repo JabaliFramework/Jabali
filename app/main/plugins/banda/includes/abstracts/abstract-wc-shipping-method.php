@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Banda Shipping Method Class.
  *
- * Extended by shipping methods to handle shipping calculations etc.
+ * Extended by delivery methods to handle shipping calculations etc.
  *
  * @class       WC_Shipping_Method
  * @version     2.6.0
@@ -101,7 +101,7 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 
 	/**
 	 * Availability - legacy. Used for method Availability.
-	 * No longer useful for instance based shipping methods.
+	 * No longer useful for instance based delivery methods.
 	 * @deprecated 2.6.0
 	 * @var string
 	 */
@@ -109,7 +109,7 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 
 	/**
 	 * Availability countries - legacy. Used for method Availability.
-	 * No longer useful for instance based shipping methods.
+	 * No longer useful for instance based delivery methods.
 	 * @deprecated 2.6.0
 	 * @var array
 	 */
@@ -252,7 +252,7 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 		$total_cost = is_array( $args['cost'] ) ? array_sum( $args['cost'] ) : $args['cost'];
 		$taxes      = $args['taxes'];
 
-		// Taxes - if not an array and not set to false, calc tax based on cost and passed calc_tax variable. This saves shipping methods having to do complex tax calculations.
+		// Taxes - if not an array and not set to false, calc tax based on cost and passed calc_tax variable. This saves delivery methods having to do complex tax calculations.
 		if ( ! is_array( $taxes ) && $taxes !== false && $total_cost > 0 && $this->is_taxable() ) {
 			$taxes = 'per_item' === $args['calc_tax'] ? $this->get_taxes_per_item( $args['cost'] ) : WC_Tax::calc_shipping_tax( $total_cost, WC_Tax::get_shipping_tax_rates() );
 		}
@@ -448,7 +448,7 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 
 	/**
 	 * Get settings fields for instances of this shipping method (within zones).
-	 * Should be overridden by shipping methods to add options.
+	 * Should be overridden by delivery methods to add options.
 	 * @since 2.6.0
 	 * @return array
 	 */

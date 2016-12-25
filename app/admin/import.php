@@ -26,7 +26,7 @@ get_current_screen()->add_help_tab( array(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Tools_Import_Screen">Documentation on Import</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Tools_Import_Screen">Documentation on Import</a>') . '</p>' .
 	'<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>'
 );
 

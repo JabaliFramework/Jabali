@@ -26,7 +26,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 /* Define plugin version */
 if( !defined('CPT_VERSION') ) define ( 'CPT_VERSION', '1.3.5.8' );
 /* define the plugin folder url */
-if( !defined('CPT_PLUGIN_URL') ) define ( 'CPT_PLUGIN_URL', includes_url( dirname(__FILE__)) );
+if( !defined('CPT_PLUGIN_URL') ) define ( 'CPT_PLUGIN_URL', res_url( dirname(__FILE__)) );
 /* define the plugin folder dir */
 if( !defined('CPT_PLUGIN_DIR') ) define ( 'CPT_PLUGIN_DIR', (ABSPATH . RES . '/custompress/'));
 /* define the text domain for CustomPress */

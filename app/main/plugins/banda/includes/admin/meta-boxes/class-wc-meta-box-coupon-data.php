@@ -70,7 +70,7 @@ class WC_Meta_Box_Coupon_Data {
 				banda_wp_text_input( array( 'id' => 'coupon_amount', 'label' => __( 'Coupon amount', 'banda' ), 'placeholder' => wc_format_localized_price( 0 ), 'description' => __( 'Value of the coupon.', 'banda' ), 'data_type' => 'price', 'desc_tip' => true ) );
 
 				// Free Shipping
-				banda_wp_checkbox( array( 'id' => 'free_shipping', 'label' => __( 'Allow free shipping', 'banda' ), 'description' => sprintf( __( 'Check this box if the coupon grants free shipping. A <a href="%s">free shipping method</a> must be enabled in your shipping zone and be set to require "a valid free shipping coupon" (see the "Free Shipping Requires" setting).', 'banda' ), 'https://docs.mtaandao.co.ke/document/free-shipping/' ) ) );
+				banda_wp_checkbox( array( 'id' => 'free_shipping', 'label' => __( 'Allow free shipping', 'banda' ), 'description' => sprintf( __( 'Check this box if the coupon grants free shipping. A <a href="%s">free shipping method</a> must be enabled in your shipping zone and be set to require "a valid free shipping coupon" (see the "Free Shipping Requires" setting).', 'banda' ), 'https://mtaandao.co.ke/docs/banda/document/free-shipping/' ) ) );
 
 				// Expiry date
 				banda_wp_text_input( array( 'id' => 'expiry_date', 'label' => __( 'Coupon expiry date', 'banda' ), 'placeholder' => _x( 'YYYY-MM-DD', 'placeholder', 'banda' ), 'description' => '', 'class' => 'date-picker', 'custom_attributes' => array( 'pattern' => "[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" ) ) );

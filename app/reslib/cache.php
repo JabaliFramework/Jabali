@@ -2,7 +2,7 @@
 /**
  * Object Cache API
  *
- * @link https://codex.jabali.github.io/Class_Reference/WP_Object_Cache
+ * @link https://jabali.github.io/Docs/Class_Reference/WP_Object_Cache
  *
  * @package Jabali
  * @subpackage Cache

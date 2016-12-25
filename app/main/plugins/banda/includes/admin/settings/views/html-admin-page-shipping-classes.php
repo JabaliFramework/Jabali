@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <h2>
 	<?php _e( 'Shipping Classes', 'banda' ); ?>
-	<?php echo wc_help_tip( __( 'Shipping classes can be used to group products of similar type and can be used by some Shipping Methods (such as Flat Rate Shipping) to provide different rates to different classes of product.', 'banda' ) ); ?>
+	<?php echo wc_help_tip( __( 'Shipping classes can be used to group products of similar type and can be used by some delivery methods (such as Flat Rate Shipping) to provide different rates to different classes of product.', 'banda' ) ); ?>
 </h2>
 
 <table class="wc-shipping-classes widefat">

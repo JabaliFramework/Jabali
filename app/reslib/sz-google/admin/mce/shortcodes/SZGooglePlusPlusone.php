@@ -36,6 +36,6 @@ extract(wp_parse_args($instance,$array),EXTR_OVERWRITE);
 // Loading ADMIN template for composition using
 // shortcodes in many cases the same code Widget
 
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidgetPlusPlusone.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseFooter.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidgetPlusPlusone.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseFooter.php');

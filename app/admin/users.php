@@ -64,8 +64,8 @@ unset( $help );
 
 get_current_screen()->set_help_sidebar(
     '<p><strong>' . __('For more information:') . '</strong></p>' .
-    '<p>' . __('<a href="https://codex.jabali.github.io/Users_Screen">Documentation on Managing Users</a>') . '</p>' .
-    '<p>' . __('<a href="https://codex.jabali.github.io/Roles_and_Capabilities">Descriptions of Roles and Capabilities</a>') . '</p>' .
+    '<p>' . __('<a href="https://jabali.github.io/Docs/Users_Screen">Documentation on Managing Users</a>') . '</p>' .
+    '<p>' . __('<a href="https://jabali.github.io/Docs/Roles_and_Capabilities">Descriptions of Roles and Capabilities</a>') . '</p>' .
     '<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>'
 );
 

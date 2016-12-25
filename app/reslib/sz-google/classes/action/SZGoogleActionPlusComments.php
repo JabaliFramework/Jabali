@@ -101,7 +101,7 @@ if (!class_exists('SZGoogleActionPlusComments'))
 		 * @return string
 		 */
 		function addPlusCommentsSystemDummy($include) {
-			return dirname(SZ_PLUGIN_GOOGLE_MAIN).'/frontend/templates/sz-google-module-plus-comments-dummy.php';
+			return ABSPATH . 'reslib/sz-google'.'/frontend/templates/sz-google-module-plus-comments-dummy.php';
 		}
 
 		/**
@@ -181,7 +181,7 @@ if (!class_exists('SZGoogleActionPlusComments'))
 
 			// Ritorno template di commenti dummy con nessuna azione HTML
 
-			return dirname(SZ_PLUGIN_GOOGLE_MAIN).'/frontend/templates/sz-google-module-plus-comments-dummy.php';
+			return ABSPATH . 'reslib/sz-google'.'/frontend/templates/sz-google-module-plus-comments-dummy.php';
 		}
 	}
 }

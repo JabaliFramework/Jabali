@@ -265,8 +265,8 @@ class WC_Form_Handler {
 				exit;
 			}
 
-			if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) ) {
-				define( 'WOOCOMMERCE_CHECKOUT', true );
+			if ( ! defined( 'BANDA_CHECKOUT' ) ) {
+				define( 'BANDA_CHECKOUT', true );
 			}
 
 			WC()->checkout()->process_checkout();

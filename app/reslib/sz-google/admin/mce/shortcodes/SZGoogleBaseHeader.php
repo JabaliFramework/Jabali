@@ -42,22 +42,22 @@ extract($variables,EXTR_OVERWRITE);
 function sz_google_ajax_load_scripts() 
 {
 	wp_enqueue_style('sz-google-style-admin',
-		plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/css/sz-google-style-admin.css',
+		ABSPATH . 'reslib/sz-google'.'/admin/files/css/sz-google-style-admin.css',
 		array(),SZ_PLUGIN_GOOGLE_VERSION
 	);
 
 	wp_enqueue_script('sz-google-javascript-widgets',
-		plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/files/js/jquery.szgoogle.widgets.js',
+		ABSPATH . 'reslib/sz-google'.'/admin/files/js/jquery.szgoogle.widgets.js',
 		array('jquery'),SZ_PLUGIN_GOOGLE_VERSION,false
 	);
 
 	wp_enqueue_script('tiny_mce_popup',
-		includes_url('js/tinymce/tiny_mce_popup.js'),
+		res_url('js/tinymce/tiny_mce_popup.js'),
 		array('jquery'),SZ_PLUGIN_GOOGLE_VERSION,false
 	);
 
 	wp_enqueue_script('tiny_mce_component',
-		plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'admin/mce/js/'.SZGOOGLE_AJAX_NAME.'.js',
+		ABSPATH . 'reslib/sz-google'.'/admin/mce/js/'.SZGOOGLE_AJAX_NAME.'.js',
 		array('tiny_mce_popup'),SZ_PLUGIN_GOOGLE_VERSION,false
 	);
 }

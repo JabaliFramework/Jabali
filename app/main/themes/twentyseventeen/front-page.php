@@ -4,7 +4,7 @@
  *
  * If the user has selected a static page for their homepage, this is what will
  * appear.
- * Learn more: https://codex.jabali.github.io/Template_Hierarchy
+ * Learn more: https://jabali.github.io/Docs/Template_Hierarchy
  *
  * @package Jabali
  * @subpackage Twenty_Seventeen

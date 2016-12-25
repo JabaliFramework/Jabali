@@ -53,7 +53,7 @@ function get_postdata($postid) {
  *
  * Use The Loop instead.
  *
- * @link https://codex.jabali.github.io/The_Loop
+ * @link https://jabali.github.io/Docs/The_Loop
  *
  * @since 1.0.1
  * @deprecated 1.5.0
@@ -1279,7 +1279,7 @@ function get_category_children( $id, $before = '/', $after = '', $visited = arra
  * @deprecated 4.0.0 Use get_terms()
  * @see get_terms()
  *
- * @link https://codex.jabali.github.io/Function_Reference/get_all_category_ids
+ * @link https://jabali.github.io/Docs/Function_Reference/get_all_category_ids
  *
  * @return object List of all of the category IDs.
  */

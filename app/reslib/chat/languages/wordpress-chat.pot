@@ -1934,7 +1934,7 @@ msgid "Go to <a target=\"_blank\" href=\"%s\">Credentials</a> tab on left, click
 msgstr ""
 
 #: lib/wpmudev_chat_form_sections.php:1634
-msgid "In the <strong>Product name</strong> field, enter a name for your application (such as \"Wordpress Chat\"). All other fields are optional. Click <strong>Save</strong>."
+msgid "In the <strong>Product name</strong> field, enter a name for your application (such as \"Jabali Chat\"). All other fields are optional. Click <strong>Save</strong>."
 msgstr ""
 
 #: lib/wpmudev_chat_form_sections.php:1635

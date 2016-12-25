@@ -80,7 +80,7 @@ case 'edit' :
 
 	get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
-	'<p>' . __('<a href="https://codex.jabali.github.io/Media_Add_New_Screen#Edit_Media">Documentation on Edit Media</a>') . '</p>' .
+	'<p>' . __('<a href="https://jabali.github.io/Docs/Media_Add_New_Screen#Edit_Media">Documentation on Edit Media</a>') . '</p>' .
 	'<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>'
 	);
 

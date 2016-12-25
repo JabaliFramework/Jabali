@@ -1317,7 +1317,7 @@ function _post_type_meta_capabilities( $capabilities = null ) {
  *          by `$post_type_object->label`. Default is 'Posts' / 'Pages'.
  * - `singular_name` - Name for one object of this post type. Default is 'Post' / 'Page'.
  * - `add_new` - Default is 'Add New' for both hierarchical and non-hierarchical types.
- *             When internationalizing this string, please use a {@link https://codex.jabali.github.io/I18n_for_Jabali_Developers#Disambiguation_by_context gettext context}
+ *             When internationalizing this string, please use a {@link https://jabali.github.io/Docs/I18n_for_Jabali_Developers#Disambiguation_by_context gettext context}
  *             matching your post type. Example: `_x( 'Add New', 'product', 'textdomain' );`.
  * - `add_new_item` - Label for adding a new singular item. Default is 'Add New Post' / 'Add New Page'.
  * - `edit_item` - Label for editing a singular item. Default is 'Edit Post' / 'Edit Page'.
@@ -5290,7 +5290,7 @@ function wp_mime_type_icon( $mime = 0 ) {
 			 *
 			 * @param string $uri Icon directory URI.
 			 */
-			$icon_dir_uri = apply_filters( 'icon_dir_uri', includes_url( 'images/media' ) );
+			$icon_dir_uri = apply_filters( 'icon_dir_uri', res_url( 'images/media' ) );
 
 			/**
 			 * Filters the list of icon directory URIs.

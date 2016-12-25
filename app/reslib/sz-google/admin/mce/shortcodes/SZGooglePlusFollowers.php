@@ -47,7 +47,7 @@ if ($object = SZGoogleModule::getObject('SZGoogleModulePlus'))
 // Setting any of the default parameters for fields 
 // that contain invalid values ​​or inconsistent
 
-$DEFAULT = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/sz_google_options_plus.php");
+$DEFAULT = include(ABSPATH . 'reslib/sz-google'."/options/sz_google_options_plus.php");
 
 if (!ctype_digit($method) or $method == 0) { $method = '1'; }
 
@@ -63,6 +63,6 @@ if (!ctype_digit($height) and $height != 'auto') $height = 'auto';
 // Loading ADMIN template for composition using
 // shortcodes in many cases the same code Widget
 
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidgetPlusFollowers.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseFooter.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidgetPlusFollowers.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseFooter.php');

@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	https://docs.mtaandao.co.ke/document/template-structure/
+ * @see 	https://mtaandao.co.ke/docs/banda/document/template-structure/
  * @author  Jabali
  * @package Banda/Templates
  * @version 2.6.0
@@ -25,6 +25,8 @@ $order = wc_get_order( $order_id );
 $show_purchase_note    = $order->has_status( apply_filters( 'banda_purchase_note_order_statuses', array( 'completed', 'processing' ) ) );
 $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_current_user_id();
 ?>
+
+
 <h2><?php _e( 'Order Details', 'banda' ); ?></h2>
 <table class="shop_table order_details">
 	<thead>
@@ -69,3 +71,38 @@ $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_cu
 <?php if ( $show_customer_details ) : ?>
 	<?php wc_get_template( 'order/order-details-customer.php', array( 'order' =>  $order ) ); ?>
 <?php endif; ?>
+<div>    
+<input id="btn-Preview-Image" class="button" value="Preview Image"/>
+    <a id="btn-Convert-Html2Image" class="fa fa-download fa-2x" href="#"></a>
+    <br/>
+    <div id="previewImage">
+    </div>
+    <br/>
+
+
+<script>
+$(document).ready(function(){
+
+	
+var element = $("#content-wrapper"); // global variable
+var getCanvas; // global variable
+ 
+    $("#btn-Preview-Image").on('click', function () {
+         html2canvas(element, {
+         onrendered: function (canvas) {
+                $("#previewImage").append(canvas);
+                getCanvas = canvas;
+             }
+         });
+    });
+
+	$("#btn-Convert-Html2Image").on('click', function () {
+    var imgageData = getCanvas.toDataURL("image/png");
+    // Now browser starts downloading it instead of just showing it
+    var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+    $("#btn-Convert-Html2Image").attr("download", "order.png").attr("href", newData);
+	});
+
+});
+
+</script>

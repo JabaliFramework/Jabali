@@ -7,7 +7,7 @@
  * and that other 'pages' on your Jabali site may use a
  * different template.
  *
- * @link https://codex.jabali.github.io/Template_Hierarchy
+ * @link https://jabali.github.io/Docs/Template_Hierarchy
  *
  * @package Jabali
  * @subpackage Twenty_Seventeen

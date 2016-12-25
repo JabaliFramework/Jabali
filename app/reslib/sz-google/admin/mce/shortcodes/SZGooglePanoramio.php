@@ -59,7 +59,7 @@ if ($object = SZGoogleModule::getObject('SZGoogleModulePanoramio'))
 // Setting any of the default parameters for fields 
 // that contain invalid values ​​or inconsistent
 
-$DEFAULT = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/sz_google_options_panoramio.php");
+$DEFAULT = include(ABSPATH . 'reslib/sz-google'."/options/sz_google_options_panoramio.php");
 
 if (!ctype_digit($columns)) $columns = $DEFAULT['panoramio_s_columns']['value'];
 if (!ctype_digit($rows))    $rows    = $DEFAULT['panoramio_s_rows']['value'];
@@ -75,6 +75,6 @@ if (!ctype_digit($height) or $height == 0) { $height = $DEFAULT['panoramio_s_hei
 // Loading ADMIN template for composition using
 // shortcodes in many cases the same code Widget
 
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidgetPanoramio.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseFooter.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidgetPanoramio.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseFooter.php');

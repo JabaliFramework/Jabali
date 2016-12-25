@@ -261,11 +261,11 @@ if ( 'category' == $taxonomy || 'link_category' == $taxonomy || 'post_tag' == $t
 	$help = '<p><strong>' . __( 'For more information:' ) . '</strong></p>';
 
 	if ( 'category' == $taxonomy )
-		$help .= '<p>' . __( '<a href="https://codex.jabali.github.io/Posts_Categories_Screen">Documentation on Categories</a>' ) . '</p>';
+		$help .= '<p>' . __( '<a href="https://jabali.github.io/Docs/Posts_Categories_Screen">Documentation on Categories</a>' ) . '</p>';
 	elseif ( 'link_category' == $taxonomy )
-		$help .= '<p>' . __( '<a href="https://codex.jabali.github.io/Links_Link_Categories_Screen">Documentation on Link Categories</a>' ) . '</p>';
+		$help .= '<p>' . __( '<a href="https://jabali.github.io/Docs/Links_Link_Categories_Screen">Documentation on Link Categories</a>' ) . '</p>';
 	else
-		$help .= '<p>' . __( '<a href="https://codex.jabali.github.io/Posts_Tags_Screen">Documentation on Tags</a>' ) . '</p>';
+		$help .= '<p>' . __( '<a href="https://jabali.github.io/Docs/Posts_Tags_Screen">Documentation on Tags</a>' ) . '</p>';
 
 	$help .= '<p>' . __('<a href="https://jabali.github.io/support/">Support Forums</a>') . '</p>';
 

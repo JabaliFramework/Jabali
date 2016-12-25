@@ -235,8 +235,8 @@ class WC_AJAX {
 
 		check_ajax_referer( 'update-shipping-method', 'security' );
 
-		if ( ! defined('WOOCOMMERCE_CART') ) {
-			define( 'WOOCOMMERCE_CART', true );
+		if ( ! defined('BANDA_CART') ) {
+			define( 'BANDA_CART', true );
 		}
 
 		$chosen_shipping_methods = WC()->session->get( 'chosen_shipping_methods' );
@@ -261,8 +261,8 @@ class WC_AJAX {
 	 */
 	public static function get_cart_totals() {
 
-		if ( ! defined( 'WOOCOMMERCE_CART' ) ) {
-			define( 'WOOCOMMERCE_CART', true );
+		if ( ! defined( 'BANDA_CART' ) ) {
+			define( 'BANDA_CART', true );
 		}
 
 		WC()->cart->calculate_totals();
@@ -280,8 +280,8 @@ class WC_AJAX {
 
 		check_ajax_referer( 'update-order-review', 'security' );
 
-		if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) ) {
-			define( 'WOOCOMMERCE_CHECKOUT', true );
+		if ( ! defined( 'BANDA_CHECKOUT' ) ) {
+			define( 'BANDA_CHECKOUT', true );
 		}
 
 		if ( WC()->cart->is_empty() ) {
@@ -465,8 +465,8 @@ class WC_AJAX {
 	 * Process ajax checkout form.
 	 */
 	public static function checkout() {
-		if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) ) {
-			define( 'WOOCOMMERCE_CHECKOUT', true );
+		if ( ! defined( 'BANDA_CHECKOUT' ) ) {
+			define( 'BANDA_CHECKOUT', true );
 		}
 
 		WC()->checkout()->process_checkout();

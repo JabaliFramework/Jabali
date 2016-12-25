@@ -391,7 +391,7 @@ class SV_WC_Framework_Bootstrap {
 	protected function get_wc_version() {
 
 		if ( defined( 'WC_VERSION' )          && WC_VERSION )          return WC_VERSION;
-		if ( defined( 'WOOCOMMERCE_VERSION' ) && WOOCOMMERCE_VERSION ) return WOOCOMMERCE_VERSION;
+		if ( defined( 'BANDA_VERSION' ) && BANDA_VERSION ) return BANDA_VERSION;
 
 		return null;
 	}

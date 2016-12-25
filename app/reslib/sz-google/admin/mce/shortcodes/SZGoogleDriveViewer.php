@@ -51,7 +51,7 @@ if ($object = SZGoogleModule::getObject('SZGoogleModuleDrive'))
 // Setting any of the default parameters for fields 
 // that contain invalid values ​​or inconsistent
 
-$DEFAULT = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/sz_google_options_drive.php");
+$DEFAULT = include(ABSPATH . 'reslib/sz-google'."/options/sz_google_options_drive.php");
 
 if (!ctype_digit($width)  or $width  == 0) { $width  = $DEFAULT['drive_viewer_s_width']['value'];  $width_auto  = '1'; }
 if (!ctype_digit($height) or $height == 0) { $height = $DEFAULT['drive_viewer_s_height']['value']; $height_auto = '1'; }
@@ -64,6 +64,6 @@ $pre = str_replace(array('0','1'),array('n','y'),$pre);
 // Loading ADMIN template for composition using
 // shortcodes in many cases the same code Widget
 
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidgetDriveViewer.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseFooter.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidgetDriveViewer.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseFooter.php');

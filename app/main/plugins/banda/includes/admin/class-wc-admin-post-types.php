@@ -2273,13 +2273,13 @@ class WC_Admin_Post_Types {
 				case 'shop_order' :
 					?>
 					<h2 class="banda-BlankState-message"><?php _e( 'When you receive a new order, it will appear here.', 'banda' ); ?></h2>
-					<a class="banda-BlankState-cta button-primary button" target="_blank" href="https://docs.mtaandao.co.ke/document/managing-orders/?utm_source=blankslate&utm_medium=product&utm_content=ordersdoc&utm_campaign=bandaplugin"><?php _e( 'Learn more about orders', 'banda' ); ?></a>
+					<a class="banda-BlankState-cta button-primary button" target="_blank" href="https://mtaandao.co.ke/docs/banda/document/managing-orders/?utm_source=blankslate&utm_medium=product&utm_content=ordersdoc&utm_campaign=bandaplugin"><?php _e( 'Learn more about orders', 'banda' ); ?></a>
 					<?php
 				break;
 				case 'shop_coupon' :
 					?>
 					<h2 class="banda-BlankState-message"><?php _e( 'Coupons are a great way to offer discounts and rewards to your customers. They will appear here once created.', 'banda' ); ?></h2>
-					<a class="banda-BlankState-cta button-primary button" target="_blank" href="https://docs.mtaandao.co.ke/document/coupon-management/?utm_source=blankslate&utm_medium=product&utm_content=couponsdoc&utm_campaign=bandaplugin"><?php _e( 'Learn more about coupons', 'banda' ); ?></a>
+					<a class="banda-BlankState-cta button-primary button" target="_blank" href="https://mtaandao.co.ke/docs/banda/document/coupon-management/?utm_source=blankslate&utm_medium=product&utm_content=couponsdoc&utm_campaign=bandaplugin"><?php _e( 'Learn more about coupons', 'banda' ); ?></a>
 					<?php
 				break;
 				case 'product' :

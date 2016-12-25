@@ -350,7 +350,7 @@ final class _WP_Editors {
 		if ( self::$this_tinymce ) {
 
 			if ( empty( self::$first_init ) ) {
-				self::$baseurl = includes_url( 'js/tinymce' );
+				self::$baseurl = res_url( 'js/tinymce' );
 
 				$mce_locale = get_user_locale();
 				self::$mce_locale = $mce_locale = empty( $mce_locale ) ? 'en' : strtolower( substr( $mce_locale, 0, 2 ) ); // ISO 639-1
@@ -568,7 +568,7 @@ final class _WP_Editors {
 
 				$suffix = SCRIPT_DEBUG ? '' : '.min';
 				$version = 'ver=' . get_bloginfo( 'version' );
-				$dashicons = includes_url( "css/dashicons$suffix.css?$version" );
+				$dashicons = res_url( "css/dashicons$suffix.css?$version" );
 
 				// Jabali default stylesheet and dashicons
 				$mce_css = array(
@@ -1149,7 +1149,7 @@ final class _WP_Editors {
 			return wp_json_encode( $mce_translation );
 		}
 
-		$baseurl = self::$baseurl ? self::$baseurl : includes_url( 'js/tinymce' );
+		$baseurl = self::$baseurl ? self::$baseurl : res_url( 'js/tinymce' );
 
 		return "tinymce.addI18n( '$mce_locale', " . wp_json_encode( $mce_translation ) . ");\n" .
 			"tinymce.ScriptLoader.markDone( '$baseurl/langs/$mce_locale.js' );\n";

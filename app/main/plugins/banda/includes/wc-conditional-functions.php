@@ -86,7 +86,7 @@ if ( ! function_exists( 'is_cart' ) ) {
 	 * @return bool
 	 */
 	function is_cart() {
-		return is_page( wc_get_page_id( 'cart' ) ) || defined( 'WOOCOMMERCE_CART' ) || wc_post_content_has_shortcode( 'banda_cart' );
+		return is_page( wc_get_page_id( 'cart' ) ) || defined( 'BANDA_CART' ) || wc_post_content_has_shortcode( 'banda_cart' );
 	}
 }
 

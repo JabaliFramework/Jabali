@@ -318,7 +318,7 @@ class WC_Tracker {
 	}
 
 	/**
-	 * Get a list of all active shipping methods.
+	 * Get a list of all active delivery methods.
 	 * @return array
 	 */
 	private static function get_active_shipping_methods() {

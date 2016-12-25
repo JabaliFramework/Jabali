@@ -597,7 +597,7 @@ if ( !class_exists( 'Banda_PDF_Invoices' ) ) {
 			}
 
 			// WC2.4 fix order_total for refunded orders
-			if ( version_compare( WOOCOMMERCE_VERSION, '2.4', '>=' ) && isset($totals['order_total']) ) {
+			if ( version_compare( BANDA_VERSION, '2.4', '>=' ) && isset($totals['order_total']) ) {
 				$tax_display = $this->export->order->tax_display_cart;
 				$totals['order_total']['value'] = wc_price( $this->export->order->get_total(), array( 'currency' => $this->export->order->get_order_currency() ) );
 				$order_total    = $this->export->order->get_total();
@@ -616,7 +616,7 @@ if ( !class_exists( 'Banda_PDF_Invoices' ) ) {
 						$tax_string_array[] = sprintf( '%s %s', wc_price( $this->export->order->get_total_tax() - $this->export->order->get_total_tax_refunded(), array( 'currency' => $this->export->order->get_order_currency() ) ), WC()->countries->tax_or_vat() );
 					}
 					if ( ! empty( $tax_string_array ) ) {
-						if ( version_compare( WOOCOMMERCE_VERSION, '2.6', '>=' ) ) {
+						if ( version_compare( BANDA_VERSION, '2.6', '>=' ) ) {
 							$tax_string = ' ' . sprintf( __( '(includes %s)', 'banda' ), implode( ', ', $tax_string_array ) );
 						} else {
 							// use old capitalized string
@@ -698,7 +698,7 @@ if ( !class_exists( 'Banda_PDF_Invoices' ) ) {
 						break;
 					case 'total':
 						// Total Discount
-						if ( version_compare( WOOCOMMERCE_VERSION, '2.3' ) >= 0 ) {
+						if ( version_compare( BANDA_VERSION, '2.3' ) >= 0 ) {
 							$discount_value = $this->export->order->get_total_discount( false ); // $ex_tax = false
 						} else {
 							// WC2.2 and older: recalculate to include tax
@@ -718,7 +718,7 @@ if ( !class_exists( 'Banda_PDF_Invoices' ) ) {
 						break;
 				}
 			} else { // calculate discount excluding tax
-				if ( version_compare( WOOCOMMERCE_VERSION, '2.3' ) >= 0 ) {
+				if ( version_compare( BANDA_VERSION, '2.3' ) >= 0 ) {
 					$discount_value = $this->export->order->get_total_discount( true ); // $ex_tax = true
 				} else {
 					// WC2.2 and older: recalculate to exclude tax
@@ -798,7 +798,7 @@ if ( !class_exists( 'Banda_PDF_Invoices' ) ) {
 		 * Return/show the order grand total
 		 */
 		public function get_order_grand_total( $tax = 'incl' ) {
-			if ( version_compare( WOOCOMMERCE_VERSION, '2.1' ) >= 0 ) {
+			if ( version_compare( BANDA_VERSION, '2.1' ) >= 0 ) {
 				// WC 2.1 or newer is used
 				$total_unformatted = $this->export->order->get_total();
 			} else {

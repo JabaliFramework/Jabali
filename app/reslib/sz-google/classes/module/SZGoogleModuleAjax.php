@@ -53,7 +53,7 @@ if (!class_exists('SZGoogleModuleAjax'))
 
 			if (isset($shortcodes[$shortcode])) {
 				define('SZGOOGLE_AJAX_NAME',$shortcodes[$shortcode]);
-				$filename = dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/'.$shortcodes[$shortcode].'.php';
+				$filename = ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/'.$shortcodes[$shortcode].'.php';
 				if (is_file($filename)) @include($filename);
 			}
 

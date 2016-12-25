@@ -232,7 +232,7 @@ class WC_Shipping_Zone extends WC_Data {
 	}
 
 	/**
-	 * Get shipping methods linked to this zone
+	 * Get delivery methods linked to this zone
 	 * @param bool Only return enabled methods.
 	 * @return array of objects
 	 */
@@ -253,7 +253,7 @@ class WC_Shipping_Zone extends WC_Data {
 			if ( in_array( $raw_method->method_id, array_keys( $allowed_classes ), true ) ) {
 				$class_name = $allowed_classes[ $raw_method->method_id ];
 
-				// The returned array may contain instances of shipping methods, as well
+				// The returned array may contain instances of delivery methods, as well
 				// as classes. If the "class" is an instance, just use it. If not,
 				// create an instance.
 				if ( is_object( $class_name ) ) {

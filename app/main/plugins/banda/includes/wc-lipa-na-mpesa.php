@@ -230,7 +230,7 @@ function lipapesa ($mtaapesa) {
 							'desc_tip'    => true,
 							),
 						'enable_for_methods' => array(
-							'title'             => __('Enable for shipping methods', 'banda'),
+							'title'             => __('Enable for delivery methods', 'banda'),
 							'type'              => 'multiselect',
 							'class'             => 'wc-enhanced-select',
 							'css'               => 'width: 450px;',
@@ -239,7 +239,7 @@ function lipapesa ($mtaapesa) {
 							'options'           => $shipping_methods,
 							'desc_tip'          => true,
 							'custom_attributes' => array(
-								'data-placeholder' => __('Select shipping methods', 'banda')
+								'data-placeholder' => __('Select delivery methods', 'banda')
 								)
 							),
 						'enable_for_virtual' => array(

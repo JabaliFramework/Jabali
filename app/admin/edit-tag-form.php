@@ -45,7 +45,7 @@ if ( 'category' == $taxonomy ) {
 }
 
 /**
- * Use with caution, see https://codex.jabali.github.io/Function_Reference/wp_reset_vars
+ * Use with caution, see https://jabali.github.io/Docs/Function_Reference/wp_reset_vars
  */
 wp_reset_vars( array( 'wp_http_referer' ) );
 

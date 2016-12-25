@@ -162,7 +162,7 @@ if (!class_exists('SZGoogleWidgetDriveEmbed'))
 			// Setting any of the default parameters for the
 			// fields that contain invalid values ​​or inconsistent
 
-			$DEFAULT = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/sz_google_options_drive.php");
+			$DEFAULT = include(ABSPATH . 'reslib/sz-google'."/options/sz_google_options_drive.php");
 
 			if (!ctype_digit($width)  or $width  == 0) { $width  = $DEFAULT['drive_embed_w_width']['value'];  $width_auto  = '1'; }
 			if (!ctype_digit($height) or $height == 0) { $height = $DEFAULT['drive_embed_w_height']['value']; $height_auto = '1'; }
@@ -170,8 +170,8 @@ if (!class_exists('SZGoogleWidgetDriveEmbed'))
 			// Calling the template for displaying the part 
 			// that concerns the administration panel (admin)
 
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidget.php');
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/' .__CLASS__.'.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidget.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/' .__CLASS__.'.php');
 		}
 	}
 }

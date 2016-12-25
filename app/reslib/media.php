@@ -2983,8 +2983,8 @@ function wp_plupload_default_settings() {
 		'runtimes'            => 'html5,flash,silverlight,html4',
 		'file_data_name'      => 'async-upload', // key passed to $_FILE.
 		'url'                 => admin_url( 'async-upload.php', 'relative' ),
-		'flash_swf_url'       => includes_url( 'js/plupload/plupload.flash.swf' ),
-		'silverlight_xap_url' => includes_url( 'js/plupload/plupload.silverlight.xap' ),
+		'flash_swf_url'       => res_url( 'js/plupload/plupload.flash.swf' ),
+		'silverlight_xap_url' => res_url( 'js/plupload/plupload.silverlight.xap' ),
 		'filters' => array(
 			'max_file_size'   => $max_upload_size . 'b',
 			'mime_types'      => array( array( 'extensions' => implode( ',', $extensions ) ) ),
@@ -3845,8 +3845,8 @@ function attachment_url_to_postid( $url ) {
  */
 function wpview_media_sandbox_styles() {
  	$version = 'ver=' . get_bloginfo( 'version' );
- 	$mediaelement = includes_url( "js/mediaelement/mediaelementplayer.min.css?$version" );
- 	$wpmediaelement = includes_url( "js/mediaelement/wp-mediaelement.css?$version" );
+ 	$mediaelement = res_url( "js/mediaelement/mediaelementplayer.min.css?$version" );
+ 	$wpmediaelement = res_url( "js/mediaelement/wp-mediaelement.css?$version" );
 
 	return array( $mediaelement, $wpmediaelement );
 }

@@ -392,8 +392,8 @@ Before you use the google translate module must register the site that you want 
 
 = Version 1.9.3 =
 * Fix: Wrong Popup Shortcode Calendar.
-* Fix: Domain for Wordpress Translate.
-* Fix: Compatible with Wordpress 4.3.
+* Fix: Domain for Jabali Translate.
+* Fix: Compatible with Jabali 4.3.
 * Fix: Translate strings with errors.
 * Fix: Translate PHP comments in english.
 
@@ -528,7 +528,7 @@ Before you use the google translate module must register the site that you want 
 * Feature: Youtube badge with sidebar widget.
 
 = Version 1.7.4 =
-* Fix: Widget Live for Wordpress 3.9 release.
+* Fix: Widget Live for Jabali 3.9 release.
 * Fix: Active any option after disable plugin.
 * Feature: Google+ automatic author badge.
 * Feature: New model developer for objects.

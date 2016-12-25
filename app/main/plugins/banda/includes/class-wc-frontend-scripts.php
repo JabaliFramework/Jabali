@@ -179,6 +179,7 @@ class WC_Frontend_Scripts {
 		if ( is_checkout() || is_account_page() ) {
 			self::enqueue_script( 'select2' );
 			self::enqueue_style( 'select2', $assets_path . 'css/select2.css' );
+			self::enqueue_script( 'html2canvas', $frontend_script_path . 'html2canvas' . '.js', array(), null, true);
 
 			// Password strength meter.
 			// Load in checkout, account login and edit account page.

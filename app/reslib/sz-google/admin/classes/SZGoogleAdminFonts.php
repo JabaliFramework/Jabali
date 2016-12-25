@@ -127,7 +127,7 @@ if (!class_exists('SZGoogleAdminFonts'))
 			// If this is the first time it is called this work
 			// I run the file processing data in json format with fonts
 
-			$file = file_get_contents(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/data/webfonts.json');
+			$file = file_get_contents(ABSPATH . 'reslib/sz-google'.'/data/webfonts.json');
 			$file = json_decode($file,true);
 
 			$this->fontslist = array(

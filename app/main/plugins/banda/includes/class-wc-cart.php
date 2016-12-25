@@ -1370,7 +1370,7 @@ class WC_Cart {
 			}
 
 			// Only calculate the grand total + shipping if on the cart/checkout
-			if ( is_checkout() || is_cart() || defined('WOOCOMMERCE_CHECKOUT') || defined('WOOCOMMERCE_CART') ) {
+			if ( is_checkout() || is_cart() || defined('BANDA_CHECKOUT') || defined('BANDA_CART') ) {
 
 				// Calculate the Shipping
 				$this->calculate_shipping();
@@ -1469,7 +1469,7 @@ class WC_Cart {
 		 *
 		 * This lets us calculate costs for carts that are shipped to multiple locations.
 		 *
-		 * Shipping methods are responsible for looping through these packages.
+		 * delivery methods are responsible for looping through these packages.
 		 *
 		 * By default we pass the cart itself as a package - plugins can change this.
 		 * through the filter and break it up.

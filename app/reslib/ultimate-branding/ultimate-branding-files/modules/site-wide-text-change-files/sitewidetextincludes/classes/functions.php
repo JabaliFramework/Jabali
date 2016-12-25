@@ -10,10 +10,10 @@ if(!function_exists('set_swt_url')) {
 
 		if( defined( 'WPMU_PLUGIN_URL' ) && defined( 'WPMU_PLUGIN_DIR' ) && file_exists( WPMU_PLUGIN_DIR . '/' . basename( $base ) ) ) {
 			$swt_url = trailingslashit( WPMU_PLUGIN_URL );
-		} elseif( defined( 'includes_url()' ) && file_exists( RES . '/site-wide-text-change/' . basename( $base ) ) ) {
-			$swt_url = trailingslashit( includes_url() . '/site-wide-text-change' );
+		} elseif( defined( 'res_url()' ) && file_exists( RES . '/site-wide-text-change/' . basename( $base ) ) ) {
+			$swt_url = trailingslashit( res_url() . '/site-wide-text-change' );
 		} else {
-			$swt_url = trailingslashit( includes_url() . '/site-wide-text-change' );
+			$swt_url = trailingslashit( res_url() . '/site-wide-text-change' );
 		}
 	}
 

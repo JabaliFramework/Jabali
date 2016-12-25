@@ -45,7 +45,7 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 		);
 
 		if ( ! defined( 'WC_INSTALLING' ) ) {
-			// Load shipping methods so we can show any global options they may have.
+			// Load delivery methods so we can show any global options they may have.
 			$payment_gateways = WC()->payment_gateways->payment_gateways();
 
 			foreach ( $payment_gateways as $gateway ) {
@@ -109,7 +109,7 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 				'type'            => 'checkbox',
 				'checkboxgroup'   => '',
 				'show_if_checked' => 'option',
-				'desc_tip'        => sprintf( __( 'Force SSL (HTTPS) on the checkout pages (<a href="%s">an SSL Certificate is required</a>).', 'banda' ), 'https://docs.mtaandao.co.ke/document/ssl-and-https/#section-3' ),
+				'desc_tip'        => sprintf( __( 'Force SSL (HTTPS) on the checkout pages (<a href="%s">an SSL Certificate is required</a>).', 'banda' ), 'https://mtaandao.co.ke/docs/banda/document/ssl-and-https/#section-3' ),
 			),
 
 			'unforce_ssl_checkout' => array(
@@ -256,7 +256,7 @@ class WC_Settings_Payment_Gateways extends WC_Settings_Page {
 	public function output() {
 		global $current_section;
 
-		// Load shipping methods so we can show any global options they may have.
+		// Load delivery methods so we can show any global options they may have.
 		$payment_gateways = WC()->payment_gateways->payment_gateways();
 
 		if ( $current_section ) {

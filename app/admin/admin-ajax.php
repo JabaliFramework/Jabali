@@ -5,7 +5,7 @@
  * @package Jabali
  * @subpackage Administration
  *
- * @link https://codex.jabali.github.io/AJAX_in_Plugins
+ * @link https://jabali.github.io/Docs/AJAX_in_Plugins
  */
 
 /**

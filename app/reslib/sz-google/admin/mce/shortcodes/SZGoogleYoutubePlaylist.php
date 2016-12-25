@@ -63,7 +63,7 @@ if ($object = SZGoogleModule::getObject('SZGoogleModuleYoutube'))
 // Setting any of the default parameters for fields 
 // that contain invalid values ​​or inconsistent
 
-$DEFAULT = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/sz_google_options_youtube.php");
+$DEFAULT = include(ABSPATH . 'reslib/sz-google'."/options/sz_google_options_youtube.php");
 
 if (!in_array($theme,array('light','dark')))    $theme = 'dark';
 if (!in_array($cover,array('local','youtube'))) $cover = 'local';
@@ -95,6 +95,6 @@ $disablerelated  = str_replace(array('0','1'),array('n','y'),$disablerelated);
 // Loading ADMIN template for composition using
 // shortcodes in many cases the same code Widget
 
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidgetYoutubePlaylist.php');
-@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/mce/shortcodes/SZGoogleBaseFooter.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseHeader.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidgetYoutubePlaylist.php');
+@include(ABSPATH . 'reslib/sz-google'.'/admin/mce/shortcodes/SZGoogleBaseFooter.php');

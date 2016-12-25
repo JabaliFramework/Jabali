@@ -463,7 +463,7 @@ if ( is_multisite() ) {
  * Ajax requests should use admin/admin-ajax.php. admin-ajax.php can handle requests for
  * users not logged in.
  *
- * @link https://codex.jabali.github.io/AJAX_in_Plugins
+ * @link https://jabali.github.io/Docs/AJAX_in_Plugins
  *
  * @since 3.0.0
  */

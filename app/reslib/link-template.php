@@ -3142,7 +3142,7 @@ function get_admin_url( $blog_id = null, $path = '', $scheme = 'admin' ) {
  *                       'http', 'https', or 'relative'. Default null.
  * @return string Includes URL link with optional path appended.
  */
-function includes_url( $path = '', $scheme = null ) {
+function res_url( $path = '', $scheme = null ) {
 	$url = site_url( '/' . RES . '/', $scheme );
 
 	if ( $path && is_string( $path ) )
@@ -3157,7 +3157,7 @@ function includes_url( $path = '', $scheme = null ) {
 	 * @param string $path Path relative to the URL to the reslib directory. Blank string
 	 *                     if no path is specified.
 	 */
-	return apply_filters( 'includes_url', $url, $path );
+	return apply_filters( 'res_url', $url, $path );
 }
 
 /**

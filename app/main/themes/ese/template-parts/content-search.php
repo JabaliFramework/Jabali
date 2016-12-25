@@ -2,7 +2,7 @@
 /**
  * The template part for displaying results in search pages.
  *
- * Learn more: http://codex.jabali.github.io/Template_Hierarchy
+ * Learn more: http://jabali.github.io/Docs/Template_Hierarchy
  *
  * @package Ese
  */

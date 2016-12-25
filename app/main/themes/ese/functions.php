@@ -36,7 +36,7 @@ function ese_setup() {
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link http://codex.jabali.github.io/Function_Reference/add_theme_support#Post_Thumbnails
+	 * @link http://jabali.github.io/Docs/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
 
@@ -61,7 +61,7 @@ function ese_setup() {
 
 	/*
 	 * Enable support for Post Formats.
-	 * See http://codex.jabali.github.io/Post_Formats
+	 * See http://jabali.github.io/Docs/Post_Formats
 	 */
 	// add_theme_support( 'post-formats', array(
 	// 	'aside',
@@ -95,7 +95,7 @@ add_action( 'after_setup_theme', 'ese_content_width', 0 );
 /**
  * Register widget area.
  *
- * @link http://codex.jabali.github.io/Function_Reference/register_sidebar
+ * @link http://jabali.github.io/Docs/Function_Reference/register_sidebar
  */
 function ese_widgets_init() {
 	register_sidebar( array(

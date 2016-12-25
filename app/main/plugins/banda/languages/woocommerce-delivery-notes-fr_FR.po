@@ -115,7 +115,7 @@ msgid ""
 "settings. The name will be ignored when a Logo is set."
 msgstr ""
 "Laisser blanc pour utiliser le titre de Blog/Site défini dans les paramètres "
-"Wordpress. Ce nom sera ignoré si un Logo est paramétré."
+"Jabali. Ce nom sera ignoré si un Logo est paramétré."
 
 # @ banda-delivery-notes
 #: ../includes/class-wcdn-settings.php:191

@@ -436,7 +436,7 @@ function wc_terms_clauses( $clauses, $taxonomies, $args ) {
 		return $clauses;
 	}
 
-	// Wordpress should give us the taxonomies asked when calling the get_terms function. Only apply to categories and pa_ attributes.
+	// Jabali should give us the taxonomies asked when calling the get_terms function. Only apply to categories and pa_ attributes.
 	$found = false;
 	foreach ( (array) $taxonomies as $taxonomy ) {
 		if ( taxonomy_is_product_attribute( $taxonomy ) || in_array( $taxonomy, apply_filters( 'banda_sortable_taxonomies', array( 'product_cat' ) ) ) ) {

@@ -2736,7 +2736,7 @@ function rsd_link() {
  */
 function wlwmanifest_link() {
 	echo '<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="',
-		includes_url( 'wlwmanifest.xml' ), '" /> ', "\n";
+		res_url( 'wlwmanifest.xml' ), '" /> ', "\n";
 }
 
 /**

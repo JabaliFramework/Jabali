@@ -192,7 +192,7 @@ function wc_cart_totals_subtotal_html() {
 }
 
 /**
- * Get shipping methods.
+ * Get delivery methods.
  *
  * @access public
  */
@@ -278,7 +278,7 @@ function wc_cart_totals_coupon_html( $coupon ) {
 
 	// get rid of empty array elements
 	$value = array_filter( $value );
-	$value = implode( ', ', $value ) . ' <a href="' . esc_url( add_query_arg( 'remove_coupon', urlencode( $coupon->code ), defined( 'WOOCOMMERCE_CHECKOUT' ) ? wc_get_checkout_url() : wc_get_cart_url() ) ) . '" class="banda-remove-coupon" data-coupon="' . esc_attr( $coupon->code ) . '">' . __( '[Remove]', 'banda' ) . '</a>';
+	$value = implode( ', ', $value ) . ' <a href="' . esc_url( add_query_arg( 'remove_coupon', urlencode( $coupon->code ), defined( 'BANDA_CHECKOUT' ) ? wc_get_checkout_url() : wc_get_cart_url() ) ) . '" class="banda-remove-coupon" data-coupon="' . esc_attr( $coupon->code ) . '">' . __( '[Remove]', 'banda' ) . '</a>';
 
 	echo apply_filters( 'banda_cart_totals_coupon_html', $value, $coupon );
 }
@@ -326,7 +326,7 @@ function wc_cart_totals_fee_html( $fee ) {
 }
 
 /**
- * Get a shipping methods full label including price.
+ * Get a delivery methods full label including price.
  * @param  WC_Shipping_Rate $method
  * @return string
  */

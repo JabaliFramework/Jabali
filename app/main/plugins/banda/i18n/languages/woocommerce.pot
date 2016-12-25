@@ -8878,7 +8878,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:397
 msgid ""
-"Shipping classes are used by certain shipping methods to group similar "
+"Shipping classes are used by certain delivery methods to group similar "
 "products."
 msgstr ""
 
@@ -10946,7 +10946,7 @@ msgstr ""
 
 #: includes/admin/settings/class-wc-settings-shipping.php:244
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:52
-msgid "No shipping methods offered to this zone."
+msgid "No delivery methods offered to this zone."
 msgstr ""
 
 #: includes/admin/settings/class-wc-settings-shipping.php:261
@@ -11023,7 +11023,7 @@ msgstr ""
 #: includes/admin/settings/views/html-admin-page-shipping-classes.php:9
 msgid ""
 "Shipping classes can be used to group products of similar type and can be "
-"used by some Shipping Methods (such as Flat Rate Shipping) to provide "
+"used by some delivery methods (such as Flat Rate Shipping) to provide "
 "different rates to different classes of product."
 msgstr ""
 
@@ -11054,13 +11054,13 @@ msgstr ""
 
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:10
 msgid ""
-"The following shipping methods apply to customers with shipping addresses "
+"The following delivery methods apply to customers with shipping addresses "
 "within this zone."
 msgstr ""
 
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:18
 msgid ""
-"Drag and drop to re-order your shipping methods. This is the order in which "
+"Drag and drop to re-order your delivery methods. This is the order in which "
 "they will display during checkout."
 msgstr ""
 
@@ -11100,12 +11100,12 @@ msgid "Add shipping method"
 msgstr ""
 
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:39
-msgid "Add shipping methods to this zone"
+msgid "Add delivery methods to this zone"
 msgstr ""
 
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:40
 msgid ""
-"You can add multiple shipping methods within this zone. Only customers "
+"You can add multiple delivery methods within this zone. Only customers "
 "within the zone will see them."
 msgstr ""
 
@@ -11122,7 +11122,7 @@ msgstr ""
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:101
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:149
 msgid ""
-"Choose the shipping method you wish to add. Only shipping methods which "
+"Choose the shipping method you wish to add. Only delivery methods which "
 "support zones are listed."
 msgstr ""
 
@@ -11136,7 +11136,7 @@ msgstr ""
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:9
 msgid ""
 "Banda will automatically choose the correct shipping zone based on "
-"your customer&lsquo;s shipping address and present the shipping methods "
+"your customer&lsquo;s shipping address and present the delivery methods "
 "within that zone to them."
 msgstr ""
 
@@ -11172,12 +11172,12 @@ msgstr ""
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:39
 msgid ""
 "This zone is used for shipping addresses that aren&lsquo;t included in any "
-"other shipping zone. Adding shipping methods to this zone is optional."
+"other shipping zone. Adding delivery methods to this zone is optional."
 msgstr ""
 
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:55
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:129
-msgid "Save changes to continue adding shipping methods to this zone"
+msgid "Save changes to continue adding delivery methods to this zone"
 msgstr ""
 
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:67
@@ -12471,13 +12471,13 @@ msgstr ""
 
 #: includes/admin/views/html-notice-legacy-shipping.php:13
 msgid ""
-"a group of regions that can be assigned different shipping methods and "
+"a group of regions that can be assigned different delivery methods and "
 "rates."
 msgstr ""
 
 #: includes/admin/views/html-notice-legacy-shipping.php:14
 msgid ""
-"Legacy shipping methods (Flat Rate, International Flat Rate, Local Pickup "
+"Legacy delivery methods (Flat Rate, International Flat Rate, Local Pickup "
 "and Delivery, and Free Shipping) are deprecated but will continue to work "
 "as normal for now. <b><em>They will be removed in future versions of "
 "Banda</em></b>. We recommend disabling these and setting up new rates "
@@ -12495,12 +12495,12 @@ msgid "Learn more about shipping zones"
 msgstr ""
 
 #: includes/admin/views/html-notice-no-shipping-methods.php:13
-msgid "Add Shipping Methods &amp; Zones"
+msgid "Add delivery methods &amp; Zones"
 msgstr ""
 
 #: includes/admin/views/html-notice-no-shipping-methods.php:14
 msgid ""
-"Shipping is currently enabled, but you haven't added any shipping methods "
+"Shipping is currently enabled, but you haven't added any delivery methods "
 "to your shipping zones."
 msgstr ""
 
@@ -17368,7 +17368,7 @@ msgid "Instructions that will be added to the thank you page."
 msgstr ""
 
 #: includes/gateways/cod/class-wc-gateway-cod.php:90
-msgid "Enable for shipping methods"
+msgid "Enable for delivery methods"
 msgstr ""
 
 #: includes/gateways/cod/class-wc-gateway-cod.php:95
@@ -17378,7 +17378,7 @@ msgid ""
 msgstr ""
 
 #: includes/gateways/cod/class-wc-gateway-cod.php:99
-msgid "Select shipping methods"
+msgid "Select delivery methods"
 msgstr ""
 
 #: includes/gateways/cod/class-wc-gateway-cod.php:103
@@ -19659,7 +19659,7 @@ msgstr ""
 
 #: templates/cart/cart-shipping.php:50
 msgid ""
-"There are no shipping methods available. Please double check your address, "
+"There are no delivery methods available. Please double check your address, "
 "or contact us if you need any help."
 msgstr ""
 
@@ -19702,7 +19702,7 @@ msgid "Checkout"
 msgstr ""
 
 #: templates/cart/proceed-to-checkout-button.php:27
-msgid "Proceed to Checkout"
+msgid "Checkout"
 msgstr ""
 
 #: templates/cart/shipping-calculator.php:33
@@ -20346,7 +20346,7 @@ msgid "Only logged in customers who have purchased this product may leave a revi
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://mtaandao.co.ke/"
+msgid "http://mtaandao.co.ke/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -20358,7 +20358,7 @@ msgid "Jabali"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://mtaandao.co.ke"
+msgid "http://mtaandao.co.ke"
 msgstr ""
 
 #: i18n/locale-info.php:87 i18n/locale-info.php:97 i18n/locale-info.php:107

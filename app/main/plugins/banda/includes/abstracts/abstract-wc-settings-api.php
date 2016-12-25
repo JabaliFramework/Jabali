@@ -2,7 +2,7 @@
 /**
  * Abstract Settings API Class
  *
- * Admin Settings API used by Integrations, Shipping Methods, and Payment Gateways.
+ * Admin Settings API used by Integrations, delivery methods, and Payment Gateways.
  *
  * @class    WC_Settings_API
  * @version  2.6.0

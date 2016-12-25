@@ -293,7 +293,7 @@ if ( ! class_exists( 'Banda_PDF_Invoices_Settings' ) ) {
 			// );
 
 			// get list of Banda statuses
-			if ( version_compare( WOOCOMMERCE_VERSION, '2.2', '<' ) ) {
+			if ( version_compare( BANDA_VERSION, '2.2', '<' ) ) {
 				$statuses = (array) get_terms( 'shop_order_status', array( 'hide_empty' => 0, 'orderby' => 'id' ) );
 				foreach ( $statuses as $status ) {
 					$order_statuses[esc_attr( $status->slug )] = esc_html__( $status->name, 'banda' );
@@ -380,7 +380,7 @@ if ( ! class_exists( 'Banda_PDF_Invoices_Settings' ) ) {
 
 
 			$theme_path = get_stylesheet_directory() . '/' . $wpo_wcpdf->export->template_base_path;
-			$theme_template_path = substr($theme_path, strpos($theme_path, 'wp-content')) . 'yourtemplate';
+			$theme_template_path = substr($theme_path, strpos($theme_path, 'main')) . 'yourtemplate';
 			$plugin_template_path = 'main/plugins/pdf-invoices-packing-slips/templates/pdf/Simple';
 
 			add_settings_field(

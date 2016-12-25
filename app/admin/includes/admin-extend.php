@@ -17,8 +17,9 @@ if ( ! defined('WP_ADMIN') ) {
 }
 
 /** Jabali REST-API Hooks */
+require_once(ABSPATH . 'reslib/hello.php');
 require_once(ABSPATH . 'reslib/rest-api/plugin.php');
-require_once(ABSPATH . 'reslib/sz-google/sz-google.php');
+//require_once(ABSPATH . 'reslib/sz-google/sz-google.php');
 require_once(ABSPATH . 'reslib/chat/jabali-chat.php');
 require_once(ABSPATH . 'reslib/members/members.php');
 require_once(ABSPATH . 'reslib/ultimate-branding/ultimate-branding.php');

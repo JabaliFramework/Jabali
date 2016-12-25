@@ -83,7 +83,7 @@ class WC_Admin_Menus {
 	}
 
 	/**
-	 * Loads gateways and shipping methods into memory for use within settings.
+	 * Loads gateways and delivery methods into memory for use within settings.
 	 */
 	public function settings_page_init() {
 		WC()->payment_gateways();

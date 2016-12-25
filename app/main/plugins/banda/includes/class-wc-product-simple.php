@@ -45,7 +45,7 @@ class WC_Product_Simple extends WC_Product {
 	 * @return string
 	 */
 	public function add_to_cart_text() {
-		$text = $this->is_purchasable() && $this->is_in_stock() ? __( 'Add to cart', 'banda' ) : __( 'Read more', 'banda' );
+		$text = $this->is_purchasable() && $this->is_in_stock() ? __( 'Buy Now', 'banda' ) : __( 'Read more', 'banda' );
 
 		return apply_filters( 'banda_product_add_to_cart_text', $text, $this );
 	}

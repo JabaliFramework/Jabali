@@ -266,4 +266,4 @@ class WooCartFestiPlugin extends FestiPluginWithOptionsFilter
     } //end onDisplayInfoAboutDisabledBandaAction
 }
 
-$GLOBALS['wooCommerceFestiCart'] = new WooCartFestiPlugin(__FILE__);
+$GLOBALS['BANDAFestiCart'] = new WooCartFestiPlugin(__FILE__);

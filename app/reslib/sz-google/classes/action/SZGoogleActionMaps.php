@@ -232,7 +232,7 @@ if (!class_exists('SZGoogleActionMaps'))
 			// Setting any of the default parameters for
 			// fields that contain invalid values or inconsistent
 
-			$DEFAULT = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/sz_google_options_maps.php");
+			$DEFAULT = include(ABSPATH . 'reslib/sz-google'."/options/sz_google_options_maps.php");
 
 			if ($check->action == 'S') {
 				if (!ctype_digit($check->zoom)   or $check->zoom   == 0) { $check->width  = $DEFAULT['maps_s_zoom'  ]['value']; }

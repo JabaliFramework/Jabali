@@ -233,7 +233,7 @@ if (!class_exists('SZGoogleAdmin'))
 		function getOptionsSet($nameset)
 		{
 			$optionsDB   = get_option($nameset);
-			$optionsList = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/{$nameset}.php");
+			$optionsList = include(ABSPATH . 'reslib/sz-google'."/options/{$nameset}.php");
 
 			// Control options in the event of non-existing
 			// function call to the control isset()
@@ -433,13 +433,6 @@ if (!class_exists('SZGoogleAdmin'))
 			// Section on the sidebar menu present on the right side
 			// Definition of the menu that will contain "Official page"
 
-			echo '<div id="official-plugin" class="postbox">';
-			echo '<div class="handlediv" title="'.ucfirst(__('click to toggle','sz-google')).'"><br></div>';
-			echo '<h3 class="hndle"><span><strong>'.ucwords(__('official page','sz-google')).'</strong></span></h3>';
-			echo '<div class="inside">';
-			echo '<a target="_blank" href="https://plus.google.com/+wpitalyplus"><img src="'.plugin_dir_url(SZ_PLUGIN_GOOGLE_MAIN).'frontend/files/images/wpitalyplus.png'.'" alt="Jabali Italy+" style="width:100%;height:auto;vertical-align:bottom;"></a>';
-			echo '</div>';
-			echo '</div>';
 
 			// Section on the sidebar menu present on the right side
 			// Definition of the menu that will contain "Request for support"

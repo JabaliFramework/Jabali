@@ -1,11 +1,4 @@
 <?php
-/*
-Plugin Name: Google for Jabali
-Plugin URI: https://otherplus.com/tech/jabali-google/
-Description: Plugin to integrate Google in Jabali
-Version: 1.9.4
-Text Domain:sz-google
-*/
 
 if (!defined('ABSPATH')) die("Accesso diretto al file non permesso");
 
@@ -13,13 +6,13 @@ if (!defined('ABSPATH')) die("Accesso diretto al file non permesso");
 // here the constants must be defined by URL, basename, version, etc.
 
 define('SZ_PLUGIN_GOOGLE',true);
-define('SZ_PLUGIN_GOOGLE_MAIN',__FILE__);
+define('SZ_PLUGIN_GOOGLE_MAIN', __FILE__);
 define('SZ_PLUGIN_GOOGLE_VERSION','1.9.4');
 
 // Definition of some basic functions to be used in the plugin 
 // for calling special functions php which depend on the version
 
-@require(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/functions/SZGoogleFunctions.php');
+@require(ABSPATH . 'reslib/sz-google'.'/functions/SZGoogleFunctions.php');
 
 // Before the definition of the class, check if there is a definition 
 // with the same name or the same as previously defined in other script.
@@ -29,7 +22,7 @@ if (!class_exists('SZGoogleCheck'))
 	class SZGoogleCheck
 	{
 		private $PHP       = '5.2.0'; // Minimum requirement PHP
-		private $WORDPRESS = '3.5.0'; // Minimum requirement WORDPRESS
+		private $JABALI = '3.5.0'; // Minimum requirement JABALI
 
 		/**
 		 * Definition the constructor function, which is called
@@ -57,7 +50,7 @@ if (!class_exists('SZGoogleCheck'))
 				$HTML .= '<ul>';
 
 				if (!$this->is_compatible_PHP())       $HTML .= '<li>'.$this->get_admin_notices_PHP(false).'</li>';
-				if (!$this->is_compatible_WORDPRESS()) $HTML .= '<li>'.$this->get_admin_notices_WORDPRESS(false).'</li>';
+				if (!$this->is_compatible_JABALI()) $HTML .= '<li>'.$this->get_admin_notices_JABALI(false).'</li>';
 
 				$HTML .= '</ul>';
 
@@ -72,15 +65,15 @@ if (!class_exists('SZGoogleCheck'))
 
 		function load_plugin_admin_notices() {
 			if (!$this->is_compatible_PHP())       echo $this->get_admin_notices_PHP(true);
-			if (!$this->is_compatible_WORDPRESS()) echo $this->get_admin_notices_WORDPRESS(true);
+			if (!$this->is_compatible_JABALI()) echo $this->get_admin_notices_JABALI(true);
 		}
 
 		function get_admin_notices_PHP($wrap) {
 			return $this->get_admin_notices_TEXT($wrap,'PHP',phpversion(),$this->PHP);
 		}
 
-		function get_admin_notices_WORDPRESS($wrap) {
-			return $this->get_admin_notices_TEXT($wrap,'WORDPRESS',$GLOBALS['wp_version'],$this->WORDPRESS);
+		function get_admin_notices_JABALI($wrap) {
+			return $this->get_admin_notices_TEXT($wrap,'JABALI',$GLOBALS['wp_version'],$this->JABALI);
 		}
 
 		/**
@@ -93,7 +86,7 @@ if (!class_exists('SZGoogleCheck'))
 			$HTML = 'Your server is running %s version %s but this plugin requires at least %s';
 
 			if ($wrap === false) $HTML = "<div>{$HTML}</div>";
-				else $HTML = "<div class=\"error\"><p>(<b>Google for Wordpress</b>) - {$HTML}</p></div>";
+				else $HTML = "<div class=\"error\"><p>(<b>Google for Jabali</b>) - {$HTML}</p></div>";
 
 			return sprintf($HTML,$s1,$s2,$s3);
 		}
@@ -104,7 +97,7 @@ if (!class_exists('SZGoogleCheck'))
 		 */
 
 		function is_compatible_version() {
-			if ($this->is_compatible_PHP() && $this->is_compatible_WORDPRESS()) return true;
+			if ($this->is_compatible_PHP() && $this->is_compatible_JABALI()) return true;
 				else return false;
 		}
 
@@ -119,12 +112,12 @@ if (!class_exists('SZGoogleCheck'))
 		}
 
 		/**
-		 * Checking the compatibility of the plugin with the version of Wordpress
+		 * Checking the compatibility of the plugin with the version of Jabali
 		 * In case of incompatibility still fully loaded plugin (return)
 		 */
 
-		function is_compatible_WORDPRESS() {
-			if (version_compare($GLOBALS['wp_version'],$this->WORDPRESS,'<')) return false;
+		function is_compatible_JABALI() {
+			if (version_compare($GLOBALS['wp_version'],$this->JABALI,'<')) return false;
 				else return true;
 		}
 
@@ -159,8 +152,8 @@ if (!class_exists('SZGoogleCheck'))
 			// these classes begin with the prefix "SZGoogleAdmin"
 
 			if (substr($classname,0,13) == 'SZGoogleAdmin') {
-				if (is_readable(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/classes/'.$classname.'.php')) {
-				       @require(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/classes/'.$classname.'.php'); return;
+				if (is_readable(ABSPATH . 'reslib/sz-google'.'/admin/classes/'.$classname.'.php')) {
+				       @require(ABSPATH . 'reslib/sz-google'.'/admin/classes/'.$classname.'.php'); return;
 				}
 			}
 
@@ -169,8 +162,8 @@ if (!class_exists('SZGoogleCheck'))
 
 			$prefix = preg_split('#([A-Z][^A-Z]*)#',$classname,null,PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
 
-			if (is_readable(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/classes/'.strtolower($prefix[3]).'/'.$classname.'.php')) {
-			       @require(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/classes/'.strtolower($prefix[3]).'/'.$classname.'.php'); return;
+			if (is_readable(ABSPATH . 'reslib/sz-google'.'/classes/'.strtolower($prefix[3]).'/'.$classname.'.php')) {
+			       @require(ABSPATH . 'reslib/sz-google'.'/classes/'.strtolower($prefix[3]).'/'.$classname.'.php'); return;
 			}
 		}
 

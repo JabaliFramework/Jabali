@@ -268,7 +268,7 @@ function wp_default_scripts( &$scripts ) {
 		'of' => __('of'),
 		'close' => __('Close'),
 		'noiframes' => __('This feature requires inline frames. You have iframes disabled or your browser does not support them.'),
-		'loadingAnimation' => includes_url('js/thickbox/loadingAnimation.gif'),
+		'loadingAnimation' => res_url('js/thickbox/loadingAnimation.gif'),
 	) );
 
 	$scripts->add( 'jcrop', "/reslib/js/jcrop/jquery.Jcrop.min.js", array('jquery'), '0.9.12');
@@ -375,7 +375,7 @@ function wp_default_scripts( &$scripts ) {
 
 	$scripts->add( 'wp-mediaelement', "/reslib/js/mediaelement/wp-mediaelement$suffix.js", array('mediaelement'), false, 1 );
 	$mejs_settings = array(
-		'pluginPath' => includes_url( 'js/mediaelement/', 'relative' ),
+		'pluginPath' => res_url( 'js/mediaelement/', 'relative' ),
 	);
 	did_action( 'init' ) && $scripts->localize( 'mediaelement', '_wpmejsSettings',
 		/**
@@ -393,7 +393,7 @@ function wp_default_scripts( &$scripts ) {
 
 	$scripts->add( 'zxcvbn-async', "/reslib/js/zxcvbn-async$suffix.js", array(), '1.0' );
 	did_action( 'init' ) && $scripts->localize( 'zxcvbn-async', '_zxcvbnSettings', array(
-		'src' => empty( $guessed_url ) ? includes_url( '/js/zxcvbn.min.js' ) : $scripts->base_url . '/reslib/js/zxcvbn.min.js',
+		'src' => empty( $guessed_url ) ? res_url( '/js/zxcvbn.min.js' ) : $scripts->base_url . '/reslib/js/zxcvbn.min.js',
 	) );
 
 	$scripts->add( 'password-strength-meter', "/admin/js/password-strength-meter$suffix.js", array( 'jquery', 'zxcvbn-async' ), false, 1 );

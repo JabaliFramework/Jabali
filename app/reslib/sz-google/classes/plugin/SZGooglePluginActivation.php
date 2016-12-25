@@ -56,7 +56,7 @@ if (!class_exists('SZGooglePluginActivation'))
 			// options that need to be stored in the database of jabali
 
 			$values = array();
-			$fields = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/{$nameset}.php");
+			$fields = include(ABSPATH . 'reslib/sz-google'."/options/{$nameset}.php");
 
 			// Check if I have received an array from the file options
 			// otherwise ignore the request of control options

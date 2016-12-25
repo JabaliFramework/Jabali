@@ -25,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 				<div class="order-addresses<?php if( !wcdn_has_shipping_address( $order ) ) : ?> no-shipping-address<?php endif; ?>">
 					<div class="billing-address">
-						<h3><?php _e( 'Billing Address', 'banda-delivery-notes' ); ?></h3>
+						<h3><?php _e( 'Bill To:', 'banda-delivery-notes' ); ?></h3>
 						<address>
 							
 							<?php if( !$order->get_formatted_billing_address() ) _e( 'N/A', 'banda-delivery-notes' ); else echo apply_filters( 'wcdn_address_billing', $order->get_formatted_billing_address(), $order ); ?>
@@ -34,7 +34,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 					</div>
 					
 					<div class="shipping-address">						
-						<h3><?php _e( 'Shipping Address', 'banda-delivery-notes' ); ?></h3>
+						<h3><?php _e( 'Deliver To:', 'banda-delivery-notes' ); ?></h3>
 						<address>
 	
 							<?php if( !$order->get_formatted_shipping_address() ) _e( 'N/A', 'banda-delivery-notes' ); else echo apply_filters( 'wcdn_address_shipping', $order->get_formatted_shipping_address(), $order ); ?>

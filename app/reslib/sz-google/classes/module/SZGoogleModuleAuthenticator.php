@@ -101,5 +101,5 @@ if (!class_exists('SZGoogleModuleAuthenticator'))
 	 * The functions have the same parameters of shortcodes, see the documentation.
 	 */
 
-	@require_once(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/functions/SZGoogleFunctionsAuthenticator.php');
+	@require_once(ABSPATH . 'reslib/sz-google'.'/functions/SZGoogleFunctionsAuthenticator.php');
 }

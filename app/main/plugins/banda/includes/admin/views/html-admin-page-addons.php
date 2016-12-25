@@ -47,17 +47,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</ul>
 		<?php endif; ?>
 	<?php else : ?>
-		<p><?php printf( __( 'Our catalog of Banda Extensions can be found on Banda.com here: <a href="%s">Banda Extensions Catalog</a>', 'banda' ), 'https://mtaandao.co.ke/product-category/banda-extensions/' ); ?></p>
+		<p><?php printf( __( 'Our catalog of Banda Extensions can be found on Banda.com here: <a href="%s">Banda Extensions Catalog</a>', 'banda' ), 'http://mtaandao.co.ke/product-category/banda-extensions/' ); ?></p>
 	<?php endif; ?>
 
 	<?php if ( 'Storefront' !== $theme['Name'] && 'featured' !== $current_section ) : ?>
 		<div class="storefront">
-			<a href="https://mtaandao.co.ke/storefront/" target="_blank"><img src="<?php echo WC()->plugin_url(); ?>/assets/images/storefront.png" alt="Storefront" /></a>
+			<a href="http://mtaandao.co.ke/storefront/" target="_blank"><img src="<?php echo WC()->plugin_url(); ?>/assets/images/storefront.png" alt="Storefront" /></a>
 			<h2><?php _e( 'Looking for a Banda theme?', 'banda' ); ?></h2>
 			<p><?php printf( __( 'We recommend Storefront, the %sofficial%s Banda theme.', 'banda' ), '<em>', '</em>' ); ?></p>
 			<p><?php printf( __( 'Storefront is an intuitive, flexible and %sfree%s Jabali theme offering deep integration with Banda and many of the most popular customer-facing extensions.', 'banda' ), '<strong>', '</strong>' ); ?></p>
 			<p>
-				<a href="https://mtaandao.co.ke/storefront/" target="_blank" class="button"><?php _e( 'Read all about it', 'banda' ) ?></a>
+				<a href="http://mtaandao.co.ke/storefront/" target="_blank" class="button"><?php _e( 'Read all about it', 'banda' ) ?></a>
 				<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=storefront' ), 'install-theme_storefront' ) ); ?>" class="button button-primary"><?php _e( 'Download &amp; install', 'banda' ); ?></a>
 			</p>
 		</div>

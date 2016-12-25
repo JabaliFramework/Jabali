@@ -166,7 +166,7 @@ switch($step) {
 	<?php
 	/* translators: %s: Codex URL */
 	printf( __( 'Need more help? <a href="%s">We got it</a>.' ),
-		__( 'https://codex.jabali.github.io/Editing_db.php' )
+		__( 'https://jabali.github.io/Docs/Editing_db.php' )
 	);
 ?></p>
 <p><?php _e( 'In all likelihood, these items were supplied to you by your Web Host. If you don&#8217;t have this information, then you will need to contact them before you can continue. If you&#8217;re all ready&hellip;' ); ?></p>
@@ -210,7 +210,7 @@ switch($step) {
 		</tr>
 		<tr>
 			<th scope="row"><label for="prefix"><?php _e( 'Table Prefix' ); ?></label></th>
-			<td><input name="prefix" id="prefix" type="text" value="wp_" size="25" /></td>
+			<td><input name="prefix" id="prefix" type="text" value="my_" size="25" /></td>
 			<td><?php _e( 'If you want to run multiple Jabali installations in a single database, change this.' ); ?></td>
 		</tr>
 	</table>

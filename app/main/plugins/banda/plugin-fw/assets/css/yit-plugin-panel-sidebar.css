@@ -344,7 +344,7 @@ ul.yit-panel-sidebar-links-list li:before {
 /* === Responsive === */
 
 @media (min-width : 767px) {
-    #wpbody-content #yit-panel-sidebar {
+    #Djody-content #yit-panel-sidebar {
         margin-right : 15px;
     }
 }

@@ -1,20 +1,20 @@
 <?php
 /**
  * Plugin Name: Banda
- * Plugin URI: https://mtaandao.co.ke/plugins/banda
- * Description: An e-commerce toolkit that helps you sell anything. Beautifully.
+ * Plugin URI: http://mtaandao.co.ke/plugins/banda
+ * Description: Set up your online store in 1,2,3... and accept mobile payments.
  * Version: 16.12
- * Author: Jabali
- * Author URI: https://mtaandao.co.ke
- * Requires at least: 4.4
- * Tested up to: 4.6
+ * Author: Mtaandao
+ * Author URI: http://mtaandao.co.ke
+ * Requires at least: 16.10
+ * Tested up to: 17.01
  *
  * Text Domain: banda
  * Domain Path: /i18n/languages/
  *
  * @package Banda
  * @category Core
- * @author Jabali
+ * @author Mtaandao
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -180,7 +180,7 @@ final class Banda {
 		$this->define( 'WC_PLUGIN_FILE', __FILE__ );
 		$this->define( 'WC_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		$this->define( 'WC_VERSION', $this->version );
-		$this->define( 'WOOCOMMERCE_VERSION', $this->version );
+		$this->define( 'BANDA_VERSION', $this->version );
 		$this->define( 'WC_ROUNDING_PRECISION', 4 );
 		$this->define( 'WC_DISCOUNT_ROUNDING_MODE', 2 );
 		$this->define( 'WC_TAX_ROUNDING_MODE', 'yes' === get_option( 'banda_prices_include_tax', 'no' ) ? 2 : 1 );

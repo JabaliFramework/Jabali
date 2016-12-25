@@ -171,7 +171,7 @@ class WC_Admin_Help {
 				'id'        => 'banda_101_tab',
 				'title'     => __( 'Banda 101', 'banda' ),
 				'content'   =>
-					'<h2><a href="https://docs.mtaandao.co.ke/document/banda-101-video-series/?utm_source=helptab&utm_medium=product&utm_content=videos&utm_campaign=bandaplugin">' . __( 'Banda 101', 'banda' ) . '</a> &ndash; ' . esc_html( $video_map[ $video_key ]['title'] ) . '</h2>' .
+					'<h2><a href="https://mtaandao.co.ke/docs/banda/document/banda-101-video-series/?utm_source=helptab&utm_medium=product&utm_content=videos&utm_campaign=bandaplugin">' . __( 'Banda 101', 'banda' ) . '</a> &ndash; ' . esc_html( $video_map[ $video_key ]['title'] ) . '</h2>' .
 					'<iframe data-src="' . esc_url( $video_map[ $video_key ]['url'] ) . '" src="" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="480" height="298"></iframe>'
 			) );
 		}
@@ -183,18 +183,18 @@ class WC_Admin_Help {
 				'<h2>' . __( 'Help &amp; Support', 'banda' ) . '</h2>' .
 				'<p>' . sprintf(
 					__( 'Should you need help understanding, using, or extending Banda, %splease read our documentation%s. You will find all kinds of resources including snippets, tutorials and much more.' , 'banda' ),
-					'<a href="https://docs.mtaandao.co.ke/documentation/plugins/banda/?utm_source=helptab&utm_medium=product&utm_content=docs&utm_campaign=bandaplugin">',
+					'<a href="https://mtaandao.co.ke/docs/banda/documentation/plugins/banda/?utm_source=helptab&utm_medium=product&utm_content=docs&utm_campaign=bandaplugin">',
 					'</a>'
 				) . '</p>' .
 				'<p>' . sprintf(
 					__( 'For further assistance with Banda core you can use the %1$scommunity forum%2$s. If you need help with premium extensions sold by Banda, please %3$suse our helpdesk%4$s.', 'banda' ),
 					'<a href="https://jabali.github.io/support/plugin/banda">',
 					'</a>',
-					'<a href="https://mtaandao.co.ke/my-account/tickets/?utm_source=helptab&utm_medium=product&utm_content=tickets&utm_campaign=bandaplugin">',
+					'<a href="http://mtaandao.co.ke/my-account/tickets/?utm_source=helptab&utm_medium=product&utm_content=tickets&utm_campaign=bandaplugin">',
 					'</a>'
 				) . '</p>' .
 				'<p>' . __( 'Before asking for help we recommend checking the system status page to identify any problems with your configuration.', 'banda' ) . '</p>' .
-				'<p><a href="' . admin_url( 'admin.php?page=wc-status' ) . '" class="button button-primary">' . __( 'System Status', 'banda' ) . '</a> <a href="' . 'https://jabali.github.io/support/plugin/banda' . '" class="button">' . __( 'Community Forum', 'banda' ) . '</a> <a href="' . 'https://mtaandao.co.ke/my-account/tickets/?utm_source=helptab&utm_medium=product&utm_content=tickets&utm_campaign=bandaplugin' . '" class="button">' . __( 'Jabali Helpdesk', 'banda' ) . '</a></p>'
+				'<p><a href="' . admin_url( 'admin.php?page=wc-status' ) . '" class="button button-primary">' . __( 'System Status', 'banda' ) . '</a> <a href="' . 'https://jabali.github.io/support/plugin/banda' . '" class="button">' . __( 'Community Forum', 'banda' ) . '</a> <a href="' . 'http://mtaandao.co.ke/my-account/tickets/?utm_source=helptab&utm_medium=product&utm_content=tickets&utm_campaign=bandaplugin' . '" class="button">' . __( 'Jabali Helpdesk', 'banda' ) . '</a></p>'
 		) );
 
 		$screen->add_help_tab( array(
@@ -213,7 +213,7 @@ class WC_Admin_Help {
 			'content'   =>
 				'<h2>' . __( 'Education', 'banda' ) . '</h2>' .
 				'<p>' . __( 'If you would like to learn about using Banda from an expert, consider following a Banda course ran by one of our educational partners.', 'banda' ) . '</p>' .
-				'<p><a href="' . 'https://mtaandao.co.ke/educational-partners/?utm_source=helptab&utm_medium=product&utm_content=edupartners&utm_campaign=bandaplugin' . '" class="button button-primary">' . __( 'View Education Partners', 'banda' ) . '</a></p>'
+				'<p><a href="' . 'http://mtaandao.co.ke/educational-partners/?utm_source=helptab&utm_medium=product&utm_content=edupartners&utm_campaign=bandaplugin' . '" class="button button-primary">' . __( 'View Education Partners', 'banda' ) . '</a></p>'
 		) );
 
 		$screen->add_help_tab( array(
@@ -228,11 +228,11 @@ class WC_Admin_Help {
 
 		$screen->set_help_sidebar(
 			'<p><strong>' . __( 'For more information:', 'banda' ) . '</strong></p>' .
-			'<p><a href="' . 'https://mtaandao.co.ke/?utm_source=helptab&utm_medium=product&utm_content=about&utm_campaign=bandaplugin' . '" target="_blank">' . __( 'About Banda', 'banda' ) . '</a></p>' .
+			'<p><a href="' . 'http://mtaandao.co.ke/?utm_source=helptab&utm_medium=product&utm_content=about&utm_campaign=bandaplugin' . '" target="_blank">' . __( 'About Banda', 'banda' ) . '</a></p>' .
 			'<p><a href="' . 'https://jabali.github.io/extend/plugins/banda/' . '" target="_blank">' . __( 'Jabali.org Project', 'banda' ) . '</a></p>' .
 			'<p><a href="' . 'https://github.com/mtaandao/banda' . '" target="_blank">' . __( 'Github Project', 'banda' ) . '</a></p>' .
-			'<p><a href="' . 'https://mtaandao.co.ke/product-category/themes/banda/?utm_source=helptab&utm_medium=product&utm_content=wcthemes&utm_campaign=bandaplugin' . '" target="_blank">' . __( 'Official Themes', 'banda' ) . '</a></p>' .
-			'<p><a href="' . 'https://mtaandao.co.ke/product-category/banda-extensions/?utm_source=helptab&utm_medium=product&utm_content=wcextensions&utm_campaign=bandaplugin' . '" target="_blank">' . __( 'Official Extensions', 'banda' ) . '</a></p>'
+			'<p><a href="' . 'http://mtaandao.co.ke/product-category/themes/banda/?utm_source=helptab&utm_medium=product&utm_content=wcthemes&utm_campaign=bandaplugin' . '" target="_blank">' . __( 'Official Themes', 'banda' ) . '</a></p>' .
+			'<p><a href="' . 'http://mtaandao.co.ke/product-category/banda-extensions/?utm_source=helptab&utm_medium=product&utm_content=wcextensions&utm_campaign=bandaplugin' . '" target="_blank">' . __( 'Official Extensions', 'banda' ) . '</a></p>'
 		);
 	}
 

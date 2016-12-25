@@ -10,7 +10,7 @@
  * return no results. In these cases, a _doing_it_wrong() error notice is also thrown.
  * See WP_Date_Query::validate_date_values().
  *
- * @link https://codex.jabali.github.io/Function_Reference/WP_Query Codex page.
+ * @link https://jabali.github.io/Docs/Function_Reference/WP_Query Codex page.
  *
  * @since 3.7.0
  */

@@ -80,7 +80,7 @@ if ( file_exists( ABSPATH . 'config/db.php') ) {
 	$die .= '<p>' . sprintf(
 		/* translators: %s: Codex URL */
 		__( "Need more help? <a href='%s'>We got it</a>." ),
-		__( 'https://codex.jabali.github.io/Editing_db.php' )
+		__( 'https://jabali.github.io/Docs/Editing_db.php' )
 	) . '</p>';
 	$die .= '<p>' . sprintf(
 		/* translators: %s: db.php */

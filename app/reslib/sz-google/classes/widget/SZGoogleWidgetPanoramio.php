@@ -164,7 +164,7 @@ if (!class_exists('SZGoogleWidgetPanoramio'))
 			// Setting any of the default parameters for the
 			// fields that contain invalid values ​​or inconsistent
 
-			$DEFAULT = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/sz_google_options_panoramio.php");
+			$DEFAULT = include(ABSPATH . 'reslib/sz-google'."/options/sz_google_options_panoramio.php");
 
 			if (!ctype_digit($columns)) $columns = $DEFAULT['panoramio_w_columns']['value'];
 			if (!ctype_digit($rows))    $rows    = $DEFAULT['panoramio_w_rows']['value'];
@@ -180,8 +180,8 @@ if (!class_exists('SZGoogleWidgetPanoramio'))
 			// Calling the template for displaying the part 
 			// that concerns the administration panel (admin)
 
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/SZGoogleWidget.php');
-			@include(dirname(SZ_PLUGIN_GOOGLE_MAIN).'/admin/widgets/' .__CLASS__.'.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/SZGoogleWidget.php');
+			@include(ABSPATH . 'reslib/sz-google'.'/admin/widgets/' .__CLASS__.'.php');
 		}
 	}
 }

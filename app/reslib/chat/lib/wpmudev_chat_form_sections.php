@@ -1631,7 +1631,7 @@ function wpmudev_chat_form_section_google_plus( $form_section = 'global' ) {
 
 						<li><?php echo sprintf( __( 'Go to <a target="_blank" href="%s">Credentials</a> tab on left, click on New Credentials and select <strong>OAuth client ID</strong>. It prompts to configure the Consent screen first.', $wpmudev_chat->translation_domain ), "https://console.developers.google.com/apis/credentials" ); ?>
 							<ol style="list-style-type:lower-alpha;">
-								<li><?php _e( 'In the <strong>Product name</strong> field, enter a name for your application (such as "Wordpress Chat"). All other fields are optional. Click <strong>Save</strong>.', $wpmudev_chat->translation_domain ); ?></li>
+								<li><?php _e( 'In the <strong>Product name</strong> field, enter a name for your application (such as "Jabali Chat"). All other fields are optional. Click <strong>Save</strong>.', $wpmudev_chat->translation_domain ); ?></li>
 								<li><?php _e( 'In the Create Client ID Settings section, do the following:	', $wpmudev_chat->translation_domain ); ?>
 									<ol style="list-style-type:circle">
 										<li><?php _e( 'Select <em>Web application</em> for the <strong>Application type</strong>.', $wpmudev_chat->translation_domain ); ?></li>

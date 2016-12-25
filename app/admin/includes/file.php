@@ -948,7 +948,7 @@ function WP_Filesystem( $args = false, $context = false, $allow_relaxed_file_own
  * The return value can be overridden by defining the `FS_METHOD` constant in `db.php`,
  * or filtering via {@see 'filesystem_method'}.
  *
- * @link https://codex.jabali.github.io/Editing_db.php#Jabali_Upgrade_Constants
+ * @link https://jabali.github.io/Docs/Editing_db.php#Jabali_Upgrade_Constants
  *
  * Plugins may define a custom transport handler, See WP_Filesystem().
  *

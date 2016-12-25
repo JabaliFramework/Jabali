@@ -117,7 +117,7 @@ get_current_screen()->add_help_tab( array(
 ) );
 
 $revisions_sidebar  = '<p><strong>' . __( 'For more information:' ) . '</strong></p>';
-$revisions_sidebar .= '<p>' . __( '<a href="https://codex.jabali.github.io/Revision_Management">Revisions Management</a>' ) . '</p>';
+$revisions_sidebar .= '<p>' . __( '<a href="https://jabali.github.io/Docs/Revision_Management">Revisions Management</a>' ) . '</p>';
 $revisions_sidebar .= '<p>' . __( '<a href="https://jabali.github.io/support/">Support Forums</a>' ) . '</p>';
 
 get_current_screen()->set_help_sidebar( $revisions_sidebar );

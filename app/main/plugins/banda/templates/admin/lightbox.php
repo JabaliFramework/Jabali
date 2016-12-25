@@ -4,7 +4,7 @@
  *
  * Page for adding new field to contact module.
  *
- * @package    Wordpress
+ * @package    Jabali
  * @subpackage Kassyopea
  * @since      1.1
  */

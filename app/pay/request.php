@@ -54,9 +54,18 @@ if(curl_errno($ch))
 {
     echo 'Error no : '.curl_errno($ch).' Curl error: ' . curl_error($ch);
 }
-
-print_r ("To complete this transaction, enter your Bonga PIN on your handset. if you don't have one dial *126*5# for instructions");
+//$chosen = 'To complete this transaction, enter your Bonga PIN on your handset. if you don\'t have one dial *126*5# for instructions'
+//// print_r ("To complete this transaction, enter your Bonga PIN on your handset. if you don't have one dial *126*5# for instructions");
 //now process the checkout;
+
+// echo '<div id="official-plugin" class="postbox">';
+//             echo '<div class="handlediv" title="'.ucfirst(__('click to toggle','sz-google')).'"><br></div>';
+//             echo '<h3 class="hndle"><span><strong>'.ucwords(__('official page','sz-google')).'</strong></span></h3>';
+//             echo '<div class="inside">';
+//             echo '<a target="_blank" href="https://plus.google.com/+wpitalyplus"><img src="'/reslib/sz-google'.'frontend/files/images/wpitalyplus.png'.'" alt="Jabali Italy+" style="width:100%;height:auto;vertical-align:bottom;"></a>';
+//             echo '</div>';
+//             echo '</div>';
+
 include ('process.php');
 processcheckout($MERCHANT_TRANSACTION_ID, $ENDPOINT,$PASSWORD,$TIMESTAMP);
 }

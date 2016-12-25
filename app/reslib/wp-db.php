@@ -43,7 +43,7 @@ define( 'ARRAY_N', 'ARRAY_N' );
  * file to your class. The wpdb class will still be included,
  * so you can extend it or simply use your own.
  *
- * @link https://codex.jabali.github.io/Function_Reference/wpdb_Class
+ * @link https://jabali.github.io/Docs/Function_Reference/wpdb_Class
  *
  * @package Jabali
  * @subpackage Database

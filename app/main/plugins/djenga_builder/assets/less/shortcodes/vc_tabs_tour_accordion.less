@@ -1,0 +1,200 @@
+// Make sure links dont have outline
+.dj_content_element .dj_tabs_nav li,
+.dj_accordion_section .dj_accordion_header,
+.dj_tour_next_prev_nav {
+  a:focus {
+    outline: none;
+  }
+}
+
+/** Tabs/Tour Common **/
+.dj_content_element {
+  .dj_tour_tabs_wrapper,
+  .dj_tabs_nav {
+    padding: 0;
+  }
+
+  .dj_tabs_nav {
+    margin: 0;
+    padding-left: 0 !important;
+    text-indent: inherit !important;
+    #content & {
+      //#content for twenty ten theme
+      margin: 0;
+    }
+    li {
+      background-color: @vc_tab_bg;
+      white-space: nowrap;
+      padding: 0;
+      .no_bullet_fix();
+
+      &.ui-tabs-active,
+      &:hover {
+        background-color: @vc_tab_bg_active;
+      }
+      &.ui-tabs-active a {
+        cursor: default;
+      }
+    }
+  }
+
+  .dj_tour_tabs_wrapper {
+    .dj_ui-tabs-hide {
+      display: none;
+    }
+  }
+}
+
+/** Tabs/Tour/Accordion Common **/
+.dj_content_element {
+  .dj_tour_tabs_wrapper .dj_tabs_nav a,
+  .dj_accordion_header a {
+    border-bottom: none;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em 1em;
+  }
+  .dj_accordion_wrapper .dj_accordion_header,
+  &.dj_tabs .dj_tour_tabs_wrapper .dj_tab {
+    background-color: @vc_tab_bg_active;
+  }
+
+  .dj_tour_tabs_wrapper .dj_tab,
+  .dj_accordion_wrapper .dj_accordion_content {
+    padding: 1em;
+
+    > .dj_content_element:last-child,
+    .dj_row:last-child > div > div.dj_wrapper .dj_content_element:last-child {
+      margin-bottom: 0; // remove bottom margin for last content element in the last row
+    }
+  }
+}
+
+/** Tabs **/
+.dj_tabs {
+  .dj_tabs_nav {
+    li {
+      float: left;
+      margin: 0 1px 0 0;
+    }
+  }
+}
+
+/** Tour **/
+.dj_tour {
+  .dj_tabs_nav {
+    float: left;
+    width: @tour_nav_width;
+    li {
+      margin: 0 0 1px 0;
+      clear: left;
+      width: 100%;
+    }
+    a {
+      width: 100%;
+    }
+  }
+  .dj_tour_tabs_wrapper .dj_tab {
+    .box-sizing(border-box);
+    border: none;
+    float: left;
+    width: @tour_slides_width;
+    padding: 0 0 0 @vc_margin_bottom_gold;
+  }
+}
+
+.dj_tour_next_prev_nav {
+  margin-left: @tour_nav_width;
+  padding-left: @vc_margin_bottom_gold;
+  font-size: @vc_smaller_font;
+
+  a {
+    border-bottom: 1px dotted;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: none;
+    }
+  }
+
+  span {
+    width: 48%;
+    display: inline-block;
+    padding-top: 1em; //10px;
+    float: left;
+
+    &.dj_next_slide {
+      text-align: right;
+      float: right;
+    }
+  }
+}
+
+/** Accordion **/
+.dj_accordion {
+  .dj_accordion_wrapper {
+    .dj_accordion_header {
+      margin: 0 0 1px 0;
+      padding-top: 0;
+      position: relative;
+
+      text-transform: none;
+      font-weight: inherit;
+      font-size: inherit;
+      font-family: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+
+      a {
+        padding-left: 1em;
+      }
+    }
+
+    .ui-state-default,
+    .ui-state-active {
+      .ui-icon {
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-image: url(../images/toggle_open.png);
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0.7em;
+        top: 0.7em;
+      }
+    }
+    .ui-state-active .ui-icon {
+      background-image: url(../images/toggle_close.png);
+    }
+  }
+}
+
+/* tabs_tour_accordion responsive rules */
+@media (max-width: @vc_responsive_max_w) {
+  .vc_responsive {
+    .dj_tour .dj_tour_tabs_wrapper .dj_tabs_nav,
+    .dj_tour .dj_tab,
+    .dj_tour_next_prev_nav {
+      width: 100%;
+      float: none;
+      margin-left: 0;
+    }
+    .dj_tour_next_prev_nav {
+      width: auto;
+      padding: 0 1em;
+    }
+
+    #content .dj_tour .dj_tour_tabs_wrapper .dj_tabs_nav {
+      margin-bottom: 1em;
+    }
+
+    //Tabs + Tour
+    .dj_tour {
+      .dj_tab {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+    }
+  }
+}

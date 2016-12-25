@@ -21,7 +21,7 @@ function wpcf7_admin_menu() {
 	add_menu_page( __( 'Contact Form 7', 'contact-form-7' ),
 		__( 'Contact', 'contact-form-7' ),
 		'wpcf7_read_contact_forms', 'wpcf7',
-		'wpcf7_admin_management_page', 'dashicons-email',
+		'wpcf7_admin_management_page', 'dashicons-email-alt',
 		$_wp_last_object_menu );
 
 	$edit = add_submenu_page( 'wpcf7',

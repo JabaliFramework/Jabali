@@ -10,8 +10,8 @@
  * This functionality was found in a plugin before the Jabali 2.2 release, which
  * included it in the core from that point on.
  *
- * @link https://codex.jabali.github.io/Plugins/Jabali_Widgets Jabali Widgets
- * @link https://codex.jabali.github.io/Plugins/Jabali_Widgets_Api Widgets API
+ * @link https://jabali.github.io/Docs/Plugins/Jabali_Widgets Jabali Widgets
+ * @link https://jabali.github.io/Docs/Plugins/Jabali_Widgets_Api Widgets API
  *
  * @package Jabali
  * @subpackage Widgets

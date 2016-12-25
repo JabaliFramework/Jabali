@@ -2,7 +2,7 @@
 /**
  * Custom header implementation
  *
- * @link https://codex.jabali.github.io/Custom_Headers
+ * @link https://jabali.github.io/Docs/Custom_Headers
  *
  * @package Jabali
  * @subpackage Twenty_Seventeen

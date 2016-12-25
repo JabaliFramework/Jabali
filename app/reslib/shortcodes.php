@@ -23,7 +23,7 @@
  *
  *     $out = do_shortcode( $content );
  *
- * @link https://codex.jabali.github.io/Shortcode_API
+ * @link https://jabali.github.io/Docs/Shortcode_API
  *
  * @package Jabali
  * @subpackage Shortcodes

@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) or exit;
 if ( ! class_exists( 'SV_WP_Async_Request' ) ) :
 
 /**
- * SkyVerge Wordpress Async Request class
+ * SkyVerge Jabali Async Request class
  *
  * Based on the incredible work by deliciousbrains - most of the code is from
  * here: https://github.com/A5hleyRich/wp-background-processing

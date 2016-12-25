@@ -107,7 +107,7 @@ function display_setup_form( $error = null ) {
 
 	if ( ! is_null( $error ) ) {
 ?>
-<h1><?php _ex( 'Welcome', 'Howdy' ); ?></h1>
+<h1><?php _ex( 'Welcome', 'Hi' ); ?></h1>
 <p class="message"><?php echo $error; ?></p>
 <?php } ?>
 <form id="setup" method="post" action="install.php?step=2" novalidate="novalidate">
@@ -234,13 +234,13 @@ $mysql_compat   = version_compare( $mysql_version, $required_mysql_version, '>='
 
 if ( !$mysql_compat && !$php_compat ) {
 	/* translators: 1: Jabali version number, 2: Minimum required PHP version number, 3: Minimum required MySQL version number, 4: Current PHP version number, 5: Current MySQL version number */
-	$compat = sprintf( __( 'You cannot install because <a href="https://codex.jabali.github.io/Version_%1$s">Jabali %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.' ), $wp_version, $required_php_version, $required_mysql_version, $php_version, $mysql_version );
+	$compat = sprintf( __( 'You cannot install because <a href="https://jabali.github.io/Docs/Version_%1$s">Jabali %1$s</a> requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s.' ), $wp_version, $required_php_version, $required_mysql_version, $php_version, $mysql_version );
 } elseif ( !$php_compat ) {
 	/* translators: 1: Jabali version number, 2: Minimum required PHP version number, 3: Current PHP version number */
-	$compat = sprintf( __( 'You cannot install because <a href="https://codex.jabali.github.io/Version_%1$s">Jabali %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.' ), $wp_version, $required_php_version, $php_version );
+	$compat = sprintf( __( 'You cannot install because <a href="https://jabali.github.io/Docs/Version_%1$s">Jabali %1$s</a> requires PHP version %2$s or higher. You are running version %3$s.' ), $wp_version, $required_php_version, $php_version );
 } elseif ( !$mysql_compat ) {
 	/* translators: 1: Jabali version number, 2: Minimum required MySQL version number, 3: Current MySQL version number */
-	$compat = sprintf( __( 'You cannot install because <a href="https://codex.jabali.github.io/Version_%1$s">Jabali %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.' ), $wp_version, $required_mysql_version, $mysql_version );
+	$compat = sprintf( __( 'You cannot install because <a href="https://jabali.github.io/Docs/Version_%1$s">Jabali %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.' ), $wp_version, $required_mysql_version, $mysql_version );
 }
 
 if ( !$mysql_compat || !$php_compat ) {
@@ -313,7 +313,7 @@ switch($step) {
 		display_header();
 ?>
 <h1><?php _ex( 'Welcome', 'Howdy' ); ?></h1>
-<p><?php _e( 'Welcome to the famous five-minute Jabali installation process! Just fill in the information below and you&#8217;ll be on your way to using the most extendable and powerful personal publishing platform in the world.' ); ?></p>
+<p><?php _e( 'Thank you for choosing the rock-solid Jabali Framework for your work. Installation is as easy as 1,2,31' ); ?></p>
 
 <h2><?php _e( 'Information needed' ); ?></h2>
 <p><?php _e( 'Please provide the following information. Don&#8217;t worry, you can always change these settings later.' ); ?></p>

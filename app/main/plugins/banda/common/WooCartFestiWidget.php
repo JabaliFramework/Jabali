@@ -7,7 +7,7 @@ class WooCartFestiWidget extends WP_Widget
 
     function __construct() 
     {    
-        $this->_plugin = &$GLOBALS['wooCommerceFestiCart'];
+        $this->_plugin = &$GLOBALS['BANDAFestiCart'];
         
         $this->_languageDomain = $this->_plugin->getLanguageDomain();
         

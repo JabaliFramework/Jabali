@@ -227,7 +227,7 @@ if ( ! class_exists( 'Banda_PDF_Invoices_Export' ) ) {
 			// 
 			// wp_upload_dir() will:
 			// * default to MAIN_DIR/uploads
-			// * UNLESS the ‘UPLOADS’ constant is defined in wp-config (http://codex.jabali.github.io/Editing_wp-config.php#Moving_uploads_folder)
+			// * UNLESS the ‘UPLOADS’ constant is defined in wp-config (http://jabali.github.io/Docs/Editing_wp-config.php#Moving_uploads_folder)
 			// 
 			// May also be overridden by the wpo_wcpdf_tmp_path filter
 
@@ -922,7 +922,7 @@ if ( ! class_exists( 'Banda_PDF_Invoices_Export' ) ) {
 					}
 					
 					// Set item meta
-					if ( version_compare( WOOCOMMERCE_VERSION, '2.4', '<' ) ) {
+					if ( version_compare( BANDA_VERSION, '2.4', '<' ) ) {
 						$meta = new WC_Order_Item_Meta( $item['item_meta'], $product );
 					} else {
 						// pass complete item for WC2.4+
@@ -965,7 +965,7 @@ if ( ! class_exists( 'Banda_PDF_Invoices_Export' ) ) {
 		 * wrapper for wc2.1 depricated price function
 		 */
 		public function wc_price( $price, $args = array() ) {
-			if ( version_compare( WOOCOMMERCE_VERSION, '2.1' ) >= 0 ) {
+			if ( version_compare( BANDA_VERSION, '2.1' ) >= 0 ) {
 				// WC 2.1 or newer is used
 				$args['currency'] = $this->order->get_order_currency();
 				$formatted_price = wc_price( $price, $args );
@@ -1001,7 +1001,7 @@ if ( ! class_exists( 'Banda_PDF_Invoices_Export' ) ) {
 				return '-'; // no need to determine tax rate...
 			}
 
-			if ( version_compare( WOOCOMMERCE_VERSION, '2.1' ) >= 0 && !apply_filters( 'wpo_wcpdf_calculate_tax_rate', false ) ) {
+			if ( version_compare( BANDA_VERSION, '2.1' ) >= 0 && !apply_filters( 'wpo_wcpdf_calculate_tax_rate', false ) ) {
 				// WC 2.1 or newer is used
 
 				// if (empty($tax_class))

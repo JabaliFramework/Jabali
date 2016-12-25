@@ -268,7 +268,7 @@ class WC_Admin_Notices {
 	}
 
 	/**
-	 * No shipping methods.
+	 * No delivery methods.
 	 */
 	public static function no_shipping_methods_notice() {
 		if ( wc_shipping_enabled() && ( empty( $_GET['page'] ) || empty( $_GET['tab'] ) || 'wc-settings' !== $_GET['page'] || 'shipping' !== $_GET['tab'] ) ) {

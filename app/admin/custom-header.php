@@ -124,7 +124,7 @@ class Custom_Image_Header {
 
 		get_current_screen()->set_help_sidebar(
 			'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-			'<p>' . __( '<a href="https://codex.jabali.github.io/Appearance_Header_Screen">Documentation on Custom Header</a>' ) . '</p>' .
+			'<p>' . __( '<a href="https://jabali.github.io/Docs/Appearance_Header_Screen">Documentation on Custom Header</a>' ) . '</p>' .
 			'<p>' . __( '<a href="https://jabali.github.io/support/">Support Forums</a>' ) . '</p>'
 		);
 	}

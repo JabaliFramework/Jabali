@@ -356,8 +356,8 @@ class WC_Checkout {
 				throw new Exception( __( 'We were unable to process your order, please try again.', 'banda' ) );
 			}
 
-			if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) ) {
-				define( 'WOOCOMMERCE_CHECKOUT', true );
+			if ( ! defined( 'BANDA_CHECKOUT' ) ) {
+				define( 'BANDA_CHECKOUT', true );
 			}
 
 			// Prevent timeout
@@ -514,7 +514,7 @@ class WC_Checkout {
 				}
 			}
 
-			// Update customer location to posted location so we can correctly check available shipping methods
+			// Update customer location to posted location so we can correctly check available delivery methods
 			if ( isset( $this->posted['billing_country'] ) ) {
 				WC()->customer->set_country( $this->posted['billing_country'] );
 			}
@@ -528,7 +528,7 @@ class WC_Checkout {
 			// Shipping Information
 			if ( ! $skipped_shipping ) {
 
-				// Update customer location to posted location so we can correctly check available shipping methods
+				// Update customer location to posted location so we can correctly check available delivery methods
 				if ( isset( $this->posted['shipping_country'] ) ) {
 					WC()->customer->set_shipping_country( $this->posted['shipping_country'] );
 				}
@@ -541,7 +541,7 @@ class WC_Checkout {
 
 			} else {
 
-				// Update customer location to posted location so we can correctly check available shipping methods
+				// Update customer location to posted location so we can correctly check available delivery methods
 				if ( isset( $this->posted['billing_country'] ) ) {
 					WC()->customer->set_shipping_country( $this->posted['billing_country'] );
 				}
@@ -571,7 +571,7 @@ class WC_Checkout {
 					wc_add_notice( sprintf( __( 'Unfortunately <strong>we do not ship %s</strong>. Please enter an alternative shipping address.', 'banda' ), WC()->countries->shipping_to_prefix() . ' ' . WC()->customer->get_shipping_country() ), 'error' );
 				}
 
-				// Validate Shipping Methods
+				// Validate delivery methods
 				$packages               = WC()->shipping->get_packages();
 				$this->shipping_methods = (array) WC()->session->get( 'chosen_shipping_methods' );
 

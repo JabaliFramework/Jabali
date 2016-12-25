@@ -16,7 +16,7 @@
 - MENU BACKGROUND IMAGE
 - WIDGETS
 - MISC
-- WORDPRESS TOOLBAR
+- JABALI TOOLBAR
 *************************************************************/
 
 
@@ -737,7 +737,7 @@ li.menu-item-has-children > a .materialize-menu-item-description { display:none;
 .materialize-absolute { position:absolute; }
 
 
-/* WORDPRESS TOOLBAR (IF WORDPRESS TOOLBAR ACTIVE, PUSH HEADER ELEMENTS DOWN A BIT)
+/* JABALI TOOLBAR (IF JABALI TOOLBAR ACTIVE, PUSH HEADER ELEMENTS DOWN A BIT)
 **************************************************/
 .wp-toolbar-active { margin-top:32px; }
 /* for the thicker, mobile admin bar */

@@ -129,7 +129,7 @@ if (!class_exists('SZGoogleModule'))
 		function getOptionsSet($nameset)
 		{
 			$optionsDB   = get_option($nameset);
-			$optionsList = include(dirname(SZ_PLUGIN_GOOGLE_MAIN)."/options/{$nameset}.php");
+			$optionsList = include(ABSPATH . 'reslib/sz-google'."/options/{$nameset}.php");
 
 			// if options do not exist control these with
 			// the function isset() and create an array

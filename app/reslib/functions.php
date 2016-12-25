@@ -4085,7 +4085,7 @@ function _doing_it_wrong( $function, $message, $version ) {
 			}
 			/* translators: %s: Codex URL */
 			$message .= ' ' . sprintf( __( 'Please see <a href="%s">Debugging in Jabali</a> for more information.' ),
-				__( 'https://codex.jabali.github.io/Debugging_in_Jabali' )
+				__( 'https://jabali.github.io/Docs/Debugging_in_Jabali' )
 			);
 			/* translators: Developer debugging message. 1: PHP function name, 2: Explanatory message, 3: Version information message */
 			trigger_error( sprintf( __( '%1$s was called <strong>incorrectly</strong>. %2$s %3$s' ), $function, $message, $version ) );
@@ -4096,7 +4096,7 @@ function _doing_it_wrong( $function, $message, $version ) {
 				$version = sprintf( '(This message was added in version %s.)', $version );
 			}
 			$message .= sprintf( ' Please see <a href="%s">Debugging in Jabali</a> for more information.',
-				'https://codex.jabali.github.io/Debugging_in_Jabali'
+				'https://jabali.github.io/Docs/Debugging_in_Jabali'
 			);
 			trigger_error( sprintf( '%1$s was called <strong>incorrectly</strong>. %2$s %3$s', $function, $message, $version ) );
 		}
@@ -4722,7 +4722,7 @@ function wp_scheduled_delete() {
  * If the file data is not within that first 8kiB, then the author should correct
  * their plugin file and move the data headers to the top.
  *
- * @link https://codex.jabali.github.io/File_Header
+ * @link https://jabali.github.io/Docs/File_Header
  *
  * @since 2.9.0
  *

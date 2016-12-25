@@ -2,10 +2,10 @@
 /**
  * Single variation display
  *
- * This is a javascript-based template for single variations (see https://codex.jabali.github.io/Javascript_Reference/wp.template).
+ * This is a javascript-based template for single variations (see https://jabali.github.io/Docs/Javascript_Reference/wp.template).
  * The values will be dynamically replaced after selecting attributes.
  *
- * @see 	https://docs.mtaandao.co.ke/document/template-structure/
+ * @see 	https://mtaandao.co.ke/docs/banda/document/template-structure/
  * @author  Jabali
  * @package Banda/Templates
  * @version 2.5.0

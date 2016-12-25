@@ -554,12 +554,12 @@ class WC_Countries {
 				'class'        => array( 'form-row-last' ),
 				'clear'        => true,
 				'autocomplete' => 'family-name',
-			),
-			'company' => array(
-				'label'        => __( 'Company Name', 'banda' ),
-				'class'        => array( 'form-row-wide' ),
-				'autocomplete' => 'organization',
-			),
+			   ),
+			// 'company' => array(
+			// 	'label'        => __( 'Company Name', 'banda' ),
+			// 	'class'        => array( 'form-row-wide' ),
+			// 	'autocomplete' => 'organization',
+			// ),
 			'country' => array(
 				'type'         => 'country',
 				'label'        => __( 'Country', 'banda' ),
@@ -575,7 +575,7 @@ class WC_Countries {
 				'autocomplete' => 'address-line1',
 			),
 			'address_2' => array(
-				'placeholder'  => _x( 'Apartment, suite, unit etc. (optional)', 'placeholder', 'banda' ),
+				'placeholder'  => _x( 'Apartment, neighbourhood, estate. (optional)', 'placeholder', 'banda' ),
 				'class'        => array( 'form-row-wide', 'address-field' ),
 				'required'     => false,
 				'autocomplete' => 'address-line2',
@@ -596,7 +596,7 @@ class WC_Countries {
 			),
 			'postcode' => array(
 				'label'        => __( 'Postcode / ZIP', 'banda' ),
-				'required'     => true,
+				'required'     => false,
 				'class'        => array( 'form-row-last', 'address-field' ),
 				'clear'        => true,
 				'validate'     => array( 'postcode' ),
@@ -817,6 +817,11 @@ class WC_Countries {
 						'label' => __( 'Prefecture', 'banda' )
 					)
 				),
+				'KE' => array(
+					'state' => array(
+						'label' => __( 'County', 'banda' )
+					)
+				),
 				'KR' => array(
 					'state' => array(
 						'required' => false
@@ -1020,6 +1025,7 @@ class WC_Countries {
 				);
 				$address_fields['billing_phone'] = array(
 					'label'        => __( 'Phone', 'banda' ),
+					'placeholder'  => _x( '2547XXXXXXXX', 'placeholder', 'banda' ),
 					'required'     => true,
 					'type'         => 'tel',
 					'class'        => array( 'form-row-last' ),

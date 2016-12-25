@@ -65,7 +65,7 @@ class SettingsWooCartFacade
         $settings = $this->_getFields();
 
         // TODO: Move to WP Facade
-        $menus = $this->_getListWordpressMenu();
+        $menus = $this->_getListJabaliMenu();
         if ($menus) {
             foreach ($menus as $menu) {
                 $settings['menuList']['values'][$menu->slug] = $menu->name;
@@ -123,10 +123,10 @@ class SettingsWooCartFacade
         return $pages;
     } // end _getPublishedPages
 
-    private function _getListWordpressMenu()
+    private function _getListJabaliMenu()
     {
         return get_terms('nav_menu', array('hide_empty' => false));
-    } //end _getListWordpressMenu
+    } //end _getListJabaliMenu
 
     private function _isSelectedCustomIcon($value)
     {

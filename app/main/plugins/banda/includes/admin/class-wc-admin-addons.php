@@ -124,16 +124,16 @@ class WC_Admin_Addons {
 
 		if ( 'storefront' === $template ) {
 			if ( 'storefront' === $stylesheet ) {
-				$url         = 'https://mtaandao.co.ke/product-category/themes/storefront-child-theme-themes/';
+				$url         = 'http://mtaandao.co.ke/product-category/themes/storefront-child-theme-themes/';
 				$text        = __( 'Need a fresh look? Try Storefront child themes', 'banda' );
 				$utm_content = 'nostorefrontchildtheme';
 			} else {
-				$url         = 'https://mtaandao.co.ke/product-category/themes/storefront-child-theme-themes/';
+				$url         = 'http://mtaandao.co.ke/product-category/themes/storefront-child-theme-themes/';
 				$text        = __( 'View more Storefront child themes', 'banda' );
 				$utm_content = 'hasstorefrontchildtheme';
 			}
 		} else {
-			$url         = 'https://mtaandao.co.ke/storefront/';
+			$url         = 'http://mtaandao.co.ke/storefront/';
 			$text        = __( 'Need a theme? Try Storefront', 'banda' );
 			$utm_content = 'nostorefront';
 		}
