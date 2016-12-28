@@ -47,7 +47,7 @@
 	}
 	
 	// prepare and bind
-	$stmt = $conn->prepare("INSERT INTO payments (Phonenumber,Amount,Trx_Id,Description,Mpesa_trx_date,Mpesa_trx_id,Trx_status,Return_code,Merchant_trx_id,Enc_params) VALUES (?,?,?,?,?,?,?,?,?,?)");
+	$stmt = $conn->prepare("INSERT INTO my_payments (Phonenumber,Amount,Trx_Id,Description,Mpesa_trx_date,Mpesa_trx_id,Trx_status,Return_code,Merchant_trx_id,Enc_params) VALUES (?,?,?,?,?,?,?,?,?,?)");
 	
 	$stmt->bind_param("ssssssssss",$PhoneNumber,$Amount,$Trx_Id,$Description,$M_pesa_trx_date,$M_pesa_trx_Id,$Trx_status,$Return_code,$Merchant_trx_Id,$ENC_Params);
 	

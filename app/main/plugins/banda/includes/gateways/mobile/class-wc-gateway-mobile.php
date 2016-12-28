@@ -41,6 +41,7 @@ class WC_Gateway_Mobile extends WC_Payment_Gateway {
 		$this->mpesa_name         = $this->get_option( 'mpesa_name' );
 		$this->mpesa_paybill         = $this->get_option( 'mpesa_paybill' );
 		$this->mpesa_sag         = $this->get_option( 'mpesa_sag' );
+		$this->mpesa_stamp         = $this->get_option( 'mpesa_stamp' );
 
 		add_action( 'banda_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
 		add_action( 'banda_thankyou_mobile', array( $this, 'thankyou_page' ) );
@@ -117,14 +118,14 @@ class WC_Gateway_Mobile extends WC_Payment_Gateway {
 				'default'           => 'no'
 			),
 			'mpesa_name' => array(
-				'title'       => __( 'Merchant Name', 'banda' ),
+				'title'       => __( 'M-Pesa Merchant Name', 'banda' ),
 				'type'        => 'text',
 				'description' => __( 'Your business name as registered with Safaricom.', 'banda' ),
 				'default'     => __( 'Mtaandao Digital Solutions', 'banda' ),
 				'desc_tip'    => true,
 			),
 			'mpesa_paybill' => array(
-			'title'       => __( 'Paybill Number', 'banda' ),
+			'title'       => __( 'M-Pesa Paybill Number', 'banda' ),
 			'type'        => 'text',
 			'description' => __( 'Your Paybill number, supplied by Safaricom.', 'banda' ),
 			'default'     => __( '898998', 'banda' ),
@@ -133,8 +134,15 @@ class WC_Gateway_Mobile extends WC_Payment_Gateway {
 			'mpesa_sag' => array(
 			'title'       => __( 'M-Pesa SAG Passkey', 'banda' ),
 			'type'        => 'text',
-			'description' => __( 'Your Safaricom Access Gatewaypassword issued on creation of the merchant account.', 'banda' ),
+			'description' => __( 'Your Safaricom Access Gateway password issued on creation of the merchant account.', 'banda' ),
 			'default'     => __( 'ZmRmZDYwYzIzZDQxZDc5ODYwMTIzYjUxNzNkZDMwMDRjNGRkZTY2ZDQ3ZTI0YjVjODc4ZTExNTNjMDA1YTcwNw==', 'banda' ),
+			'desc_tip'    => true,
+			),
+			'mpesa_stamp' => array(
+			'title'       => __( 'M-Pesa Timestamp', 'banda' ),
+			'type'        => 'text',
+			'description' => __( 'Your Safaricom Timestamp issued on creation of the merchant account.', 'banda' ),
+			'default'     => __( '20160510161908', 'banda' ),
 			'desc_tip'    => true,
 			)
 	   );

@@ -6,7 +6,6 @@
     }
 
     require_once ABSPATH . 'load.php';
-    require_once ABSPATH . 'config/db.php';
 
 // Redirect to https login if forced to use SSL
 if ( force_ssl_admin() && ! is_ssl() ) {
@@ -155,7 +154,7 @@ function login_header( $title = 'Pay', $message = '', $wp_error = '' ) {
   do_action( 'login_header' );
   ?>
   <div id="login">
-    <center><a href="https://safaricom.co.ke/mpesa-oline/" target="_blank" alt="Lipa na M-Pesa Online"><img src="l.png" width="320px"></a></center>
+    <center><a href="https://safaricom.co.ke/mpesa-online/" target="_blank" alt="Lipa na M-Pesa Online"><img src="l.png" width="320px"></a></center>
   <?php
 
   unset( $login_header_url, $login_header_title );
@@ -833,7 +832,7 @@ default:
     <input type="text" name="number" id="user_pass"<?php echo $aria_describedby_error; ?> class="input" value="" size="20" placeholder="2547XXXXXXXX" /></label>
   </p>
     <p>
-    <label for="user_pass"><?php _e( 'Amount ' ); ?><strong>(KSh)</strong><input type="text" name="amount" id="user_pass"<?php echo $aria_describedby_error; ?> class="input" value="" size="20" placeholder="12345" /></label>
+    <label for="user_pass"><?php _e( 'Amount ' ); ?><strong>(KSh)</strong><input type="text" name="amount" id="user_pass"<?php echo $aria_describedby_error; ?> class="input" value="123" size="20" placeholder="12345" /></label>
   </p>
   <?php
   /**

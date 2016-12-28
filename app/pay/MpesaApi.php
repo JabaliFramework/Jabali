@@ -2,11 +2,11 @@
 
     /** Define ABSPATH as this file's directory */
     if ( ! defined( 'ABSPATH' ) ) {
-      define( 'ABSPATH', dirname(dirname( __FILE__ )) . '/' );
+      define( 'ABSPATH', dirname(dirname(dirname(( __FILE__ )))) . '/' );
     }
 
     require_once ABSPATH . 'load.php';
-    require_once('request.php');
+    include('constants.php');
 
                         
     class MpesaAPI  {
