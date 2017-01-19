@@ -1,5 +1,6 @@
 <?php 
-
+    if(isset($_GET['edit'])) {
+        
     $title = 'Edit Post';
     include ('admin-header.php');
     include 'config/db.php';
@@ -96,5 +97,7 @@
 
     $conn->close();
 }
+    } elseif (isset($_GET['delete'])) {
+    }
 
 include ('admin-footer.php'); ?> 
