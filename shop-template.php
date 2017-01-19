@@ -1,149 +1,7 @@
-
 <?php
-
 // Report All PHP Errors
-error_reporting(E_ALL);
-
-// Session start
-session_start();
-
-$filename = 'admin/config/db.php';
-if (!file_exists($filename)) {
-
-header("Location: /install.php"); /* Redirect browser */
-exit();
-}
-else
-{
-$currency = "KSh";
-$msg = "";
-$v = "1.6";
-
-include 'header.php';
-include 'navbar.php';
 ?>
-  <body>
-
-	<?php
-	// Add item to cart
-	if (empty($_POST['item']) || empty($_POST['price']) || empty($_POST['quantity'])) 
-	{ } else {
-
-		# Take values
-		$SBCSprice = $_POST['price'];
-		$SBCSitem = $_POST['item'];
-		$SBCSquantity = $_POST['quantity'];
-		$SBCSuniquid = rand();
-		
-		$SBCSexist = false;
-		$SBCScount = 0;
-		
-		// If SESSION Generated?
-		if($_SESSION['SBCScart']!="")
-		{
-			// Look for item
-			foreach($_SESSION['SBCScart'] as $SBCSproduct)
-			{
-				// Yes we found it
-				if($SBCSitem == $SBCSproduct['item']) {
-					$SBCSexist = true;
-					break;
-				}
-				$SBCScount++;
-			}
-		}
-		
-		// If we found same item
-		if($SBCSexist)
-		{
-		
-			// Update quantity
-			$_SESSION['SBCScart'][$SBCScount]['quantity'] += $SBCSquantity;
-			
-			// Write down the message and then we open in modal at the bottom
-			$msg = "
-			<script type=\"text/javascript\">
-				$(document).ready(function(){
-					$('#myDialogText').text('".$SBCSitem." quantity updated..');
-					$('#modal-cart').modal('show');
-				});
-			</script>			
-			";
-			
-		} else {
-		
-			// If we do not found, insert new
-			$SBCSmycartrow = array(
-				'item' => $SBCSitem,
-				'unitprice' => $SBCSprice,
-				'quantity' => $SBCSquantity,
-				'id' => $SBCSuniquid
-			);
-			
-			// If session not exist, create
-			if (!isset($_SESSION['SBCScart']))
-				$_SESSION['SBCScart'] = array();
-
-			// Add item to cart
-			$_SESSION['SBCScart'][] = $SBCSmycartrow;
-			
-			// Write down the message and then we open in modal at the bottom
-			$msg = "
-			<script type=\"text/javascript\">
-				$(document).ready(function(){
-					$('#myDialogText').text('".$SBCSitem." added to your cart');
-					$('#modal-cart').modal('show');
-				}); 
-			</script>			
-			";
-		
-		}
-	}
-
-	// Clear cart
-	if(isset($_GET["clear"])) 
-	{ 
-		session_unset();
-		session_destroy(); 
-		
-		// Write down the message and then we open in modal at the bottom
-		$msg = "
-		<script type=\"text/javascript\">
-			$(document).ready(function(){
-				$('#myDialogText').text('Your cart is empty now..');
-				$('#modal-cart').modal('show');
-			});
-		</script>			
-		";		
-	}
-
-	// Remove item from cart (Updating quantity to 0)
-	$remove = isset($_GET['remove']) ? $_GET['remove'] : '';
-	if($remove!="") 
-	{ 
-	  $_SESSION['SBCScart'][$_GET["remove"]]['quantity'] = 0;
-	}
-	?>
-
-    <div class="navbar navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php">PHP-SBCS</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-			<li class="active"><a href="/" target="blank">Who Am I</a></li>
-			<li class="active"><a href="https://github.com/ganbarli/PHP-SBCS" target="blank">GitHub Project Page</a></li>
-          </ul>
-        </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </div><!-- /.navbar -->
-
+    
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-8">
@@ -152,7 +10,12 @@ include 'navbar.php';
           </p>
 		  
           <div class="jumbotron">
-            <p>PHP Session Based Cart System is pretty simple and fast way for listing small amount of products. This script lists manually added products, you can add that products to your shopping cart, remove them, change quantity via sessions. This script doesn't include any payment method or payment page.</p>
+            <img class="mySlides" src="assets/images/bg.jpg" width="100%">
+            <img class="mySlides" src="assets/images/bg.jpg" width="100%">
+            <img class="mySlides" src="assets/images/bg.jpg" width="100%">
+            <img class="mySlides" src="assets/images/bg.jpg" width="100%">
+            <a class="pot-btn-floating pot-display-left" onclick="plusDivs(-1)">&#10094;</a>
+			<a class="pot-btn-floating pot-display-right" onclick="plusDivs(+1)">&#10095;</a>
           </div><!-- /.jumbotron -->
 		  
           <div class="col-sm-13">
@@ -161,7 +24,7 @@ include 'navbar.php';
 			  <div class="panel-heading"><span class="glyphicon glyphicon-shopping-cart"></span> Well done!</div>
 			  <div class="panel-body">
 				Payment options for <b><?php echo $_POST["payment"];?></b>, here you can code, or simply change the forms action to another script page.<br><br>
-				If you wish, you can write session variables into database (do not forget to clean the variables, for example you can use mysql_real_escape_string) or simply you can mail the form values. After  And then destroy & unset the session "SBCScart".
+				If you wish, you can write session variables into database (do not forget to clean the variables, for example you can use mysql_real_escape_string) or simply you can mail the form values. After  And then destroy & unset the session "POTcart".
 				<br><br>
 				<b>Order Details</b>
 				<br><br>
@@ -172,36 +35,36 @@ include 'navbar.php';
 			
 			<!-- Products Group -->
 			<div class="panel panel-default">
-			  <div class="panel-heading"><span class="glyphicon  glyphicon-cutlery"></span> Products Group</div>
+			  <div class="panel-heading"><span class="glyphicon  glyphicon-cutlery"></span> Featured Products</div>
 			  <ul class="list-group">
 				<!-- Product 1 -->
 				<li class="list-group-item">
 					<form action="?" method="post">
-						<input type="submit" name="ok" value="+" class="btn btn-success btn-xs"> 
+						<input type="submit" name="ok" value="Add To Cart" class="btn btn-success btn-xs"> 
 						<input class="form-control quantity" name="quantity" type="text" onkeypress="return isNumberKey(event)" maxlength="2" value="1"> Product 1 
-						<span class="pull-right">1.10 <?php echo $currency;?></span>
+						<span class="pull-right"><?php echo $currency;?>500</span>
 						<input type="hidden" name="item" value="Product 1" />
-						<input type="hidden" name="price" value="1.10" />
+						<input type="hidden" name="price" value="500" />
 					</form>
 				</li>
 				<!-- Product 2 -->
 				<li class="list-group-item">
 					<form action="?" method="post">
-						<input type="submit" name="ok" value="+" class="btn btn-success btn-xs"> 
+						<input type="submit" name="ok" value="Add To Cart" class="btn btn-success btn-xs"> 
 						<input class="form-control quantity" name="quantity" type="text" onkeypress="return isNumberKey(event)" maxlength="2" value="1"> Product 2 
-						<span class="pull-right">1.20 <?php echo $currency;?></span>
+						<span class="pull-right"><?php echo $currency;?>600</span>
 						<input type="hidden" name="item" value="Product 2" />
-						<input type="hidden" name="price" value="1.20" />
+						<input type="hidden" name="price" value="600" />
 					</form>
 				</li>
 				<!-- Product 3 -->
 				<li class="list-group-item">
 					<form action="?" method="post">
-						<input type="submit" name="ok" value="+" class="btn btn-success btn-xs"> 
+						<input type="submit" name="ok" value="Add To Cart" class="btn btn-success btn-xs"> 
 						<input class="form-control quantity" name="quantity" type="text" onkeypress="return isNumberKey(event)" maxlength="2" value="1"> Product 3 
-						<span class="pull-right">1.30 <?php echo $currency;?></span>
+						<span class="pull-right"><?php echo $currency;?>900</span>
 						<input type="hidden" name="item" value="Product 3" />
-						<input type="hidden" name="price" value="1.30" />
+						<input type="hidden" name="price" value="900" />
 					</form>
 				</li>
 			  </ul>
@@ -221,7 +84,7 @@ include 'navbar.php';
 						<form action="?" method="post">
 							<div class = "input-group">
 							<input class="form-control" name="quantity" type="text" onkeypress="return isNumberKey(event)" maxlength="2" value="1">
-							<span class = "input-group-btn"><input type="submit" class="btn btn-success" type="button" value="Add To Basket"></span>	
+							<span class = "input-group-btn"><input type="submit" class="btn btn-success" type="button" value="Buy Now"></span>	
 							</div>
 							<input type="hidden" name="item" value="Product 4" />
 							<input type="hidden" name="price" value="2.10" />
@@ -239,7 +102,7 @@ include 'navbar.php';
 						<form action="?" method="post">
 							<div class = "input-group">
 							<input class="form-control" name="quantity" type="text" onkeypress="return isNumberKey(event)" maxlength="2" value="1">
-							<span class = "input-group-btn"><input type="submit" class="btn btn-success" type="button" value="Add To Basket"></span>	
+							<span class = "input-group-btn"><input type="submit" class="btn btn-success" type="button" value="Buy Now"></span>	
 							</div>
 							<input type="hidden" name="item" value="Product 5" />
 							<input type="hidden" name="price" value="2.20" />
@@ -257,7 +120,7 @@ include 'navbar.php';
 						<form action="?" method="post">
 							<div class = "input-group">
 							<input class="form-control" name="quantity" type="text" onkeypress="return isNumberKey(event)" maxlength="2" value="1">
-							<span class = "input-group-btn"><input type="submit" class="btn btn-success" type="button" value="Add To Basket"></span>	
+							<span class = "input-group-btn"><input type="submit" class="btn btn-success" type="button" value="Buy Now"></span>	
 							</div>
 							<input type="hidden" name="item" value="Product 6" />
 							<input type="hidden" name="price" value="2.30" />
@@ -275,7 +138,7 @@ include 'navbar.php';
 						<form action="?" method="post">
 							<div class = "input-group">
 							<input class="form-control" name="quantity" type="text" onkeypress="return isNumberKey(event)" maxlength="2" value="1">
-							<span class = "input-group-btn"><input type="submit" class="btn btn-success" type="button" value="Add To Basket"></span>	
+							<span class = "input-group-btn"><input type="submit" class="btn btn-success" type="button" value="Add To Cart"></span>	
 							</div>
 							<input type="hidden" name="item" value="Product 7" />
 							<input type="hidden" name="price" value="2.40" />
@@ -292,7 +155,7 @@ include 'navbar.php';
           <div class="sidebar-nav">
 			<?php 
 			// If cart is empty
-			if (!isset($_SESSION['SBCScart']) || (count($_SESSION['SBCScart']) == 0)) { 
+			if (!isset($_SESSION['POTcart']) || (count($_SESSION['POTcart']) == 0)) { 
 			?>
 				<div class="panel panel-default">
 				  <div class="panel-heading">
@@ -333,7 +196,7 @@ include 'navbar.php';
 						$linenumber = 0;
 						
 						// Run loop for cart array 
-						foreach($_SESSION['SBCScart'] as $SBCSitem) 
+						foreach($_SESSION['POTcart'] as $SBCSitem) 
 						{
 							// Don't list items with 0 qty
 							if($SBCSitem['quantity']!=0) {
@@ -388,7 +251,7 @@ include 'navbar.php';
 					<h3 class="panel-title"><span class="glyphicon glyphicon-phone-alt"></span> Address</h3>
 				  </div>
 				  <div class="panel-body">
-					<form role="form" method="post" action="?pay">
+					<form role="form" method="post" action="request.php">
 					  <div class="form-group">
 						<label for="inputEmail1">Name</label>
 						<div>
@@ -417,6 +280,7 @@ include 'navbar.php';
 						<label for="optionsRadios1">Payment</label>
 						<div style="margin-top: 6px;">
 							<select class="form-control selectEleman" name="payment">
+							  <option value="MPESA-Paybill">Lipa Na MPESA</option>
 							  <option value="Credit Card">Credit Card</option>
 							  <option value="PayPal">PayPal</option>
 							</select>
@@ -424,7 +288,7 @@ include 'navbar.php';
 					  </div>
 					  <div class="form-group">
 						<div>
-						  <button type="submit" class="btn btn-success pull-right">Give Order</button>
+						  <button type="submit" class="btn btn-success pull-right">Place Order</button>
 						</div>
 					  </div>
 					<input type="hidden" name="total" value="<?php echo $total;?>">
@@ -438,33 +302,10 @@ include 'navbar.php';
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
-	  
-      <hr>
-
-      <footer>
-        <p><a href="https://github.com/ganbarli/PHP-SBCS" target="blank">PHP-SBCS</a> (<?php echo $v; ?>) is coded with <i class="glyphicon glyphicon-heart"></i> in İstanbul, <a href="http://www.turkeydiscoverthepotential.com/" target="blank">Türkiye</a></p>
-      </footer>
 
     </div><!--/.container-->
-		
-	<div id="modal-cart" class="modal fade" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-body">
-					<p class="text-center" id="myDialogText"></p>
-				</div>
-			</div>
-		</div>
-	</div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<?php
+?>
+
 	
-	<?php if($msg != "") { echo $msg; } 
-	}
-	?>
-	
-  </body>
-</html>

@@ -1,0 +1,78 @@
+#sticky-social {
+   left: 0;
+   position: fixed;
+   top: 150px;
+}
+* {
+box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+body {
+font-family: Arial;
+background:url('../images/bg.jpg') no-repeat center center fixed;
+padding: 50px;
+}
+
+/*.logo {
+  position: absolute;
+  vertical-align: center;
+  top: 350px;
+}*/
+
+/*.btn {
+  border: 2px solid transparent;
+  background: #006600;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}*/
+
+.btn:hover {
+  background-color: #21b68e;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #ffffff;
+  vertical-align: bottom;
+  position: absolute;
+  left: 20px;
+}
+
+.attribution {
+  font-size: 12px;
+  color: #ffffff;
+  vertical-align: bottom;
+  position: absolute;
+  right: 20px;
+}
+
+.attribution-link {
+  font-size: 12px;
+  color: #ffffff;
+  display: block;
+  margin-top: 12px;
+}
+
+.strokeme
+{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    
+}

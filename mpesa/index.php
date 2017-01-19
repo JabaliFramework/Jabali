@@ -1,27 +1,45 @@
-
 <?php
-
 // Report All PHP Errors
 error_reporting(E_ALL);
 
 // Session start
 session_start();
 
-$filename = 'admin/config/db.php';
-if (!file_exists($filename)) {
+// Currency symbol, you can change it
+$currency = "$";
 
-header("Location: /install.php"); /* Redirect browser */
-exit();
-}
-else
-{
-$currency = "KSh";
 $msg = "";
 $v = "1.6";
-
-include 'header.php';
-include 'navbar.php';
 ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PHP Session Based Cart System is pretty simple and fast way for listing small amount of products. This script doesn't include any payment method or payment page. This script lists manually added products, you can add that products to your shopping cart, remove them, change quantity via sessions.">
+    <meta name="author" content="anbarli.org">
+
+    <title>PHP-SBCS / Session Based Cart System</title>
+	
+    <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<script language="Javascript">
+	<!-- Allows only numeric chars -->
+	function isNumberKey(evt) 
+	{
+		var charCode=(evt.which)?evt.which:event.keyCode
+		if(charCode>31&&(charCode<48||charCode>57))
+		return false;return true;
+	}
+	</script>
+
+	<style>
+	.quantity { width: 20px; float: left; margin-right: 10px; height: 23px; font-size: 12px; padding: 5px; }
+	</style>
+
+  </head>
+
   <body>
 
 	<?php
@@ -462,9 +480,7 @@ include 'navbar.php';
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
-	<?php if($msg != "") { echo $msg; } 
-	}
-	?>
+	<?php if($msg != "") { echo $msg; } ?>
 	
   </body>
 </html>
