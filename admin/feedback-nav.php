@@ -10,13 +10,15 @@
     }
 
     $sql = "SELECT * FROM pot_comments WHERE read_unread='unread'";
-    $result = $conn->query($sql);;
+    $result = $conn->query($sql);
+    $count = $result->num_rows;
 
-    if ($result->num_rows > 0) {
+    if ( $count > 0) {
     while($row = $result->fetch_assoc()) {
+
 ?>
 
-	<div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="1">
+	<div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="<?php echo $count; ?>">
                 mail_outline
             </div>
 
@@ -24,7 +26,7 @@
             <ul class="mdl-menu mdl-list mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-shadow--2dp messages-dropdown"
                 for="inbox">
                 <li class="mdl-list__item">
-                    <?php echo "You have 1 Unread message!" ?>
+                    <?php echo 'You have '.$count.' Unread message!' ?>
                 </li>
                 <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
                     <span class="mdl-list__item-primary-content">

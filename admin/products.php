@@ -19,7 +19,7 @@
     if ($result->num_rows > 0) {
     echo '<center><h2>All Products     <a style="padding-left:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="post-new.php"><i class="material-icons">add</i><a/></h2></center>';
     echo '<div style="padding-left:10px; padding-right:10px; text-decoration-color: white;">';
-    echo '<table style="width:100%; text-decoration-color: #ffffff; border-spacing: 15px;" border="1"><tr>
+    echo '<table style="width:100%; text-decoration-color: #ffffff; border-spacing: 5px;" border="1"><tr>
     <th>ID</th>
     <th>Title</th>
     <th>Content</th>

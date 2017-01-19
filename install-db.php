@@ -34,9 +34,15 @@ if (!file_exists($filename)) {
 	fwrite($dbfile, $txt);
 	$txt = 'define("DB_SERVER", "'.$dbhost.'");';
 	fwrite($dbfile, $txt);
+	$txt = "\n";
+	fwrite($dbfile, $txt);
 	$txt = 'define("DB_NAME", "'.$dbname.'");';
 	fwrite($dbfile, $txt);
+	$txt = "\n";
+	fwrite($dbfile, $txt);
 	$txt = 'define("DB_USER", "'.$dbuser.'");';
+	fwrite($dbfile, $txt);
+	$txt = "\n";
 	fwrite($dbfile, $txt);
 	$txt = 'define("DB_PASS", "'.$dbpass.'");';
 	fwrite($dbfile, $txt);
@@ -45,7 +51,24 @@ if (!file_exists($filename)) {
 	}
 
 	/*
-	*Adding .htaccess
+	*Adding Root .htaccess
+	*We can ovewrite this file to ensure the installation is secure.
+	*/
+	$htaccess = fopen(".htaccess", "w") or die("Unable to create .htaccess file!");
+	$txt = "RewriteEngine On";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	fwrite($htaccess, $txt);
+	$txt = "RewriteCond %{REQUEST_FILENAME} !-f";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	fwrite($htaccess, $txt);
+	$txt = "RewriteRule ^([^\.]+)$ $1.php [NC,L]";
+	fwrite($htaccess, $txt);
+	fclose($htaccess);
+
+	/*
+	*Adding Config .htaccess
 	*We can ovewrite this file to ensure the installation is secure.
 	*/
 	$htaccess = fopen("admin/config/.htaccess", "w") or die("Unable to create .htaccess file!");
