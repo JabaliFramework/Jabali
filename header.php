@@ -6,10 +6,10 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PHP Session Based Cart System is pretty simple and fast way for listing small amount of products. This script doesn't include any payment method or payment page. This script lists manually added products, you can add that products to your shopping cart, remove them, change quantity via sessions.">
+    <meta name="description" content=".">
     <meta name="author" content="anbarli.org">
 
-    <title>Banda Store</title>
+    <title><?php echo "$title"; ?></title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -34,17 +34,23 @@
           type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/material.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/lib/getmdl-select.min.css">
     <link rel="stylesheet" href="assets/css/lib/nv.d3.css">
     <link rel="stylesheet" href="assets/css/application.css">
+    <link rel="stylesheet" href="blog-styles.css">
 
 	
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/pot.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
-	
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <script src="assets/js/jquery-3.1.1.min.js" ></script>
+    <script src="assets/js/jquery.dotdotdot.min.js" ></script>
     <script src="assets/js/ckeditor/ckeditor.js"></script>
     <script src="assets/js/sort-table.js"></script>
     <script language="Javascript">
@@ -56,9 +62,20 @@
 		return false;return true;
 	}
 	</script>
+    <script>
+    $(document).ready(function($) {
+
+    $('.card__share > a').on('click', function(e){ 
+        e.preventDefault() // prevent default action - hash doesn't appear in url
+        $(this).parent().find( 'div' ).toggleClass( 'card__social--active' );
+        $(this).toggleClass('share-expanded');
+    });
+
+    });
+    </script>
 
 	<style>
-	a:link    {color:white; text-decoration:none}
+	/*a:link    {color:white; text-decoration:none}*/
 	a:visited {color:red; background-color:transparent; text-decoration:none}
 	a:hover   {color:green; background-color:transparent; text-decoration:underline}
 	a:active  {color:yellow; background-color:transparent; text-decoration:underline}
@@ -81,9 +98,43 @@
         </style>
 
   </head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-<?php
-// Report All PHP Errors
-?>
-
-	
+      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="android-title mdl-layout-title">
+            <img class="android-logo-image" src="assets/images/android-logo.png">
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="android-header-spacer mdl-layout-spacer"></div>
+          <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field">
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="android-navigation-container">
+            <nav class="android-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="admin">Admin</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="blog-template">Posts</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Blog</a>
+            </nav>
+          </div>
+          <span class="android-mobile-title mdl-layout-title">
+            <img class="android-logo-image" src="assets/images/android-logo.png">
+          </span>
+          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li class="mdl-menu__item">5.0 Lollipop</li>
+            <li class="mdl-menu__item">4.4 KitKat</li>
+            <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
+            <li class="mdl-menu__item">Android History</li>
+          </ul>
+        </div>
+      </div>

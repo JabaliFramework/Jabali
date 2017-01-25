@@ -31,13 +31,25 @@
           type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- inject:css -->
+    <link rel="stylesheet" href="../assets/css/material.min.css">
     <link rel="stylesheet" href="../assets/css/material-icons.css">
     <link rel="stylesheet" href="../assets/css/material-table.css">
     <link rel="stylesheet" href="../assets/css/lib/getmdl-select.min.css">
     <link rel="stylesheet" href="../assets/css/lib/nv.d3.css">
     <link rel="stylesheet" href="../assets/css/application.css">
     <script src="../assets/js/ckeditor/ckeditor.js"></script>
+    <script src="../assets/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">$("#post_type").change(function () {
+    var selected_option = $('#post_type').val();
+    if (selected_option === 'product') {
+        $('#product_price').attr('pk','article').show();
+    }
+    if (selected_option != 'product') {
+        $("#product_price").removeAttr('pk').hide();
+    }
+})</script>
     <script src="../assets/js/sort-table.js"></script>
+    <script src="../assets/js/material.min.js"></script>
     <script src="../assets/js/material-table.js"></script>
 
     <!-- endinject -->
@@ -77,10 +89,10 @@
                     </span>
                 </li>
                 <li class="list__item--border-top"></li>
-                <a class="mdl-menu__item mdl-list__item" href="settings.php"><i class="material-icons mdl-list__item-icon">account_circle</i><span style="padding-left: 20px">
+                <a class="mdl-menu__item mdl-list__item" href="profile.php"><i class="material-icons mdl-list__item-icon">account_circle</i><span style="padding-left: 20px">
                             Edit account</span></a>
                 <li class="list__item--border-top"></li>
-                <a class="mdl-menu__item mdl-list__item" href="profile.php"><i class="material-icons mdl-list__item-icon">settings</i><span style="padding-left: 20px">
+                <a class="mdl-menu__item mdl-list__item" href="settings.php"><i class="material-icons mdl-list__item-icon">settings</i><span style="padding-left: 20px">
                             Settings</span></a>
 
                 <a class="mdl-menu__item mdl-list__item" href="logout.php"><i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i><span style="padding-left: 20px">

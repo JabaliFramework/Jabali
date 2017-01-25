@@ -1,8 +1,8 @@
 <?php 
 
-    $title = 'All Posts';
-    include ('header.php');  ?>
-        <main class="mdl-layout__content mdl-color--white-100" style="width:100%">
+    $title = 'Blog';
+    include ('header.php');
+    include ('navbar.php');  ?>
         <?php
          include 'admin/config/db.php';
     $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
@@ -16,19 +16,56 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-    echo '<center><h1>All Posts</h1></center>';
+    echo '<center><h1>Blog</h1></center>';
     while($row = $result->fetch_assoc()) {
-
-        echo '<div style="width:100%;padding-left:15px; display:block"><div style="display:block;">
-        <h2><b>'.$row["post_title"].'<b></h2>
-        <span><img src="content/uploads/'.$row["post_image"].'" alt="'.$row["post_title"].'" style="float:left;width:180px;margin:10px">'.$row["post_content"].'</span></div>
-        <p style="display:block;">
-        <b>Post Type: </b>'.$row["post_type"].'<br>
-        <b>Category: </b>'.$row["post_cat"].'<br>
-        <b> Tags: </b>'.$row["post_tag"].'</p>
-        <p>Published by <b>'.$row["post_author"].'</b> on '.$row["created_at"].'</p><hr></div>';
+        $post_id = $row["id"];
+        $post_title = $row["post_title"];
+        $image = $row["post_image"];
+        $content = $row["post_content"];
+        $tag = $row["post_tag"];
+        $cat = $row["post_cat"];
+        $author = $row["post_author"];
+        $date = $row["created_at"];
     ?>
-    </main>
+    <div class="wrapper" style="display:block;">
+            
+            <div class="card radius shadowDepth1">
+                <div class="card__image border-tlr-radius">
+                    <img src="content/uploads/<?php echo "$image"; ?>" alt="<?php echo "$post_title"; ?>" style="float:left;width:300px;margin:10px" class="border-tlr-radius">
+                </div>
+
+                <div class="card__content card__padding">
+                    <?php include 'share.php'; ?>
+
+                    <div class="card__meta">
+                        Posted in: <a href="#"><?php echo "$cat"; ?></a><br>
+                        Tagged: <a href="#"><?php echo "$tag"; ?></a>
+                    </div>
+
+                    <b><h1 style="line-height: 200%;"><a href="#"><?php echo "$post_title"; ?></a></h1><b>
+
+                    <article class="card__article dot-ellipsis dot-resize-update" >
+
+                        <?php echo substr($content, 0,500); ?>
+                        <form name="post_view_form" action="blog.php" method="GET">
+                        <input type="hidden" name="post_id" value="<?php echo "$post_id"; ?>">
+                        <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored alignright" type="submit" name="action" value="view" style="clear: both;">
+                        </form>
+                    </article>
+                </div>
+
+                <div class="card__action">
+                    
+                    <div class="card__author">
+                        <img src="http://lorempixel.com/40/40/sports/" alt="user">
+                        <div class="card__author-content">
+                            Published By: <a href="#"><?php echo "$author"; ?></a><time> on <?php echo "$date"; ?></time>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <?php
     } 
     } else {

@@ -11,7 +11,7 @@
 	<br><br>
 	<div class="login">
 	<div class="login-screen">
-	<form id="constants-form" class="pot-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" style="background: #66ad45;">
+	<form id="constants-form" class="pot-form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" style="background: #66ad45;">
 		<img src="assets/images/mpesa-white.png" width="300px">
 		<p>Merchant Name:<input class="mdl-textfield__input" type="text" name="merchname" id="firstName" placeholder="Mtaandao Digital" value="<?php echo "$merchname";?>" /></p>
         <p>Merchant ID:<input class="mdl-textfield__input" type="text" name="merchid" id="firstName" placeholder="898998" value="" /></p>
@@ -39,13 +39,23 @@
 	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	order_id INT(11) NOT NULL,
 	order_total INT(11) NOT NULL,
-	created_at TIMESTAMP NOT NULL,
+	order_date TIMESTAMP NOT NULL,
 	mpesa_phone VARCHAR(50) NOT NULL,
 	mpesa_receipt VARCHAR(50) NOT NULL,
 	mpesa_date VARCHAR(50) NOT NULL,
 	mpesa_amount VARCHAR(50) NOT NULL,
 	mpesa_bal VARCHAR(50) NOT NULL,
 	mpesa_customer VARCHAR(50) NOT NULL
+	);";
+
+	$sql .= "CREATE TABLE pot_orders (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	order_id INT(11) NOT NULL,
+	order_items VARCHAR(50) NOT NULL,
+    order_email VARCHAR(60) NOT NULL,
+    order_phone VARCHAR(5000) NOT NULL,
+	order_total VARCHAR(50),NOT NULL,
+	order_date TIMESTAMP NOT NULL
 	);";
 
 	$sql .= "UPDATE pot_options SET 
@@ -56,7 +66,9 @@
 	merch_callback = '".$_POST["merchcallback"]."'";
 
 	if ($conn->multi_query($sql) === TRUE) {
-	    echo "New records created successfully";
+	    echo "<script type = \"text/javascript\">
+					alert(\"M-PESA Records created successfully.\"))
+				</script>";
 	} else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}

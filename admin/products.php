@@ -23,7 +23,6 @@
     <th>ID</th>
     <th>Title</th>
     <th>Content</th>
-    <th>Thumbnail</th>
     <th>Category</th>
     <th>Tag</th>
     <th>Price</th>
@@ -36,20 +35,23 @@
         <td>'.$row["id"].'</td>
         <td>'.$row["post_title"].'</td>
         <td>'.$row["post_content"].'</td>
-        <td><img src="../content/uploads/'.$row["post_image"].'" alt="'.$row["post_title"].'" style="float:left;width:180px;margin:10px"></td>
         <td>'.$row["post_cat"].'</td>
         <td>'.$row["post_tag"].'</td>
         <td>'.$row["id"].'</td>
         <td>'.$row["post_author"].'</td>
         <td>'.$row["created_at"].'</td>
-        <td><center>    <form name="post_edit_form" action="post-edit.php" method="GET">
+        <td><center>    <form name="post_view_form" action="../blog.php" method="GET">
         <input type="hidden" name="post_id" value="'.$row["id"].'">
-        <input type="submit" name="edit" value="edit">
+        <input type="submit" name="action" value="view">
+    </form>
+    <br><form name="post_edit_form" action="post-edit.php" method="GET">
+        <input type="hidden" name="post_id" value="'.$row["id"].'">
+        <input type="submit" name="action" value="edit">
     </form>
     <br>
     <form name="post_delete_form" action="post-edit.php" method="GET">
         <input type="hidden" name="post_id" value="'.$row["id"].'">
-        <input type="submit" name="edit" value="delete">
+        <input type="submit" name="action" value="delete">
     </form></center></td></tr>';
     }
     echo "</table>";

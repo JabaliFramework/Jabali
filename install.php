@@ -1,13 +1,54 @@
 <?php
 
 $filename = 'admin/config/db.php';
-if (!file_exists($filename)) {
+if (file_exists($filename)) {
+
+	/*
+	*Adding Root .htaccess
+	*We can ovewrite this file to ensure the installation is secure.
+	*/
+	$htaccess = fopen(".htaccess", "w") or die("Unable to create .htaccess file!");
+	$txt = "RewriteEngine On";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	fwrite($htaccess, $txt);
+	$txt = "RewriteCond %{REQUEST_FILENAME} !-f";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	$txt = "RewriteCond %{REQUEST_FILENAME} !-d";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	fwrite($htaccess, $txt);
+	$txt = "RewriteRule ^([^\.]+)$ $1.php [NC,L]";
+	fwrite($htaccess, $txt);
+	fclose($htaccess);
 
 header("Location: install-admin.php"); /* Redirect browser */
 exit();
 }
 else
-{ ?>
+{ 
+
+	/*
+	*Adding Root .htaccess
+	*We can ovewrite this file to ensure the installation is secure.
+	*/
+	$htaccess = fopen(".htaccess", "w") or die("Unable to create .htaccess file!");
+	$txt = "RewriteEngine On";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	fwrite($htaccess, $txt);
+	$txt = "RewriteCond %{REQUEST_FILENAME} !-f";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	$txt = "RewriteCond %{REQUEST_FILENAME} !-d";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	fwrite($htaccess, $txt);
+	$txt = "RewriteRule ^([^\.]+)$ $1.php [NC,L]";
+	fwrite($htaccess, $txt);
+	fclose($htaccess);
+	?>
 	<!DOCTYPE html>
 	<html>
 	<head>

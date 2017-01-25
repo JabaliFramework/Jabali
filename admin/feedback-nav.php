@@ -13,12 +13,8 @@
     $result = $conn->query($sql);
     $count = $result->num_rows;
 
-    if ( $count > 0) {
-    while($row = $result->fetch_assoc()) {
-
-?>
-
-	<div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="<?php echo $count; ?>">
+    if ( $count > 0) { ?>
+    <div class="material-icons mdl-badge mdl-badge--overlap mdl-button--icon message" id="inbox" data-badge="<?php echo $count; ?>">
                 mail_outline
             </div>
 
@@ -28,30 +24,38 @@
                 <li class="mdl-list__item">
                     <?php echo 'You have '.$count.' Unread message!' ?>
                 </li>
+
+    <?php
+    while($row = $result->fetch_assoc()) {
+
+?>
+            <form id="comment" name="comment" action="comment.php" method="GET">
                 <li class="mdl-menu__item mdl-list__item mdl-list__item--two-line list__item--border-top">
                     <span class="mdl-list__item-primary-content">
-                        <span class="mdl-list__item-avatar background-color--primary">
-                            <text><?php echo $row["id"]; ?></text>
-                        </span>
-                        <span><?php echo $row["nicename"]; ?></span>
-                        <span class="mdl-list__item-sub-title"><?php echo $row["email"]; ?></span>
+                    <span><?php echo $row["nicename"]; ?></span>
+                    <span class="mdl-list__item-sub-title"><?php echo $row["email"]; ?></span>
                     </span>
                     <span class="mdl-list__item-secondary-content">
-                      <span class="label label--transparent"><?php echo $row["comment_date"]; ?></span>
+                    <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
+                    <input type="submit" class="" name="action" value="View">
                     </span>
                 </li>
-                <li class="mdl-list__item list__item--border-top">
-                    <a href="feedback.php"><button href="feedback.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</button></a>
-                </li>
-            </ul>
-
+            </form>
             <?php
 	}
 } else {
 
             	echo '<li class="mdl-list__item list__item--border-top">
-            	                    <a href="feedback.php"><button href="feedback.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">NO MESSAGES</button></a>
+            	                    <a href="feedback.php"><button href="feedback.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">NO NEW MESSAGES</button></a>
             	                </li>';
 }
+?>
+
+                <li class="mdl-list__item list__item--border-top">
+                    <a href="feedback.php"><button href="feedback.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">SHOW ALL MESSAGES</button></a>
+                </li>
+            </ul>
+
+<?php
     mysqli_close($conn);
     ?>

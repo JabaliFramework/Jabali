@@ -425,7 +425,7 @@
    Base styles: opinionated defaults
    ========================================================================== */
 html {
-  color: #ffffff; /*rgba(0,0,0, 0.87);*/
+  color: #cfcfcf; /*rgba(0,0,0, 0.87);*/
   font-size: 1em;
   line-height: 1.4; }
 
@@ -4206,7 +4206,7 @@ input.mdl-button[type="submit"] {
   width: auto;
   z-index: 1;
   position: relative;
-  background: #4e4e4e;
+  background: #cfcfcf;
   border-radius: 2px;
   box-sizing: border-box; }
 
@@ -4251,7 +4251,7 @@ input.mdl-button[type="submit"] {
   margin: 0; }
 
 .mdl-card__supporting-text {
-  color: rgba(255, 255, 255, 0.8);
+  color: #000000;
   font-size: 1rem;
   line-height: 18px;
   overflow: hidden;
@@ -10662,7 +10662,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
   background: #202020; }
 
 main {
-  background: url("../images/Dark_background_1920x1080.png") center top no-repeat;
+  background: #cfcfcf;*/
   background-size: cover;
   margin-right: -18px; }
 
@@ -11172,11 +11172,9 @@ a {
       position: relative; }
 
 .employer-form {
-  padding-left: 10%;
-  padding-right: 10%;
-  width: 100% auto;
-  background-color: #4e4e4e;
-  margin: 16px auto; }
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100% auto; }
   .employer-form .mdl-radio {
     width: 20%;
     margin-top: 22px;

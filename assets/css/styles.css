@@ -12,8 +12,8 @@ box-sizing: border-box;
 }
 body {
 font-family: Arial;
-background:url('../images/bg.jpg') no-repeat center center fixed;
-padding: 50px;
+/*background:url('../images/bg.jpg') no-repeat center center fixed;**/
+padding: 0px;
 }
 
 /*.logo {

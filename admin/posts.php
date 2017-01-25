@@ -16,44 +16,61 @@
     $sql = "SELECT * FROM pot_posts";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-    echo '<center><h2>All Posts     <a style="padding-left:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="post-new.php"><i class="material-icons">add</i><a/></h2></center>';
-    echo '<div class="table-responsive-vertical shadow-z-1" style="padding-left:10px; padding-right:10px; text-decoration-color: white;">';
-    echo '<table id="table" class="table table-hover table-mc-light-blue sortable" style="width:100%; text-decoration-color: #ffffff; border-spacing: 15px;" border="1"><tr>
+    if ($result->num_rows > 0) { ?>
+
+    <center><h2>All Posts     <a style="padding-left:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="post-new.php"><i class="material-icons">add</i><a/></h2></center>
+    <div class="table table-responsive-vertical shadow-z-1" style="padding-left:15px; padding-right:15px;">
+    <table id="table" class="mdl-data-table" cellspacing="0" width="100%"><tr>
     <th>ID</th>
     <th>Type</th>
     <th>Title</th>
     <th>Content</th>
-    <th>Thumbnail</th>
     <th>Category</th>
     <th>Tag</th>
     <th>Author</th>
     <th>Date</th>
-    <th>Actions</th></tr>';
+    <th>Actions</th></tr>'
+    <?php
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo '<tr>
-        <td>'.$row["id"].'</td>
-        <td>'.$row["post_type"].'</td>
-        <td>'.$row["post_title"].'</td>
-        <td>'.$row["post_content"].'</td>
-        <td><img src="../content/uploads/'.$row["post_image"].'" alt="'.$row["post_title"].'" style="float:left;width:180px;margin:10px"></td>
-        <td>'.$row["post_cat"].'</td>
-        <td>'.$row["post_tag"].'</td>
-        <td>'.$row["post_author"].'</td>
-        <td>'.$row["created_at"].'</td>
-        <td><center>    <form name="post_edit_form" action="post-edit.php" method="GET">
-        <input type="hidden" name="post_id" value="'.$row["id"].'">
-        <input type="submit" name="edit" value="edit">
+        $url = '../content/uploads/';
+        $post_id = $row["id"];
+        $post_type = $row["post_type"];
+        $post_title = $row["post_title"];
+        $image = $row["post_image"];
+        $post_content = $row["post_content"];
+        $tag = $row["post_tag"];
+        $cat = $row["post_cat"];
+        $author = $row["post_author"];
+        $date = $row["created_at"]; ?>
+        <tr>
+        <td><?php echo "$post_id"; ?></td>
+        <td><?php echo "$post_type"; ?></td>
+        <td><?php echo "$post_title"; ?></td>
+        <td><?php echo substr($post_content, 0,50); ?>...</td>
+        <td><?php echo "$cat"; ?></td>
+        <td><?php echo "$tag"; ?></td>
+        <td><?php echo "$author"; ?></td>
+        <td><?php echo "$date"; ?></td>
+        <td><center>    <form name="post_view_form" action="../blog.php" method="GET">
+        <input type="hidden" name="post_id" value="<?php echo "$post_id"; ?>">
+        <input type="submit" name="action" value="view">
+    </form>
+    <br><form name="post_edit_form" action="post-edit.php" method="GET">
+        <input type="hidden" name="post_id" value="<?php echo "$post_id"; ?>">
+        <input type="submit" name="action" value="edit">
     </form>
     <br>
     <form name="post_delete_form" action="post-edit.php" method="GET">
-        <input type="hidden" name="post_id" value="'.$row["id"].'">
-        <input type="submit" name="edit" value="delete">
-    </form></center></td></tr>';
-    }
-    echo "</table>";
-    echo "</div>";
+        <input type="hidden" name="post_id" value="<?php echo "$post_id"; ?>">
+        <input type="submit" name="action" value="delete">
+    </form></center></td></tr>
+    <?php
+    } ?>
+    </table>
+    </div>
+
+<?php
 } else {
     echo "<center><br><h2>No posts found!</h2></center>";
 }

@@ -1,4 +1,4 @@
-/* W3.CSS 2.84 Dec 2016 by Jan Egil and Borge Refsnes */
+/* W3.CSS 2.88 Jan 2017 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
@@ -27,7 +27,7 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 ::-webkit-input-placeholder{color:inherit;opacity:0.54}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 /* End extract */
-html,body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
 h1,h2,h3,h4,h5,h6,.pot-slim,.pot-wide{font-family:"Segoe UI",Arial,sans-serif}
 h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
 .pot-serif{font-family:"Times New Roman",Times,serif}
@@ -106,7 +106,7 @@ input[type=checkbox].pot-check:checked+.pot-validate,input[type=radio].pot-radio
 input[type=checkbox].pot-check:disabled+.pot-validate,input[type=radio].pot-radio:disabled+.pot-validate{color:#aaa}
 .pot-responsive{overflow-x:auto}
 .pot-container:after,.pot-panel:after,.pot-row:after,.pot-row-padding:after,.pot-topnav:after,.pot-clear:after,.pot-btn-group:before,.pot-btn-group:after,.pot-btn-bar:before,.pot-btn-bar:after
-{content:"";display:table;clear:both}
+{content:"";display:table;clear:none;}
 .pot-col,.pot-half,.pot-third,.pot-twothird,.pot-threequarter,.pot-quarter{float:left;width:100%}
 .pot-col.s1{width:8.33333%}
 .pot-col.s2{width:16.66666%}
@@ -148,16 +148,19 @@ input[type=checkbox].pot-check:disabled+.pot-validate,input[type=radio].pot-radi
 .pot-col.l12{width:99.99999%}}
 .pot-content{max-width:980px;margin:auto}
 .pot-rest{overflow:hidden}
+.pot-layout-container{display:table;width:100%}.pot-layout-row{display:table-row}.pot-layout-cell,.pot-layout-col{display:table-cell}
+.pot-layout-top{vertical-align:top}.pot-layout-middle{vertical-align:middle}.pot-layout-bottom{vertical-align:bottom}
 .pot-hide{display:none!important}.pot-show-block,.pot-show{display:block!important}.pot-show-inline-block{display:inline-block!important}
 @media (max-width:600px){.pot-modal-content{margin:0 10px;width:auto!important}.pot-modal{padding-top:30px}}
 @media (max-width:768px){.pot-modal-content{width:500px}.pot-modal{padding-top:50px}}
 @media (min-width:993px){.pot-modal-content{width:900px}}
-@media screen and (max-width:600px){.pot-topnav a{display:block}.pot-navbar li:not(.pot-opennav){float:none;width:100%!important}.pot-navbar li.pot-right{float:none!important}} 
-@media screen and (max-width:600px){.pot-topnav .pot-dropdown-hover .pot-dropdown-content,.pot-navbar .pot-dropdown-click .pot-dropdown-content,.pot-navbar .pot-dropdown-hover .pot-dropdown-content{position:relative}}  
+@media screen and (max-width:600px){.pot-topnav a{display:block}.pot-navbar li:not(.pot-opennav){float:none;width:100%!important}.pot-navbar li.pot-right{float:none!important}}	
+@media screen and (max-width:600px){.pot-topnav .pot-dropdown-hover .pot-dropdown-content,.pot-navbar .pot-dropdown-click .pot-dropdown-content,.pot-navbar .pot-dropdown-hover .pot-dropdown-content{position:relative}}	
 @media screen and (max-width:600px){.pot-topnav,.pot-navbar{text-align:center}}
 @media (max-width:600px){.pot-hide-small{display:none!important}}
 @media (max-width:992px) and (min-width:601px){.pot-hide-medium{display:none!important}}
 @media (min-width:993px){.pot-hide-large{display:none!important}}
+@media only screen and (max-width:600px){.pot-layout-col{display:block;width:100%!important}}
 @media screen and (max-width:992px){.pot-sidenav.pot-collapse{display:none}.pot-main{margin-left:0!important;margin-right:0!important}}
 @media screen and (min-width:993px){.pot-sidenav.pot-collapse{display:block!important}}
 .pot-top,.pot-bottom{position:fixed;width:100%;z-index:1}.pot-top{top:0}.pot-bottom{bottom:0}
@@ -322,7 +325,7 @@ input[type=checkbox].pot-check:disabled+.pot-validate,input[type=radio].pot-radi
 .pot-border-light-blue,.pot-hover-border-light-blue:hover{border-color:#87CEEB!important}
 .pot-border-brown,.pot-hover-border-brown:hover{border-color:#795548!important}
 .pot-border-cyan,.pot-hover-border-cyan:hover{border-color:#00bcd4!important}
-.pot-border-blue-grey,.pot-hover-blue-grey:hover,.pot-border-blue-gray,.pot-hover-blue-gray:hover{border-color:#607d8b!important}
+.pot-border-blue-grey,.pot-hover-border-blue-grey:hover,.pot-border-blue-gray,.pot-hover-border-blue-gray:hover{border-color:#607d8b!important}
 .pot-border-green,.pot-hover-border-green:hover{border-color:#4CAF50!important}
 .pot-border-light-green,.pot-hover-border-light-green:hover{border-color:#8bc34a!important}
 .pot-border-indigo,.pot-hover-border-indigo:hover{border-color:#3f51b5!important}
@@ -343,10 +346,4 @@ input[type=checkbox].pot-check:disabled+.pot-validate,input[type=radio].pot-radi
 .pot-border-light-grey,.pot-hover-border-light-grey:hover,.pot-border-light-gray,.pot-hover-border-light-gray:hover{border-color:#f1f1f1!important}
 .pot-border-dark-grey,.pot-hover-border-dark-grey:hover,.pot-border-dark-gray,.pot-hover-border-dark-gray:hover{border-color:#616161!important}
 .pot-border-pale-red,.pot-hover-border-pale-red:hover{border-color:#ffe7e7!important}.pot-border-pale-green,.pot-hover-border-pale-green:hover{border-color:#e7ffe7!important}
-.pot-border-pale-yellow,.pot-hover-border-pale-yellow:hover
-.constants-form {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
+.pot-border-pale-yellow,.pot-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.pot-border-pale-blue,.pot-hover-border-pale-blue:hover{border-color:#e7ffff!important}

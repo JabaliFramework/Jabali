@@ -1,0 +1,128 @@
+#profile {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 15px;
+      margin-bottom: 440px;
+      z-index: 900;
+      text-decoration: none;
+}
+      #new-post {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 15px;
+      margin-bottom: 380px;
+      z-index: 900;
+      text-decoration: none;
+}
+      #new-page {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 15px;
+      margin-bottom: 320px;
+      z-index: 900;
+}
+      #new-media {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 15px;
+      margin-bottom: 260px;
+      z-index: 900;
+}
+      #customize {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 15px;
+      margin-bottom: 200px;
+      z-index: 900;
+}
+      #login {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 15px;
+      margin-bottom: 70px;
+      z-index: 900;
+}
+      #register {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      z-index: 900;
+}
+      #hide {
+      position: fixed;
+      display: block;
+      left: 0;
+      bottom: 0;
+      margin-left: 70px;
+      margin-bottom: 15px;
+      z-index: 900;
+}
+      #show {
+      position: fixed;
+      display: block;
+      left: 0;
+      bottom: 0;
+      margin-left: 5px;
+      margin-bottom: 5px;
+      z-index: 900;
+}
+      #share-whatsapp {
+      position: fixed;
+      display: block;
+      left: 0;
+      bottom: 0;
+      margin-left: 10px;
+      margin-bottom: 65px;
+      z-index: 900;
+}
+      #share-email {
+      position: fixed;
+      display: block;
+      left: 0;
+      bottom: 0;
+      margin-left: 10px;
+      margin-bottom: 125px;
+      z-index: 900;
+}
+      #share-google {
+      position: fixed;
+      display: block;
+      left: 0;
+      bottom: 0;
+      margin-left: 10px;
+      margin-bottom: 185px;
+      z-index: 900;
+}
+      #share-twitter {
+      position: fixed;
+      display: block;
+      left: 0;
+      bottom: 0;
+      margin-left: 10px;
+      margin-bottom: 245px;
+      z-index: 900;
+}
+      #share-facebook {
+      position: fixed;
+      display: block;
+      left: 0;
+      bottom: 0;
+      margin-left: 10px;
+      margin-bottom: 305px;
+      z-index: 900;
+}

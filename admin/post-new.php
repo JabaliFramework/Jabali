@@ -8,14 +8,15 @@
                     <form id="admin-post-form" action="" method="POST" enctype="multipart/form-data">
                             <h3>Add New Post</h3>
                             <p>Post Title:<input class="mdl-textfield__input" type="text" name="post_title" id="post_title" placeholder="Add Title Here" value="<?php echo $post_title; ?>" /></p>
-                            <p>Post Type: <input type="text" name="post_type" value="<?php echo $post_type; ?>"" list="post_types" style="color: #000000">
+                            <p>Post Type: <input class="mdl-textfield__input" type="text" id="post_type" name="post_type" value="<?php echo $post_type; ?>"" list="post_types" style="color: #000000">
                             <datalist id="post_types">
-                            <option value="Article">Article</option>
-                            <option value="Page">Page</option>
-                            <option value="Media">Media</option>
-                            <option value="Product">Product</option></datalist></p>
-                            <p>Post Content:</p><textarea style="color: #000000" cols="140" rows="120" name="post_content" id="post_content" value="<?php echo $post_content; ?>"" ></textarea><script>CKEDITOR.replace( 'post_content' );</script>
-                            <p>Post Category: <input type="text" name="post_category" list="post_categories" style="color: #000000" value="<?php echo $post_categories; ?>"" >
+                            <option value="article">Article</option>
+                            <option value="page">Page</option>
+                            <option value="media">Media</option>
+                            <option value="product">Product</option></datalist></p>
+                            <p>Post Content:</p><textarea class="mdl-textfield__input" style="color: #000000" cols="140" rows="120" name="post_content" id="post_content" value="<?php echo $post_content; ?>"" ></textarea><script>CKEDITOR.replace( 'post_content' );</script>
+                            <p id="product_price" style="display:none">Product Price:<input class="mdl-textfield__input" type="text" name="product_price" placeholder="e.g 1000" value="" /></p>
+                            <p>Post Category: <input class="mdl-textfield__input" type="text" name="post_category" list="post_categories" style="color: #000000" value="<?php echo $post_categories; ?>"" >
                             <datalist id="post_categories">
                             <option value="Uncategorized">Article</option></datalist></p>
                             <p>Post Tags:<input class="mdl-textfield__input" type="text" name="post_tags" id="post_tags" placeholder="e.g Poetry" value="<?php echo $post_tags; ?>"" /></p>

@@ -36,7 +36,7 @@
                 <i class="material-icons" role="presentation">attach_money</i>
                 Payments
             </a>
-            <hr>
+            <div class="mdl-layout-spacer"></div>
             <a class="mdl-navigation__link-dropdown" href="settings.php">
                 <i class="material-icons" role="presentation"></i>
                 Settings
@@ -54,12 +54,6 @@
             <a class="mdl-navigation__link" href="feedback.php">
                 <i class="material-icons" role="presentation">email</i>
                 Feedback
-            </a>
-
-            <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link" href="profile.php">
-                <i class="material-icons" role="presentation">account_circle</i>
-                Account
             </a>
         </nav>
     </div>

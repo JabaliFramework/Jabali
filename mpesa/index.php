@@ -19,7 +19,7 @@ $v = "1.6";
     <meta name="description" content="PHP Session Based Cart System is pretty simple and fast way for listing small amount of products. This script doesn't include any payment method or payment page. This script lists manually added products, you can add that products to your shopping cart, remove them, change quantity via sessions.">
     <meta name="author" content="anbarli.org">
 
-    <title>PHP-SBCS / Session Based Cart System</title>
+    <title>BANDA / Session Based Cart System</title>
 	
     <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -48,41 +48,41 @@ $v = "1.6";
 	{ } else {
 
 		# Take values
-		$SBCSprice = $_POST['price'];
-		$SBCSitem = $_POST['item'];
-		$SBCSquantity = $_POST['quantity'];
-		$SBCSuniquid = rand();
+		$BANDAprice = $_POST['price'];
+		$BANDAitem = $_POST['item'];
+		$BANDAquantity = $_POST['quantity'];
+		$BANDAuniquid = rand();
 		
-		$SBCSexist = false;
-		$SBCScount = 0;
+		$BANDAexist = false;
+		$BANDAcount = 0;
 		
 		// If SESSION Generated?
-		if($_SESSION['SBCScart']!="")
+		if($_SESSION['BANDAcart']!="")
 		{
 			// Look for item
-			foreach($_SESSION['SBCScart'] as $SBCSproduct)
+			foreach($_SESSION['BANDAcart'] as $BANDAproduct)
 			{
 				// Yes we found it
-				if($SBCSitem == $SBCSproduct['item']) {
-					$SBCSexist = true;
+				if($BANDAitem == $BANDAproduct['item']) {
+					$BANDAexist = true;
 					break;
 				}
-				$SBCScount++;
+				$BANDAcount++;
 			}
 		}
 		
 		// If we found same item
-		if($SBCSexist)
+		if($BANDAexist)
 		{
 		
 			// Update quantity
-			$_SESSION['SBCScart'][$SBCScount]['quantity'] += $SBCSquantity;
+			$_SESSION['BANDAcart'][$BANDAcount]['quantity'] += $BANDAquantity;
 			
 			// Write down the message and then we open in modal at the bottom
 			$msg = "
 			<script type=\"text/javascript\">
 				$(document).ready(function(){
-					$('#myDialogText').text('".$SBCSitem." quantity updated..');
+					$('#myDialogText').text('".$BANDAitem." quantity updated..');
 					$('#modal-cart').modal('show');
 				});
 			</script>			
@@ -91,25 +91,25 @@ $v = "1.6";
 		} else {
 		
 			// If we do not found, insert new
-			$SBCSmycartrow = array(
-				'item' => $SBCSitem,
-				'unitprice' => $SBCSprice,
-				'quantity' => $SBCSquantity,
-				'id' => $SBCSuniquid
+			$BANDAmycartrow = array(
+				'item' => $BANDAitem,
+				'unitprice' => $BANDAprice,
+				'quantity' => $BANDAquantity,
+				'id' => $BANDAuniquid
 			);
 			
 			// If session not exist, create
-			if (!isset($_SESSION['SBCScart']))
-				$_SESSION['SBCScart'] = array();
+			if (!isset($_SESSION['BANDAcart']))
+				$_SESSION['BANDAcart'] = array();
 
 			// Add item to cart
-			$_SESSION['SBCScart'][] = $SBCSmycartrow;
+			$_SESSION['BANDAcart'][] = $BANDAmycartrow;
 			
 			// Write down the message and then we open in modal at the bottom
 			$msg = "
 			<script type=\"text/javascript\">
 				$(document).ready(function(){
-					$('#myDialogText').text('".$SBCSitem." added to your cart');
+					$('#myDialogText').text('".$BANDAitem." added to your cart');
 					$('#modal-cart').modal('show');
 				}); 
 			</script>			
@@ -139,7 +139,7 @@ $v = "1.6";
 	$remove = isset($_GET['remove']) ? $_GET['remove'] : '';
 	if($remove!="") 
 	{ 
-	  $_SESSION['SBCScart'][$_GET["remove"]]['quantity'] = 0;
+	  $_SESSION['BANDAcart'][$_GET["remove"]]['quantity'] = 0;
 	}
 	?>
 
@@ -151,12 +151,12 @@ $v = "1.6";
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">PHP-SBCS</a>
+          <a class="navbar-brand" href="index.php">BANDA</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
 			<li class="active"><a href="/" target="blank">Who Am I</a></li>
-			<li class="active"><a href="https://github.com/ganbarli/PHP-SBCS" target="blank">GitHub Project Page</a></li>
+			<li class="active"><a href="https://github.com/ganbarli/BANDA" target="blank">GitHub Project Page</a></li>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
@@ -179,7 +179,7 @@ $v = "1.6";
 			  <div class="panel-heading"><span class="glyphicon glyphicon-shopping-cart"></span> Well done!</div>
 			  <div class="panel-body">
 				Payment options for <b><?php echo $_POST["payment"];?></b>, here you can code, or simply change the forms action to another script page.<br><br>
-				If you wish, you can write session variables into database (do not forget to clean the variables, for example you can use mysql_real_escape_string) or simply you can mail the form values. After  And then destroy & unset the session "SBCScart".
+				If you wish, you can write session variables into database (do not forget to clean the variables, for example you can use mysql_real_escape_string) or simply you can mail the form values. After  And then destroy & unset the session "BANDAcart".
 				<br><br>
 				<b>Order Details</b>
 				<br><br>
@@ -310,7 +310,7 @@ $v = "1.6";
           <div class="sidebar-nav">
 			<?php 
 			// If cart is empty
-			if (!isset($_SESSION['SBCScart']) || (count($_SESSION['SBCScart']) == 0)) { 
+			if (!isset($_SESSION['BANDAcart']) || (count($_SESSION['BANDAcart']) == 0)) { 
 			?>
 				<div class="panel panel-default">
 				  <div class="panel-heading">
@@ -351,14 +351,14 @@ $v = "1.6";
 						$linenumber = 0;
 						
 						// Run loop for cart array 
-						foreach($_SESSION['SBCScart'] as $SBCSitem) 
+						foreach($_SESSION['BANDAcart'] as $BANDAitem) 
 						{
 							// Don't list items with 0 qty
-							if($SBCSitem['quantity']!=0) {
+							if($BANDAitem['quantity']!=0) {
 								
 							// For calculating total values with decimals
-							$pricedecimal = str_replace(",",".",$SBCSitem['unitprice']); 
-							$qtydecimal = str_replace(",",".",$SBCSitem['quantity']); 
+							$pricedecimal = str_replace(",",".",$BANDAitem['unitprice']); 
+							$qtydecimal = str_replace(",",".",$BANDAitem['quantity']); 
 
 							$pricedecimal = (float)$pricedecimal; 
 							$qtydecimal = (float)$qtydecimal; 
@@ -366,15 +366,15 @@ $v = "1.6";
 							$totaldecimal = $pricedecimal*$qtydecimal;								
 								
 							// We store order detail in HTML
-							$OrderDetail .= "<tr><td>".$SBCSitem['item']."</td><td>".$SBCSitem['unitprice']." ".$currency."</td><td>".$SBCSitem['quantity']."</td><td>".$totaldecimal." ".$currency."</td></tr>";
+							$OrderDetail .= "<tr><td>".$BANDAitem['item']."</td><td>".$BANDAitem['unitprice']." ".$currency."</td><td>".$BANDAitem['quantity']."</td><td>".$totaldecimal." ".$currency."</td></tr>";
 							
 							// Write cart to screen
 							echo 
 							"
 							<tr class='tablerow'>
-								<td><a href=\"?remove=".$linenumber."\" class=\"btn btn-danger btn-xs\" onclick=\"return confirm('Are you sure?')\">X</a> ".$SBCSitem['item']."</td>
-								<td>".$SBCSitem['unitprice']." ".$currency."</td>
-								<td>".$SBCSitem['quantity']."</td>
+								<td><a href=\"?remove=".$linenumber."\" class=\"btn btn-danger btn-xs\" onclick=\"return confirm('Are you sure?')\">X</a> ".$BANDAitem['item']."</td>
+								<td>".$BANDAitem['unitprice']." ".$currency."</td>
+								<td>".$BANDAitem['quantity']."</td>
 								<td>".$totaldecimal." ".$currency."</td>
 							</tr>
 							";
@@ -460,7 +460,7 @@ $v = "1.6";
       <hr>
 
       <footer>
-        <p><a href="https://github.com/ganbarli/PHP-SBCS" target="blank">PHP-SBCS</a> (<?php echo $v; ?>) is coded with <i class="glyphicon glyphicon-heart"></i> in İstanbul, <a href="http://www.turkeydiscoverthepotential.com/" target="blank">Türkiye</a></p>
+        <p><a href="https://github.com/ganbarli/BANDA" target="blank">BANDA</a> (<?php echo $v; ?>) is coded with <i class="glyphicon glyphicon-heart"></i> in İstanbul, <a href="http://www.turkeydiscoverthepotential.com/" target="blank">Türkiye</a></p>
       </footer>
 
     </div><!--/.container-->

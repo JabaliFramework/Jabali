@@ -1,10 +1,74 @@
 <?php
 include 'admin/config/db.php';
-?>
+
+//Pass settings to database
+	$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+
+		// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	} 
+
+		// sql to create table
+	$sql = "CREATE TABLE pot_options (
+	setting VARCHAR(30) NOT NULL, PRIMARY KEY, 
+	dbhost VARCHAR(30) NOT NULL,
+	dbname VARCHAR(30) NOT NULL,
+	dbuser VARCHAR(50),
+	dbpass VARCHAR(50),
+	merch_name VARCHAR(50), 
+	merch_id VARCHAR(50),
+	sag_password VARCHAR(50),
+	merch_timestamp VARCHAR(50),
+	merch_callback VARCHAR(50)
+	);";
+
+	$sql .= "CREATE TABLE pot_users (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	username VARCHAR(30) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+	password VARCHAR(30) NOT NULL,
+	nicename VARCHAR(50) NOT NULL,
+	avatar VARCHAR(50),
+	reg_date TIMESTAMP NOT NULL
+	);";
+
+	$sql .= "CREATE pot_posts (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	post_type VARCHAR(50) NOT NULL,
+    post_title VARCHAR(60) NOT NULL,
+    post_content VARCHAR(5000) NOT NULL,
+	post_cat VARCHAR(50),
+	post_tag VARCHAR(50),
+	post_author VARCHAR(50) NOT NULL,
+	post_image VARCHAR(50) NOT NULL,
+	post_date TIMESTAMP NOT NULL
+	);";
+
+	$sql .= "CREATE TABLE pot_comments (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	email VARCHAR(30) NOT NULL,
+	nicename VARCHAR(50),
+	comment VARCHAR(50),
+	comment_date TIMESTAMP,
+	read_unread VARCHAR(10)
+	type VARCHAR(10)
+	)";
+
+	if ($conn->multi_query($sql) === TRUE) {
+	    echo "<script type = \"text/javascript\">
+					alert(\"Awesome! Admin Account Set Up Successfully.\"))
+				</script>";
+	} else {
+	    echo "<br><br>Error: " . $sql . "<br>" . $conn->error;
+	}
+
+	$conn->close();
+	?>
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title>Install</title>
+		<title>Adminstrator Settings</title>
 		<link rel="stylesheet" type="text/css" href="assets/css/pot.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/app.css">
 	</head>
@@ -23,6 +87,12 @@ include 'admin/config/db.php';
 		<input type="hidden" name="dbname" value="<?php echo DB_NAME;?>">
 		<input type="hidden" name="dbuser" value="<?php echo DB_USER;?>">
 		<input type="hidden" name="dbpass" value="<?php echo DB_PASS;?>">
+
+		<input type="hidden" name="site-settings" value="site-settings">
+		<input type="hidden" name="user-settings" value="user-settings">
+		<input type="hidden" name="mpesa-settings" value="mpesa-settings">
+
+
 		<input type="submit" class="pot-btn" name="submit" placeholder="" value="Submit">
 	</form>
 	</div>
@@ -33,12 +103,12 @@ include 'admin/config/db.php';
 
 		//Handle image uploads
 	$target_dir = "content/uploads/";
-	$target_file = $target_dir . basename($_FILES["theUpload"]["name"]);
+	$target_file = $target_dir . basename($_FILES["avatar"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 	// Check if image file is a actual image or fake image
 	if(isset($_POST["submit"])) {
-	    $check = getimagesize($_FILES["theUpload"]["tmp_name"]);
+	    $check = getimagesize($_FILES["avatar"]["tmp_name"]);
 	    if($check !== false) {
 	        echo "File is an image - " . $check["mime"] . ".";
 	        $uploadOk = 1;
@@ -53,7 +123,7 @@ include 'admin/config/db.php';
 	    $uploadOk = 0;
 	}
 	// Check file size
-	if ($_FILES["theUpload"]["size"] > 500000) {
+	if ($_FILES["avatar"]["size"] > 500000) {
 	    echo "Sorry, your file is too large.";
 	    $uploadOk = 0;
 	}
@@ -68,8 +138,8 @@ include 'admin/config/db.php';
 	    echo "Sorry, your file was not uploaded.";
 	// if everything is ok, try to upload file
 	} else {
-	    if (move_uploaded_file($_FILES["theUpload"]["tmp_name"], $target_file)) {
-	        echo "The file ". basename( $_FILES["theUpload"]["name"]). " has been uploaded.";
+	    if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
+	        echo "The file ". basename( $_FILES["avatar"]["name"]). " has been uploaded.";
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
@@ -84,11 +154,12 @@ include 'admin/config/db.php';
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
+
 	$sql = "INSERT INTO pot_users (email, password, username, nicename, avatar )
 	VALUES ('".$_POST["email"]."','".$_POST["password"]."','".$_POST["username"]."','".$_POST["nicename"]."','".$_POST["avatar"]."');";
 
-	$sql .= "INSERT INTO pot_options (dbhost, dbname, dbuser, dbpass)
-	VALUES ('".$_POST["dbhost"]."','".$_POST["dbname"]."','".$_POST["dbuser"]."','".$_POST["dbpass"]."')";
+	$sql .= "INSERT INTO pot_options (setting, dbhost, dbname, dbuser, dbpass)
+	VALUES ('".$_POST["setting"]."','".$_POST["dbhost"]."','".$_POST["dbname"]."','".$_POST["dbuser"]."','".$_POST["dbpass"]."')";
 
 	if ($conn->multi_query($sql) === TRUE) {
 	    echo "<script type = \"text/javascript\">
@@ -100,7 +171,8 @@ include 'admin/config/db.php';
 
 	$conn->close();
 	?>
-	<br><br>If you will be accepting payments via M-PESA, please <br><br><a href="install-mpesa.php" class="pot-btn">INSTALL MPESA</a><?php  
+	<br><br>If you will be accepting payments via M-PESA, please <br><br><a href="install-mpesa.php" class="pot-btn">INSTALL MPESA</a>
+	<br><br>Or, <br><br><a href="admin/" class="pot-btn">LOG IN</a><?php  
 	}
 	?>
 	</center>
