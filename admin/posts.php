@@ -3,80 +3,139 @@
     $title = 'All Posts';
     include ('admin-header.php'); 
     ?>
-        <main class="mdl-layout__content mdl-color--white-100">
-        <?php
-         include 'config/db.php';
-    $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-
-        // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    <main class="mdl-layout__content mdl-color--white-100">
+    <?php
+    connect_db();
+    check_db();
 
     $sql = "SELECT * FROM pot_posts";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) { ?>
+                <!-- Table-->
+    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone ">
 
-    <center><h2>All Posts     <a style="padding-left:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="post-new.php"><i class="material-icons">add</i><a/></h2></center>
-    <div class="table table-responsive-vertical shadow-z-1" style="padding-left:15px; padding-right:15px;">
-    <table id="table" class="mdl-data-table" cellspacing="0" width="100%"><tr>
-    <th>ID</th>
-    <th>Type</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Category</th>
-    <th>Tag</th>
-    <th>Author</th>
-    <th>Date</th>
-    <th>Actions</th></tr>'
+    <div style="display:inline-flex;">
+
+    <a href="post-new">
+    <button class="add-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored ">
+        <i class="material-icons mdl-js-ripple-effect">add</i>
+    </button>
+    </a>
+    <form name="post_edit_form" action="" method="GET">
+    <table id="table" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table sortable">
+    <th class="mdl-data-table__cell--non-numeric">Title</th>
+    <th class="mdl-data-table__cell--non-numeric">Content</th>
+    <th class="mdl-data-table__cell--non-numeric">Category</th>
+    <th class="mdl-data-table__cell--non-numeric">Tag</th>
+    <th class="mdl-data-table__cell--non-numeric">Author</th>
+    <th class="mdl-data-table__cell--non-numeric">Date</th>
+    <th class="mdl-data-table__cell--non-numeric">Status</th>
+    <th class="mdl-data-table__cell--non-numeric">Actions</th></tr>
     <?php
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $url = '../content/uploads/';
+        $url = '../media/uploads/';
         $post_id = $row["id"];
-        $post_type = $row["post_type"];
         $post_title = $row["post_title"];
         $image = $row["post_image"];
         $post_content = $row["post_content"];
         $tag = $row["post_tag"];
         $cat = $row["post_cat"];
         $author = $row["post_author"];
-        $date = $row["created_at"]; ?>
+        $dates = $row["post_date"];
+list($date, $time) = split('[/. ]', $dates);
+        $status = $row["post_status"]; ?>
         <tr>
-        <td><?php echo "$post_id"; ?></td>
-        <td><?php echo "$post_type"; ?></td>
-        <td><?php echo "$post_title"; ?></td>
-        <td><?php echo substr($post_content, 0,50); ?>...</td>
-        <td><?php echo "$cat"; ?></td>
-        <td><?php echo "$tag"; ?></td>
-        <td><?php echo "$author"; ?></td>
-        <td><?php echo "$date"; ?></td>
-        <td><center>    <form name="post_view_form" action="../blog.php" method="GET">
+        <td class="mdl-data-table__cell--non-numeric"><?php echo "$post_title"; ?></td>
+        <td class="mdl-data-table__cell--non-numeric"><?php echo substr($post_content, 0,50); ?>...</td>
+        <td class="mdl-data-table__cell--non-numeric"><?php echo "$cat"; ?></td>
+        <td class="mdl-data-table__cell--non-numeric"><?php echo "$tag"; ?></td>
+        <td class="mdl-data-table__cell--non-numeric"><?php echo "$author"; ?></td>
+        <td class="mdl-data-table__cell--non-numeric"><?php echo "$date"; ?></td>
+        <td class="mdl-data-table__cell--non-numeric"><?php echo "$status"; ?></td>
+        <td><center>
         <input type="hidden" name="post_id" value="<?php echo "$post_id"; ?>">
-        <input type="submit" name="action" value="view">
-    </form>
-    <br><form name="post_edit_form" action="post-edit.php" method="GET">
-        <input type="hidden" name="post_id" value="<?php echo "$post_id"; ?>">
-        <input type="submit" name="action" value="edit">
-    </form>
-    <br>
-    <form name="post_delete_form" action="post-edit.php" method="GET">
-        <input type="hidden" name="post_id" value="<?php echo "$post_id"; ?>">
-        <input type="submit" name="action" value="delete">
-    </form></center></td></tr>
+        <a  class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored" href="../?p=<?php echo "$post_id"; ?>&action=view">View</a><input type="hidden" name="post_id" value="<?php echo "$post_id"; ?>">
+        <a  class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored" href="post-edit?p=<?php echo "$post_id"; ?>&action=edit">Edit</a>
+    </center></td></tr>
     <?php
     } ?>
     </table>
-    </div>
 
+    <div style="display:inline-flex;">
+    <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+    <p><b>With Selected: </b><input class="mdl-textfield__input" style="max-width: 50%" type="text" id="post_type" name="do" value="" list="actions">
+                            <datalist id="actions">
+                            <option value="Trash">Move to Trash</option>
+                            <option value="Delete">Delete Permanently</option>
+                            </datalist></p><br>
+                            <input id="jfwork-show-snackbar" type="submit" name="trash" value="true" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored alignright">
+                            <div id="jfwork-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+      <div class="mdl-snackbar__text">Hey!</div>
+      <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+    <script>
+(function() {
+  'use strict';
+  var snackbarContainer = document.querySelector('#djfwork-snackbar-example');
+  var showSnackbarButton = document.querySelector('#jfwork-show-snackbar');
+  var handler = function(event) {
+    showSnackbarButton.style.backgroundColor = '';
+  };
+  showSnackbarButton.addEventListener('click', function() {
+    'use strict';
+    showSnackbarButton.style.backgroundColor = '#' +
+        Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    var data = {
+      message: 'Are You Sure.',
+      timeout: 2000,
+      actionHandler: handler,
+      actionText: 'OKAY'
+    };
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+}());
+</script>
+    <br>
+            
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
 <?php
 } else {
-    echo "<center><br><h2>No posts found!</h2></center>";
+    ?>
+    <center>
+     <br>
+    <img src="../assets/images/loader.gif" width="25%" style="margin: auto;vertical-align: middle;">
+    <br>
+    <h2>No posts found!</h2>
+    </center>
+    <?php
 }
     mysqli_close($conn);
     ?>
 </main>
-    <?php 
-    
-include ('admin-footer.php'); ?>
+
+<?php 
+
+ if(isset($_GET["trash"]))
+   {
+
+    function deletepost($postID){
+
+    $sql ='DELETE FROM pot_posts WHERE ID='.$_GET["p"].'';
+    $result=mysql_query($sql) or die("oopsy, error when tryin to delete the post");
+
+}
+
+    echo "<script type = \"text/javascript\">
+                    alert(\"Are you sure you want to delete the selected posts?\");
+                </script>";
+    deletepost($postID);
+
+   }
+
+inc_afooter(); ?>

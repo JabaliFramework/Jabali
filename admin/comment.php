@@ -2,17 +2,15 @@
 
     $title = 'Read Comment';
     include ('admin-header.php');
-    include 'config/db.php';
-    $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
-        // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    if(isset($_GET["id"])){
 
-    $sql = 'UPDATE pot_comments SET read_unread=read WHERE id='.$_GET["id"].''; 
+    connect_db();
+    check_db();
 
-    $sql .= 'SELECT * FROM pot_comments WHERE id='.$_GET["id"].'';
+    $sql = 'UPDATE pot_comments SET read_unread="read" WHERE id="'.$_GET["id"].'";';
+
+    $sql .= 'SELECT * FROM pot_comments WHERE id="'.$_GET["id"].'"';
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -31,7 +29,7 @@
         </div>
                     <form id="admin-post-form" action="" method="POST" enctype="multipart/form-data">
                             <h3>Add Response</h3>
-                            <p>Response:</p><textarea style="color: #000000" cols="140" rows="120" name="post_content" id="post_content" value="<?php echo $row["post_content"]; ?>" ></textarea><script>CKEDITOR.replace( 'post_content' );</script>
+                            <p>Response:</p><textarea style="color: #000000" cols="140" rows="120" name="post_content" id="post_content" value="" ></textarea><script>CKEDITOR.replace( 'post_content' );</script>
                             <input type="submit" name="submit" value="RESPOND" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                             <input type="hidden" name="email" value="email@domain.com">
                             <input type="hidden" name="nicename" value="Admin">
@@ -46,43 +44,12 @@
     echo "<center><br><h2>Comment not found!</h2></center>";
 }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+} 
 
-    $target_dir = "../content/uploads/";
-    $target_file = $target_dir . basename($_FILES["post_image"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-    $check = getimagesize($_FILES["post_image"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
+if(isset($_POST["submit"])){
 
-    if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-    }
-    if ($_FILES["post_image"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
-    }
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-        $uploadOk = 0;
-    }
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    } else {
-        if (move_uploaded_file($_FILES["post_image"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["post_image"]["name"]). " has been uploaded.";
-        } else {
-            echo "Sorry, there was an error uploading your file.";
-        }
-    }
+    connect_db();
+    check_db();
 
     $sql = "INSERT INTO pot_comments (email, nicename, comment, read_unread)
     VALUES ('".$_POST["email"]."','".$_POST["nicename"]."','".$_POST["comment"]."','".$_POST["read_unread"]."')";
@@ -98,4 +65,4 @@
     $conn->close();
 }
 
-include ('admin-footer.php'); ?> 
+inc_afooter(); ?> 

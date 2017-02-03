@@ -1,0 +1,204 @@
+/*Doc setup*/
+html,
+body{
+  position:relative;
+  min-height:100vh;
+  overflow-y:hidden;
+}
+body{
+  background-size:cover;
+}
+
+/*component*/
+.navbar.slide-tab{
+  border:0;
+  border-radius:0;
+  color:#000000;
+  min-height:0!important;
+  position:relative;
+  z-index:2;
+}
+.navbar.navbar-default.slide-tab{
+  background:none;
+}
+.navbar.slide-tab .navbar-nav{
+  text-transform:uppercase;
+  letter-spacing:.9px;
+  font-weight:600;
+  font-size:1.3rem;
+  -webkit-transition:background-size .3s;
+  background: -webkit-linear-gradient(#008b8b 1%, #008080 100%);
+background: -moz-linear-gradient(#008b8b 1%, #008080 100%);
+background: -o-linear-gradient(#008b8b 1%, #008080 100%);
+background: linear-gradient(#008b8b 1%, #008080 100%);
+  background-size:0;
+  background-position:0 0;
+  background-repeat:no-repeat;
+}
+.navbar.slide-tab .navbar-nav > li > a,
+.navbar.slide-tab .navbar-nav > li > a:hover,
+.navbar.slide-tab .navbar-nav > li > a:focus{
+  background:none;
+  color:inherit;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;
+}
+@-webkit-keyframes upTab{
+  0%{
+    background-position:-50px;
+    background-size:0;
+   background-position:center 50px;
+  }
+  100%{
+    background-position:0;
+    background-size:200px;
+    background-position:center center;
+  }
+}
+
+.navbar.slide-tab .navbar-nav > li.active > a{
+  color:#fff;
+
+  background: -webkit-linear-gradient(#008b8b 1%, #008080 100%);
+background: -moz-linear-gradient(#008b8b 1%, #008080 100%);
+background: -o-linear-gradient(#008b8b 1%, #008080 100%);
+background: linear-gradient(#008b8b 1%, #008080 100%);
+background-position:0 0;
+  background-repeat:no-repeat;
+  -webkit-animation:upTab .3s;
+}
+.navbar.slide-tab .navbar-nav > li a{
+  padding:2rem 3rem;
+}
+
+.layer{
+  background:rgba(0,0,0,0.8);
+  height:100%;
+}
+
+.container-fluid.scroll{
+  overflow-x:scroll;
+}
+.breakscroll{
+  width:500vw; /*swapping to dynamic js*/
+  margin:0!important;
+}
+.breakscroll li{
+  display:inline-block!important;
+  white-space:nowrap;
+}
+/*hide scrollbar*/
+.invisibar::-webkit-scrollbar {
+    height:0px;
+}
+.control{
+  position:absolute;
+  right:0;
+  top:0;
+  background:rgba(0,0,0,0.95);
+  height:100%;
+  margin:0;
+  padding:0;
+}
+.control li{
+  list-style:none;
+  float:left;
+  padding-top: 10px;
+padding-bottom: 10px;
+line-height: 28px;
+  font-size:1.4em;
+  padding-left:15px;
+  padding-right:10px;
+}
+.control li span:not(.muted){
+  color:#eee!important;
+}
+.muted{
+  color:#666!important;
+  opacity:0.6;
+}
+.hotspots .hotspot{
+  width:30%;
+  padding-bottom:50%;
+  position:absolute;
+  top:0;
+  float:left;
+  z-index:1;
+}
+.hotspots .hotspot > .hotspot{
+  padding:0;
+  height:100%;
+  width:10%;
+  position:absolute;
+  border:0;
+  outline:0;
+}
+.hotspots.verbose .hotspot[data="left"]{
+  background:rgba(255, 0, 0, 0.15);
+  left:0;
+}
+.hotspots.verbose .hotspot[data="right"]{
+  background:rgba(0, 0, 255, 0.15);
+  right:0;
+}
+
+/*this is where im tierd and will need to change it*/
+.panes.breakscroll{
+  width:9999vw!important;
+}
+.panes > .content{
+  min-height:100vh;
+  height:100%;
+  width:calc(100vw);
+  float:left;
+}
+.dash{
+  width:100%;
+  overflow:hidden;
+  overflow-x:scroll;
+  margin-top:-81.4px;
+}
+
+.hotspot{
+  position:absolute;
+  z-index:1;
+  top:72px;
+  left:0;
+  width:100%;
+  height:100%;
+}
+.hotspot > .half{
+  width:50%;
+  float:left;
+  height:100%;
+}
+.click{
+  width:5rem;
+  height:100%;
+  border:0;
+  outline:0;
+  opacity:0.0;
+}
+.half[data="left"] .click{
+  float:left;
+}
+.half[data="right"] .click{
+  float:right;
+}
+
+.inner{
+  margin-top:80px;
+}
+.slot{
+  list-style:none!important;
+}
+.icon{
+  background:#333;
+  color:#fff;
+  margin:4.1%;
+}
+
+/*from my responsive bootstrap proportions pen*/
+/* http://codepen.io/acronamy/pen/yyNXjw */
+[class*="ratio"]{position:relative}[class*="ratio"]>div,[class*="ratio"]>section,[class*="ratio"]>article,[class*="ratio"]>header,[class*="ratio"]>footer{position:absolute;left:0;top:0;width:100%;height:100%}.col-md-1.ratio-1\:1{padding-bottom:8.333333335%}.col-md-2.ratio-1\:1{padding-bottom:16.66666667%}.col-md-3.ratio-1\:1{padding-bottom:25%}.col-md-4.ratio-1\:1{padding-bottom:33.33333333%}.col-md-5.ratio-1\:1{padding-bottom:41.66666667%}.col-md-6.ratio-1\:1{padding-bottom:50%}.col-md-7.ratio-1\:1{padding-bottom:58.33333333%}.col-md-8.ratio-1\:1{padding-bottom:66.66666667%}.col-md-9.ratio-1\:1{padding-bottom:75%}.col-md-10.ratio-1\:1{padding-bottom:83.33333333%}.col-md-11.ratio-1\:1{padding-bottom:91.66666667%}.col-md-12.ratio-1\:1{padding-bottom:100%}.col-md-1.ratio-2\:1{padding-bottom:4.1666666675%}.col-md-2.ratio-2\:1{padding-bottom:8.333333335%}.col-md-3.ratio-2\:1{padding-bottom:12.5%}.col-md-4.ratio-2\:1{padding-bottom:16.666666665%}.col-md-5.ratio-2\:1{padding-bottom:20.833333335%}.col-md-6.ratio-2\:1{padding-bottom:25%}.col-md-7.ratio-2\:1{padding-bottom:29.166666665%}.col-md-8.ratio-2\:1{padding-bottom:33.333333335%}.col-md-9.ratio-2\:1{padding-bottom:37.5%}.col-md-10.ratio-2\:1{padding-bottom:41.666666665%}.col-md-11.ratio-2\:1{padding-bottom:45.833333335%}.col-md-12.ratio-2\:1{padding-bottom:50%}.col-md-1.ratio-3\:1{padding-bottom:2.777777778333333%}.col-md-2.ratio-3\:1{padding-bottom:5.555555556666667%}.col-md-3.ratio-3\:1{padding-bottom:8.333333333333333%}.col-md-4.ratio-3\:1{padding-bottom:11.11111111%}.col-md-5.ratio-3\:1{padding-bottom:13.88888889%}.col-md-6.ratio-3\:1{padding-bottom:16.66666666666667%}.col-md-7.ratio-3\:1{padding-bottom:19.44444444333333%}.col-md-8.ratio-3\:1{padding-bottom:22.22222222333333%}.col-md-9.ratio-3\:1{padding-bottom:25%}.col-md-10.ratio-3\:1{padding-bottom:27.77777777666667%}.col-md-11.ratio-3\:1{padding-bottom:30.55555555666667%}.col-md-12.ratio-3\:1{padding-bottom:33.33333333333333%}

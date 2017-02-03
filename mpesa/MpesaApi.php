@@ -1,18 +1,36 @@
 <?php
-/** 
- * @see 	    http://mtaandao.co.ke/docs/banda/lipa-na-mpesa/
- * @author 		Mtaandao
- * @package 	Jabali
- * @subpackage  M-Pesa
- * @version     17.01
-**/
-    include('constants.php');
+
+include('constants.php');
 
                         
     class MpesaAPI  {
 
-	public function processCheckOutRequest($PAYBILL_NO,$PASSWORD,$MERCHANT_TRANSACTION_ID,
-		                                    $PRODUCT_ID,$AMOUNT,$NUMBER,$CALLBACK_URL,$CALL_BACK_METHOD,$TIMESTAMP,$ENDPOINT){
+
+
+        //merchant id auto generation
+        
+	public function generateRandomString() {
+			
+		    $length = 10;
+		
+		    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		
+		    $charactersLength = strlen($characters);
+		
+		    $randomString = '';
+		
+		    for ($i = 0; $i < $length; $i++) {
+		
+		        $randomString .= $characters[rand(0, $charactersLength - 1)];
+		    }
+		
+		    return $randomString;
+		}
+
+
+
+
+	public function processCheckOutRequest($PAYBILL_NO,$PASSWORD,$TIMESTAMP,$MERCHANT_TRANSACTION_ID,$PRODUCT_ID,$AMOUNT,$NUMBER,$CALLBACK_URL,$CALL_BACK_METHOD,$TIMESTAMP,$ENDPOINT){
 
 
 		$body =  '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -107,7 +125,7 @@
 
                      return 
                             '<h2>Process Checkout Response</h2>
-                             <table class="pot-table-all">
+                             <table class="w3-table-all">
 				    <tr>
 				      <th>Return Code</th>
 				      <th>Description</th>
@@ -235,7 +253,7 @@
 			
 			
                  return '<h2>Transaction Status Response</h2>
-                             <table class="pot-table-all">
+                             <table class="w3-table-all">
 				    <tr>
 				      <th>Return Code</th>
 				      <th>Customer PhoneNumber</th>
@@ -246,7 +264,7 @@
 				      <th>Amount affected</th>
 				      <th>Merchant Transaction Id</th>
 				      <th>Transaction Status</th>
-				      <th>Enc Params</th>
+				      <th>ENC PARAMS</th>
 				    </tr>
 				    <tr>
 				      <td>'.$s_return_code.'</td>
@@ -291,7 +309,7 @@
 
                      return 
                             '<h2>Transaction Confirm Response</h2>
-                             <table class="pot-table-all">
+                             <table class="w3-table-all">
 				    <tr>
 				      <th>Return Code</th>
 				      <th>Description</th>
@@ -391,8 +409,17 @@ public function sendTransactionConfirmRequest($ENDPOINT,$requestBody){
 
 //end of sendTransactionConfirmRequest
 
+
+
+        
+
 }
 
 // end of MpesaAPI class
+
+
+
+        
+
 
 ?>

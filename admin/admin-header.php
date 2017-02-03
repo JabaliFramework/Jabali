@@ -1,8 +1,10 @@
-<?php ?>
+<?php include('admin.php');
+
+?>
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <link rel="icon" type="image/png" href="images/DB_16х16.png">
+    <link rel="shortcut icon" type="image/png" href="images/icon-16.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
@@ -27,55 +29,35 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900' rel='stylesheet'
-          type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../assets/css/material.min.css">
-    <link rel="stylesheet" href="../assets/css/material-icons.css">
-    <link rel="stylesheet" href="../assets/css/material-table.css">
-    <link rel="stylesheet" href="../assets/css/lib/getmdl-select.min.css">
-    <link rel="stylesheet" href="../assets/css/lib/nv.d3.css">
-    <link rel="stylesheet" href="../assets/css/application.css">
-    <script src="../assets/js/ckeditor/ckeditor.js"></script>
-    <script src="../assets/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript">$("#post_type").change(function () {
-    var selected_option = $('#post_type').val();
-    if (selected_option === 'product') {
-        $('#product_price').attr('pk','article').show();
-    }
-    if (selected_option != 'product') {
-        $("#product_price").removeAttr('pk').hide();
-    }
-})</script>
-    <script src="../assets/js/sort-table.js"></script>
-    <script src="../assets/js/material.min.js"></script>
-    <script src="../assets/js/material-table.js"></script>
-
-    <!-- endinject -->
+    <?php load_scripts(); ?>
+    
     <title><?php echo $title; ?></title>
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
+        <h4 style=" padding-left:20px"><?php echo "$title"; ?></h4>
             <div class="mdl-layout-spacer"></div>
+
             <!-- Search-->
+            <form name="search" action="" method="GET">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
                     <i class="material-icons">search</i>
                 </label>
 
                 <div class="mdl-textfield__expandable-holder">
-                    <input class="mdl-textfield__input" type="text" id="search"/>
+                    <input class="mdl-textfield__input" type="text" id="search" style="border-bottom:0px;border-right:0px;" >
                     <label class="mdl-textfield__label" for="search">Enter your query...</label>
                 </div>
             </div>
+            </form>
 
             <?php include ('feedback-nav.php'); ?>
 
             <div class="avatar-dropdown" id="icon">
-                <span>Admin</span>
+                <span><?php echo $_COOKIE[$cookie_name];; ?></span>
                 <img src="../assets/images/Icon_header.png">
             </div>
             <!-- Account dropdawn-->
@@ -84,18 +66,18 @@
                 <li class="mdl-list__item mdl-list__item--two-line">
                     <span class="mdl-list__item-primary-content">
                         <span class="material-icons mdl-list__item-avatar"></span>
-                        <span>Admin</span>
-                        <span class="mdl-list__item-sub-title">admin@ite.com</span>
+                        <span><?php echo $_COOKIE[$cookie_name];; ?></span>
+                        <span class="mdl-list__item-sub-title"><?php echo $_SESSION['email']; ?></span>
                     </span>
                 </li>
                 <li class="list__item--border-top"></li>
-                <a class="mdl-menu__item mdl-list__item" href="profile.php"><i class="material-icons mdl-list__item-icon">account_circle</i><span style="padding-left: 20px">
+                <a class="mdl-menu__item mdl-list__item" href="profile"><i class="material-icons mdl-list__item-icon">account_circle</i><span style="padding-left: 20px">
                             Edit account</span></a>
                 <li class="list__item--border-top"></li>
-                <a class="mdl-menu__item mdl-list__item" href="settings.php"><i class="material-icons mdl-list__item-icon">settings</i><span style="padding-left: 20px">
+                <a class="mdl-menu__item mdl-list__item" href="settings"><i class="material-icons mdl-list__item-icon">settings</i><span style="padding-left: 20px">
                             Settings</span></a>
 
-                <a class="mdl-menu__item mdl-list__item" href="logout.php"><i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i><span style="padding-left: 20px">
+                <a class="mdl-menu__item mdl-list__item" href="../account/logout"><i class="material-icons mdl-list__item-icon text-color--secondary">exit_to_app</i><span style="padding-left: 20px">
                             Log out</span></a>
             </ul>
 
@@ -121,3 +103,5 @@
 
     <?php 
     include ('admin-menu.php'); ?>
+    
+    <div class="mdl-grid mdl-cell mdl-cell--9-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-cell--top">

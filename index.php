@@ -1,151 +1,82 @@
-
 <?php
+/**
+ * @package Jabali Framework
+ * @subpackage Main
+ * @version 17.02.1
+ * @author Mtaandao Digital Solutions
+ * @see http://mtaandao.co.ke/framework
+ * @link http://github.com/JabaliFramework/Jabali
+ */
 
-// Report All PHP Errors
-error_reporting(E_ALL);
+$htaccess = '.htaccess';
+if (!file_exists($htaccess)) {
 
-// Session start
-session_start();
+	/*
+	*Adding Root .htaccess
+	*We create this first to ensure our urls work.
+	*/
+	$htaccess = fopen("../.htaccess", "w") or die("Unable to create .htaccess file!");
+	$txt = "RewriteEngine On";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	fwrite($htaccess, $txt);
+	$txt = "RewriteCond %{REQUEST_FILENAME} !-f";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	fwrite($htaccess, $txt);
+	$txt = "RewriteCond %{REQUEST_FILENAME} !-d";
+	fwrite($htaccess, $txt);
+	$txt = "\n";
+	fwrite($htaccess, $txt);
+	$txt = "RewriteRule ^([^\.]+)$ $1.php [NC,L]";
+	fwrite($htaccess, $txt);
+	fclose($htaccess);
 
-$filename = 'admin/config/db.php';
-if (!file_exists($filename)) {
-
-header("Location: install.php"); /* Redirect browser */
-exit();
 }
-else
-{
-$currency = "KSh";
-$msg = "";
-$v = "1.6";
-$title = 'Home';
-include 'header.php';
-include 'navbar.php';
-?>
-  <body>
 
-	<?php
-	// Add item to cart
-	if (empty($_POST['item']) || empty($_POST['price']) || empty($_POST['quantity'])) 
-	{ } else {
+/*
+	*Check if installed
+	*If not, redirect to install, otherwise echo home page
+*/	
+$db = 'admin/config/db.php';
+if (!file_exists($db)) {
 
-		# Take values
-		$BANDAprice = $_POST['price'];
-		$BANDAitem = $_POST['item'];
-		$BANDAquantity = $_POST['quantity'];
-		$BANDAuniquid = rand();
-		
-		$BANDAexist = false;
-		$BANDAcount = 0;
-		
-		// If SESSION Generated?
-		if($_SESSION['BANDAcart']!="")
-		{
-			// Look for item
-			foreach($_SESSION['BANDAcart'] as $BANDAproduct)
-			{
-				// Yes we found it
-				if($BANDAitem == $BANDAproduct['item']) {
-					$BANDAexist = true;
-					break;
-				}
-				$BANDAcount++;
-			}
-		}
-		
-		// If we found same item
-		if($BANDAexist)
-		{
-		
-			// Update quantity
-			$_SESSION['BANDAcart'][$BANDAcount]['quantity'] += $BANDAquantity;
-			
-			// Write down the message and then we open in modal at the bottom
-			$msg = "
-			<script type=\"text/javascript\">
-				$(document).ready(function(){
-					$('#myDialogText').text('".$BANDAitem." quantity updated..');
-					$('#modal-cart').modal('show');
-				});
-			</script>			
-			";
-			
-		} else {
-		
-			// If we do not found, insert new
-			$BANDAmycartrow = array(
-				'item' => $BANDAitem,
-				'unitprice' => $BANDAprice,
-				'quantity' => $BANDAquantity,
-				'id' => $BANDAuniquid
-			);
-			
-			// If session not exist, create
-			if (!isset($_SESSION['BANDAcart']))
-				$_SESSION['BANDAcart'] = array();
+header("Location: install"); /* Redirect browser */
+exit();
+} elseif(isset($_GET["p"])){
 
-			// Add item to cart
-			$_SESSION['BANDAcart'][] = $BANDAmycartrow;
-			
-			// Write down the message and then we open in modal at the bottom
-			$msg = "
-			<script type=\"text/javascript\">
-				$(document).ready(function(){
-					$('#myDialogText').text('".$BANDAitem." added to your cart');
-					$('#modal-cart').modal('show');
-				}); 
-			</script>			
-			";
-		
-		}
-	}
+include 'templates/view.php';
 
-	// Clear cart
-	if(isset($_GET["clear"])) 
-	{ 
-		session_unset();
-		session_destroy(); 
-		
-		// Write down the message and then we open in modal at the bottom
-		$msg = "
-		<script type=\"text/javascript\">
-			$(document).ready(function(){
-				$('#myDialogText').text('Your cart is empty now..');
-				$('#modal-cart').modal('show');
-			});
-		</script>			
-		";		
-	}
+} elseif(isset($_GET["page"])){
 
-	// Remove item from cart (Updating quantity to 0)
-	$remove = isset($_GET['remove']) ? $_GET['remove'] : '';
-	if($remove!="") 
-	{ 
-	  $_SESSION['BANDAcart'][$_GET["remove"]]['quantity'] = 0;
-	}
-	?>
+include 'templates/page-view.php';
 
-<?php include 'shop-template.php'; ?>
-<?php include 'footer.php'; ?>
-		
-	<div id="modal-cart" class="modal fade" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-body">
-					<p class="text-center" id="myDialogText"></p>
-				</div>
-			</div>
-		</div>
-	</div>
+} elseif(isset($_GET["cat"])){
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-	<script src="assets/js/jquery-1.10.2.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	
-	<?php if($msg != "") { echo $msg; } 
-	}
-	?>
-	
-  </body>
-</html>
+include 'templates/cat-view.php';
+
+} elseif(isset($_GET["tag"])){
+
+include 'templates/tag-view.php';
+
+} elseif(isset($_GET["blog"])){
+
+include 'templates/blog.php';
+
+} elseif(isset($_GET["blog-masonry"])){
+
+include 'templates/blog-masonry.php';
+
+} elseif(isset($_GET["blog-json"])){
+
+include 'templates/blog-json.php';
+
+} elseif(isset($_GET["events"])){
+
+include 'templates/events.php';
+
+} else {
+$title = "Home";
+include 'templates/home.php';
+}
+inc_footer (); ?>

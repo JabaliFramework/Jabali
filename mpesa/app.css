@@ -1,0 +1,78 @@
+* {
+box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+background-color: #ffffff;
+margin: auto;
+}
+.login {
+width: 300px;
+margin-top: 50px;
+margin: auto;
+}
+.login-screen {
+background-color: #66ad45;
+padding: 5px;
+border-radius: 5px
+}
+
+.app-logo {
+text-align: center;
+width: 300px;
+}
+
+.login-form {
+text-align: center;
+}
+.control-group {
+margin-bottom: 10px;
+}
+
+input {
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 20px;
+font-weight: 200;
+width: 250px;
+transition: border .5s;
+}
+
+input:focus {
+border: 2px solid #006600;
+box-shadow: none;
+}
+
+.btn {
+  border: 2px solid transparent;
+  background: #006600;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  background-color: #BB0000;
+}
+
+.login-link {
+  font-size: 14px;
+  color: #006600;
+  display: block;
+	margin-top: 12px;
+}

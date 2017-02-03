@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv=X-UA-Compatible content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <meta name=description content="Jabali PWA">
+  <title>Jabali PWA</title>
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#1E88E5">
+  
+  <!-- For iOS -->
+  <meta name="application-name" content="Jabali PWA">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Jabali PWA">
+  
+  <!-- Windows -->
+  <meta name="msapplication-TileColor" content="#1E88E5">
+  <meta name="msapplication-TileImage" content="./images/touch/mstile-150x150.png">
+
+  <!-- iOS touch icons -->
+  <link rel="apple-touch-icon" href="./images/touch/apple-touch-icon.png">
+  
+  <!-- Android icon -->
+  <link rel=icon sizes="192x192" href="./images/touch/jfwork-chrome-192x192.png">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="./images/touch/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="shortcut icon" href="./favicon.ico">
+
+  <!-- Manifest for add to homescreen, splash screen etc, -->
+  <link rel="manifest" href="./manifest.json">
+
+  <link href="../assets/css/material.min.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+  <link href="../assets/css/styles.css" rel="stylesheet">
+  <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      justify-content: center;
+      align-items: center;
+      margin-right: 25px;
+      margin-bottom: 100px;
+      z-index: 900;
+    }
+    </style>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <div class="jfwork-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="jfwork-title mdl-layout-title">
+            <a href="<?php get_home_url(); ?>"><img class="jfwork-logo-image" src="assets/images/logo.png"></a>
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="jfwork-header-spacer mdl-layout-spacer"></div>
+          <div class="jfwork-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field">
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="jfwork-navigation-container" style="text-decoration: none;">
+            <nav class="jfwork-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index">Home</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="page">Page/Post Template</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="blog">Blog Main</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="blog2">Blog Masonry</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="shop">Shop</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="admin">Admin</a>
+            </nav>
+          </div>
+          <span class="jfwork-mobile-title mdl-layout-title">
+            <a href="<?php get_home_url(); ?>"><img class="jfwork-logo-image" src="assets/images/logo.png"></a>
+          </span>
+          <button class="jfwork-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <a href="account"><li class="mdl-menu__item">Sign In</li></a>
+            <a href="account/register"><li class="mdl-menu__item">Sign Up</li></a>
+          </ul>
+        </div>
+      </div>
+
+
+  <!-- Main Content -->
+  <div class="main">
+
+    <img class="main__loader hide" src="./images/loading.gif" alt="loading..." />
+
+  
+  <!-- Snackbar notification  -->
+  <div class="snackbar">
+    <p class="snackbar__msg no--select"></p>
+  </div>
+
+
+    <button class="mdl-button mdl-button--fab mdl-js-ripple-effect" id="view-source"><a href="account-add.php" target="_blank" style="text-decoration:none"><i class="mdi mdi-account-add"></i></a></button>
+    <button class="main__fab mdl-button mdl-button--fab mdl-js-ripple-effect"><a href="project-add.php" target="_blank" style="text-decoration:none"><i class="mdi mdi-plus"></i></a></button>
+
+
+  <!-- JS Files -->
+  <script src="../assets/js/material.min.js"></script>
+  <script type="text/javascript">
+    // If service worker is supported, then register it.
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js', { scope: './' }) //To set service worker scope
+        .then(function (register) {
+          if (register.installing) {
+            console.log('Service worker is installing!');
+          }
+          else if (register.waiting) {
+            console.log('Service worker is waiting!');
+          }
+          else if (register.active) {
+            console.log('Service worker is active!');
+          }
+        })
+        .catch(function (error) {
+          console.log('Service worker registration failed ', error);
+        });
+    }
+    else {
+      console.log('Service worker is not supported.');
+    }
+  </script>
+  <script src="./js/fetch-polyfill.js" type="text/javascript"></script>
+  <script src="./js/menu.js" type="text/javascript"></script>
+  <script src="./js/snackbar.js" type="text/javascript"></script>
+  <script src="./js/app.js" type="text/javascript"></script>
+</body>
+</html>>

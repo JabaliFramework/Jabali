@@ -1,24 +1,11 @@
 <?php
-/** 
- * @see 	    http://mtaandao.co.ke/docs/banda/lipa-na-mpesa/
- * @author 		Mtaandao
- * @package 	Jabali
- * @subpackage  M-Pesa
- * @version     17.01
-**/
 	
-			/** Define ABSPATH as this file's directory */
-		if ( ! defined( 'ABSPATH' ) ) {
-			define( 'ABSPATH', dirname(dirname( __FILE__ )) . '/' );
-		}
-
-		require_once ABSPATH . 'load.php';
-		include (ABSPATH . 'config/db.php');
 	
-	$Local_Host=DB_HOST;
-	$DBUser_Name=DB_USER;
-	$DBPass_word=DB_PASSWORD;
-	$Database_Name=DB_NAME;
+	
+	$Local_Host="localhost";
+	$DBUser_Name="gcbcoke_tikko";
+	$DBPass_word="d4~?+M;0ak2p";
+	$Database_Name="gcbcoke_tikko";
 	
 	$return_code = $_POST['RETURN_CODE'];
 	$desc = $_POST['DESCRIPTION'];

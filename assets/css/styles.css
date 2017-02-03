@@ -1,78 +1,539 @@
-#sticky-social {
-   left: 0;
-   position: fixed;
-   top: 150px;
-}
-* {
-box-sizing: border-box;
-}
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-*:focus {
-	outline: none;
-}
 body {
-font-family: Arial;
-/*background:url('../images/bg.jpg') no-repeat center center fixed;**/
-padding: 0px;
+  margin: 0;
 }
 
-/*.logo {
-  position: absolute;
-  vertical-align: center;
-  top: 350px;
-}*/
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
 
-/*.btn {
-  border: 2px solid transparent;
-  background: #006600;
-  color: #ffffff;
-  font-size: 16px;
-  line-height: 25px;
-  padding: 10px 0;
+::-moz-selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+::selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+.jfwork-search-box .mdl-textfield__input {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.jfwork-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.jfwork-fab {
+  position: absolute;
+  right: 20%;
+  bottom: -26px;
+  z-index: 3;
+  background: #64ffda !important;
+  color: black !important;
+}
+
+.jfwork-mobile-title {
+  display: none !important;
+}
+
+
+.jfwork-logo-image {
+  height: 50px;
+  width: 95px;
+}
+
+
+.jfwork-header {
+  overflow: visible;
+  background-color: white;
+}
+
+  .jfwork-header .material-icons {
+    color: #767777 !important;
+  }
+
+  .jfwork-header .mdl-layout__drawer-button {
+    background: transparent;
+    color: #767777;
+  }
+
+  .jfwork-header .mdl-navigation__link {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .jfwork-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction: rtl;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 500px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .jfwork-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 800px;
+  }
+
+  .jfwork-search-box.is-focused + .jfwork-navigation-container {
+    opacity: 0;
+    width: 100px;
+  }
+
+
+  .jfwork-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+  }
+
+    .jfwork-navigation .mdl-navigation__link:hover {
+      border-bottom: 4px solid #8bc34a;
+    }
+
+  .jfwork-search-box {
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .jfwork-more-button {
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+
+.jfwork-drawer {
+  border-right: none;
+}
+
+  .jfwork-drawer-separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+  }
+
+  .jfwork-drawer .mdl-navigation__link.mdl-navigation__link {
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  .jfwork-drawer span.mdl-navigation__link.mdl-navigation__link {
+    color: #8bc34a;
+  }
+
+  .jfwork-drawer .mdl-layout-title {
+    position: relative;
+    height: 160px;
+  }
+
+    .jfwork-drawer .jfwork-logo-image {
+      position: absolute;
+    }
+
+.jfwork-be-together-section {
+  position: relative;
+  height: 800px;
+  width: auto;
+  background-color: #f3f3f3;
+  background: url('images/slide01.jpg') center 30% no-repeat;
+  background-size: cover;
+}
+
+.logo-font {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1;
+  color: #767777;
+  font-weight: 500;
+}
+
+.jfwork-slogan {
+  font-size: 60px;
+  padding-top: 160px;
+}
+
+.jfwork-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
+}
+
+.jfwork-create-character {
+  font-size: 21px;
+  padding-top: 400px;
+}
+
+  .jfwork-create-character a {
+    text-decoration: none;
+    color: #767777;
+    font-weight: 300;
+  }
+
+.jfwork-screen-section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.jfwork-screens {
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.jfwork-screen {
+  text-align: center;
+}
+
+.jfwork-screen .jfwork-link {
+  margin-top: 16px;
+  display: block;
+  z-index: 2;
+}
+
+.jfwork-image-link {
   text-decoration: none;
-  text-shadow: none;
-  border-radius: 3px;
-  box-shadow: none;
-  transition: 0.25s;
-  display: block;
-  width: 250px;
-  margin: 0 auto;
-}*/
-
-.btn:hover {
-  background-color: #21b68e;
 }
 
-.copyright {
-  font-size: 12px;
-  color: #ffffff;
-  vertical-align: bottom;
+.jfwork-wear {
+  display: inline-block;
+  width: 160px;
+  margin-right: 32px;
+}
+
+  .jfwork-wear .jfwork-screen-image {
+    width: 40%;
+    z-index: 1;
+  }
+
+
+.jfwork-phone {
+  display: inline-block;
+  width: 64px;
+  margin-right: 48px;
+}
+
+  .jfwork-phone .jfwork-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.jfwork-tablet {
+  display: inline-block;
+  width: 110px;
+  margin-right: 64px;
+}
+
+  .jfwork-tablet .jfwork-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+  .jfwork-tablet .jfwork-link {
+    display: block;
+    z-index: 2;
+  }
+
+
+.jfwork-tv {
+  display: inline-block;
+  width: 300px;
+  margin-right: 80px;
+}
+
+  .jfwork-tv .jfwork-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.jfwork-auto {
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+}
+
+  .jfwork-auto .jfwork-screen-image {
+    display: block;
+    height: 300px;
+    z-index: 1;
+  }
+
+
+.jfwork-wear-section {
+  position: relative;
+  background: url('images/wear.png') center top no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.jfwork-wear-band {
   position: absolute;
-  left: 20px;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #37474f;
 }
 
-.attribution {
-  font-size: 12px;
-  color: #ffffff;
-  vertical-align: bottom;
-  position: absolute;
-  right: 20px;
+.jfwork-wear-band-text {
+  max-width: 800px;
+  margin-left: 25%;
+  padding: 24px;
+  text-align: left;
+  color: white;
 }
 
-.attribution-link {
-  font-size: 12px;
-  color: #ffffff;
-  display: block;
-  margin-top: 12px;
+  .jfwork-wear-band-text p {
+    padding-top: 8px;
+  }
+
+.jfwork-link {
+  text-decoration: none;
+  color: #8bc34a !important;
 }
 
-.strokeme
-{
-    color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-    
+  .jfwork-link:hover {
+    color: #7cb342 !important;
+  }
+
+  .jfwork-link .material-icons {
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+  }
+
+.jfwork-alt-link {
+  text-decoration: none;
+  color: #64ffda !important;
+  font-size: 16px;
+}
+
+  .jfwork-alt-link:hover {
+    color: #00bfa5 !important;
+  }
+
+  .jfwork-alt-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+.jfwork-customized-section {
+  text-align: center;
+}
+
+.jfwork-customized-section-text {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 16px 0 16px;
+}
+
+  .jfwork-customized-section-text p {
+    padding-top: 16px;
+  }
+
+.jfwork-customized-section-image {
+  background: url('images/devices.jpg') center top no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.jfwork-more-section {
+  padding: 80px 0;
+  max-width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .jfwork-more-section .jfwork-section-title {
+    margin-left: 12px;
+    padding-bottom: 24px;
+  }
+
+.jfwork-card-container {
+}
+
+  .jfwork-card-container .mdl-card__media {
+    overflow: hidden;
+    background: transparent;
+  }
+
+    .jfwork-card-container .mdl-card__media img {
+      width: 100%;
+    }
+
+  .jfwork-card-container .mdl-card__title {
+    background: transparent;
+    height: auto;
+  }
+
+  .jfwork-card-container .mdl-card__title-text {
+    color: black;
+    height: auto;
+  }
+
+  .jfwork-card-container .mdl-card__supporting-text {
+    height: auto;
+    color: black;
+    padding-bottom: 56px;
+  }
+
+  .jfwork-card-container .mdl-card__actions {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .jfwork-card-container .mdl-card__actions a {
+    border-top: none;
+    font-size: 16px;
+  }
+
+.jfwork-footer {
+  background-color: #fafafa;
+  position: relative;
+}
+
+  .jfwork-footer a:hover {
+    color: #8bc34a;
+  }
+
+  .jfwork-footer .mdl-mega-footer--top-section::after {
+    border-bottom: none;
+  }
+
+  .jfwork-footer .mdl-mega-footer--middle-section::after {
+    border-bottom: none;
+  }
+
+  .jfwork-footer .mdl-mega-footer--bottom-section {
+    position: relative;
+  }
+
+  .jfwork-footer .mdl-mega-footer--bottom-section a {
+    margin-right: 2em;
+  }
+
+  .jfwork-footer .mdl-mega-footer--right-section a .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+
+.jfwork-link-menu:hover {
+  cursor: pointer;
+}
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+  .jfwork-navigation-container {
+    display: none;
+  }
+
+  .jfwork-title {
+    display: none !important;
+  }
+
+  .jfwork-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 12px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
+     consecutive "+" operators in some cases. Therefore, we need to use both
+     here to cover all the bases. */
+  .android.jfwork-search-box.is-focused ~ .jfwork-mobile-title,
+  .jfwork-search-box.is-focused + .jfwork-navigation-container + .jfwork-mobile-title {
+    opacity: 0;
+  }
+
+  .jfwork-more-button {
+    display: none;
+  }
+
+  .jfwork-search-box.is-focused {
+    width: calc(100% - 48px);
+  }
+
+  .jfwork-search-box .mdl-textfield__expandable-holder {
+    width: 100%;
+  }
+
+  .jfwork-be-together-section {
+    height: 350px;
+  }
+
+  .jfwork-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+    padding-top: 24px;
+  }
+
+  .jfwork-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+    padding-top: 8px;
+  }
+
+  .jfwork-create-character {
+    padding-top: 200px;
+    font-size: 16px;
+  }
+
+  .jfwork-create-character img {
+    height: 12px;
+  }
+
+  .jfwork-fab {
+    display: none;
+  }
+
+  .jfwork-wear-band-text {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .jfwork-footer .mdl-mega-footer--bottom-section {
+    display: none;
+  }
 }
