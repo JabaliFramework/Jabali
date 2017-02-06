@@ -5,6 +5,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="../assets/css/material.min.css">
     <link rel="stylesheet" href="../assets/css/material-icons.css">
+    <link rel="stylesheet" href="../assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/material-table.css">
     <link rel="stylesheet" href="../assets/css/lib/getmdl-select.min.css">

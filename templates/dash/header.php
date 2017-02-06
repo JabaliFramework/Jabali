@@ -15,7 +15,7 @@ $user=$_SESSION['username'];
           <a class="mdl-navigation__link" href="?home=view&user=<?php echo $user;?>"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_circle</i>Summary</a>
           <a class="mdl-navigation__link" href="?inbox=view&user=<?php echo $user;?>"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
           <a class="mdl-navigation__link" href="?forums=view&user=<?php echo $user;?>"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forums</a>
-          <a class="mdl-navigation__link" href="?home=view&user=<?php echo $user;?>"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Updates</a>
+          <a class="mdl-navigation__link" href="?home=view&user=<?php echo $user;?>"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">work</i>Updates</a>
           <a class="mdl-navigation__link" href="?home=view&user=<?php echo $user;?>"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Promos</a>
           <a class="mdl-navigation__link" href="?home=view&user=<?php echo $user;?>"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Purchases</a>
           <div class="mdl-layout-spacer"></div>

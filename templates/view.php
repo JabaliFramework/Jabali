@@ -6,7 +6,7 @@ include ('header.php');
 connect_db();
 check_db();
 
-    $sql = 'SELECT * FROM pot_posts WHERE id='.$_GET["p"].'';
+    $sql = 'SELECT * FROM pot_posts WHERE post_url='.$_GET["p"].'';
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) { ?>

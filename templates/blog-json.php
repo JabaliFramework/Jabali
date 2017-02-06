@@ -6,7 +6,7 @@ include ('header.php'); ?>
 <main class="mdl-layout__content mdl-color--white-100" style="width:100%"><div class="container" style="display:block;" id="id01"></div></main>
 <script>
 var xmlhttp = new XMLHttpRequest();
-var url = "api/posts.php";
+var url = "json/posts.php";
 
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

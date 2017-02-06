@@ -15,10 +15,10 @@ $url = basename($path, ".php");
                     </a>';}
 
             if($url == 'posts') {echo '<a class="mdl-navigation__link mdl-navigation__link--current" href="posts">
-                <i class="material-icons" role="presentation">note_add</i>
+                <i class="material-icons" role="presentation">description</i>
                 Blog
             </a>';} else {echo '<a class="mdl-navigation__link" href="posts">
-                <i class="material-icons" role="presentation">note_add</i>
+                <i class="material-icons" role="presentation">description</i>
                 Blog
             </a>';} 
 
@@ -67,11 +67,19 @@ $url = basename($path, ".php");
             </a>';} 
 
             if($url == 'wapi') {echo '<a class="mdl-navigation__link dropdown" href="wapi">
-                <i class="material-icons" role="presentation">tune</i>
+                <i class="material-icons" role="presentation">event</i>
                 Atiwapi Events
             </a>';} else {echo '<a class="mdl-navigation__link dropdown" href="wapi">
-                <i class="material-icons" role="presentation">tune</i>
+                <i class="material-icons" role="presentation">event</i>
                 Atiwapi Events
+            </a>';}
+
+            if($url == 'femus') {echo '<a class="mdl-navigation__link dropdown" href="femus">
+                <i class="material-icons" role="presentation">event</i>
+                fEmUs
+            </a>';} else {echo '<a class="mdl-navigation__link dropdown" href="femus">
+                <i class="material-icons" role="presentation">event</i>
+                fEmUs
             </a>';}?>
             
             <div class="mdl-layout-spacer"></div>

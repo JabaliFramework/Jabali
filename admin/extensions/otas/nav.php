@@ -9,7 +9,7 @@
                 Summary
             </a>
             <a class="mdl-navigation__link" href="?products">
-                <i class="material-icons" role="presentation">note_add</i>
+                <i class="material-icons" role="presentation">shopping_cart</i>
                 Products
             </a>
             <a class="mdl-navigation__link" href="?orders">
@@ -25,7 +25,7 @@
                 Invoices
             </a>
             <a class="mdl-navigation__link" href="?invoice=otas&action=view">
-                <i class="material-icons" role="presentation">shopping_cart</i>
+                <i class="material-icons" role="presentation">receipt</i>
                 Receipts
             </a>
             <a class="mdl-navigation__link" href="?home=otas&action=view">

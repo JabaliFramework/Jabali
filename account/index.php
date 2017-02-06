@@ -79,8 +79,8 @@ Please log in.
 <div id="constants-form" class="login-screen">
 		<form  name="constants" class="pot-form" method="POST" action="">
 		<center><img clas="app-logo" src="../assets/images/jabali-logo-250-w.png"></center>
-			<p style="color: white;">Username: <input type="text" name="username" id="username" class="mdl-textfield__input" placeholder="username" value="" size="25" required></p>
-			<p style="color: white;">Pasword: <input type="password" name="password" class="mdl-textfield__input" placeholder="password" value="" size="25" required></p>
+			<p style="color: white;">Username: <input type="text" name="username" id="username" class="mdl-textfield__input" placeholder="username" value=""  required></p>
+			<p style="color: white;">Pasword: <input type="password" name="password" class="mdl-textfield__input" placeholder="password" value=""></p>
 			<input type="submit" class="submit mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="submit" value="Login">
 		</form><br> <br> 
 </div><br> 
@@ -114,7 +114,7 @@ Please log in.
 			if ($result->num_rows > 0){
 				$_SESSION['username'] = $username; // Initializing Session
 				setcookie("authorization","ok", time() + (86400 * 30), "/"); // 86400 = 1 day
-				header( "Location:../admin");
+				header( "Location: ../admin");
 				exit();
 			} else {
 				echo "<script type = \"text/javascript\">

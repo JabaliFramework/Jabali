@@ -67,7 +67,7 @@
 
                             <div class="mdl-grid">
                                 <div class="mdl-cell mdl-cell--9-col input-group">
-                                    <i class="material-icons pull-left" style="color: #008080;">mail_outline</i>
+                                    <i class="mdi mdi-email pull-left" style="color: #008080;"></i>
 
                                     <div class="mdl-textfield mdl-js-textfield pull-left">
                                         <input class="mdl-textfield__input" type="text" id="email" value=""/>
@@ -80,7 +80,7 @@
                             <div class="mdl-grid">
                                 <div class="mdl-cell mdl-cell--9-col input-group">
                                 <h6 style="color: #cfcfcf;">http://www.facebook.com/</h6>
-                                    <i class="fa fa-facebook pull-left" style="color: #008080;"></i>
+                                    <i class="mdi mdi-facebook pull-left" style="color: #008080;"></i>
 
                                     <div class="mdl-textfield mdl-js-textfield pull-left">
                                         <input class="mdl-textfield__input" type="text" id="address"/>
@@ -92,7 +92,7 @@
 
                             <div class="mdl-grid">
                                 <div class="mdl-cell mdl-cell--9-col input-group">
-                                    <i class="fa fa-twitter pull-left" style="color: #008080;"></i>
+                                    <i class="mdi mdi-twitter pull-left" style="color: #008080;"></i>
 
                                     <div class="mdl-textfield mdl-js-textfield pull-left">
                                         <input class="mdl-textfield__input" type="text" id="address"/>
@@ -104,7 +104,7 @@
 
                             <div class="mdl-grid">
                                 <div class="mdl-cell mdl-cell--9-col input-group">
-                                    <i class="fa fa-instagram pull-left" style="color: #008080;"></i>
+                                    <i class="mdi mdi-instagram pull-left" style="color: #008080;"></i>
 
                                     <div class="mdl-textfield mdl-js-textfield pull-left">
                                         <input class="mdl-textfield__input" type="text" id="address"/>
@@ -116,7 +116,19 @@
 
                             <div class="mdl-grid">
                                 <div class="mdl-cell mdl-cell--9-col input-group">
-                                    <i class="fa fa-google-plus pull-left" style="color: #008080;"></i>
+                                    <i class="mdi mdi-google-plus pull-left" style="color: #008080;"></i>
+
+                                    <div class="mdl-textfield mdl-js-textfield pull-left">
+                                        <input class="mdl-textfield__input" type="text" id="address"/>
+                                        <label class="mdl-textfield__label" for="address">@username</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--9-col input-group">
+                                    <i class="mdi mdi-github-circle pull-left" style="color: #008080;"></i>
 
                                     <div class="mdl-textfield mdl-js-textfield pull-left">
                                         <input class="mdl-textfield__input" type="text" id="address"/>
@@ -191,8 +203,13 @@
 
     function create_account() {
 
+        $email = mysqli_real_escape_string($conn, $_POST["email"]);
+        $nicename = mysqli_real_escape_string($conn, $_POST["nicename"]);
+        $comment = mysqli_real_escape_string($conn, $_POST["comment"]);
+        $read_unread = mysqli_real_escape_string($conn, $_POST["read_unread"]);  
+
         $sql = "INSERT INTO pot_users (email, nicename, comment, read_unread)
-    VALUES ('".$_POST["email"]."','".$_POST["nicename"]."','".$_POST["comment"]."','".$_POST["read_unread"]."')";
+    VALUES ('".$email."','".$nicename."','".$comment."','".$read_unread."')";
     }
 
     create_account();
@@ -207,5 +224,3 @@
 
     $conn->close();
 }
-
-inc_footer ();

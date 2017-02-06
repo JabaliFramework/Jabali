@@ -34,6 +34,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="../assets/css/material.min.css">
     <link rel="stylesheet" href="../assets/css/material-icons.css">
+    <link rel="stylesheet" href="../assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/css/material-table.css">
     <link rel="stylesheet" href="../assets/css/lib/getmdl-select.min.css">
     <link rel="stylesheet" href="../assets/css/lib/nv.d3.css">
@@ -58,7 +59,7 @@
     <script type='text/javascript' src='js/example.js'></script>
     <script type="text/javascript" src="moment.min.js"></script>
     <script type="text/javascript" src="material-datepicker.min.js"></script>      
-    <title>Jabali OTAS</title>
+    <title><?php echo $title; ?></title>
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">

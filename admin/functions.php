@@ -46,10 +46,10 @@ function post_error_db (){
 function check_db (){
 
     $conn = $GLOBALS['conn'];
-        // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 }
 
 
@@ -158,13 +158,6 @@ function update_mpesa_settings (){
 	
 }
 
-function add_post (){
-
-	$sql = "INSERT INTO pot_posts (post_type, post_title, post_content, post_cat, post_tag, post_author, post_image)
-    VALUES ('".$_POST["post_type"]."','".$_POST["post_title"]."','".$_POST["post_content"]."','".$_POST["post_category"]."','".$_POST["post_tags"]."','".$_POST["post_authors"]."','".$_FILES["post_image"]["name"]."')";
-    $result = $conn->query($sql);
-	
-}
 
 function update_post (){
 
@@ -194,10 +187,6 @@ $result = $conn->query($sql);
 
     header('Content-Type:Application/json');
     echo json_encode($array);
-    // $posts_json = fopen("posts.json", "w") or die("Unable to create json file file!");
-    // $txt = json_encode($array);
-    // fwrite($posts_json, $txt);
-    // fclose($posts_json);
 
     }
 }
@@ -281,7 +270,7 @@ function get_tag (){
 }
 
 function featured_image_uploads() {
-     $target_dir = "../media/uploads/";
+    $target_dir = "../media/uploads/";
     $target_file = $target_dir . basename($_FILES["post_image"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -290,7 +279,7 @@ function featured_image_uploads() {
 }
 
 function avatar_uploads() {
-     $target_dir = "../media/uploads/";
+    $target_dir = "../media/uploads/";
     $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

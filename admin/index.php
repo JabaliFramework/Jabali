@@ -59,28 +59,55 @@
                     </div>
                 </div>
                                 <!-- ToDo_widget-->
-                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--13-col-phone">
-                    <div class="mdl-card mdl-shadow--2dp todo" style="margin:auto;background-color: #eee;">
-                        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text">To-do list</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <ul class="mdl-list">
-                            <li>hffkknkgn</li>
+<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--13-col-phone">
+<form name="post_edit_form" action="" method="GET">
+<div class="mdl-card mdl-shadow--2dp todo" style="margin:auto;background-color: #eee;">
+    <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">To-do list</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+        <table id="table" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table sortable">
+        <th class="mdl-data-table__cell--non-numeric">Title</th>
+        <tr>
+        <td class="mdl-data-table__cell--non-numeric">
+        <div id="dynamicInput" style="padding-left: 10px;"><br>
+        <label style="padding-right: 5px;">Item </label><select><option value="">ghh</option><option>ghh</option><option>ghh</option></select>
+        <label style="padding-right: 5px;">Label </label><input type="text" name="myInputs[]">
+        <label style="padding-right: 5px;">Icon </label><input type='text' name='icon'>
+        </div>
+        </td></tr>
+        </table>
+        <script type="text/javascript">
+        var counter = 1;
+        var limit = 9;
+        function addInput(divName){
+        if (counter == limit)  {
+          alert("You have reached the limit of adding " + counter + " inputs");
+        }
+        else {
+          var newdiv = document.createElement('td');
+          newdiv.innerHTML = "<br><tr><td class='mdl-data-table__cell--non-numeric'><div id='dynamicInput' style='padding-left: 10px;'><br><label style='padding-right: 5px;'>Item </label><select><option>ghh</option><option>ghh</option><option>ghh</option></select><label style='padding-right: 5px;'>Label </label><input type='text' name='myInputs[]''><label style='padding-right: 5px;'>Icon </label><input type='text' name='icon'></div></td><tr>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+        }
+        }
 
-                            </ul>
-                        </div>
-                        <div class="mdl-card__actions">
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored ">remove selected</button> <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored ">update</button>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored ">
-                                <i class="material-icons mdl-js-ripple-effect">add</i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        </script>
+    </div>
+<div class="mdl-card__actions">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored ">remove selected</button> 
+<input type="submit" name="update" value="update" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-shadow--8dp mdl-button--colored">
 
-            </div>
+</div>
+</div>
+</form>
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-shadow--8dp mdl-button--colored " onClick="addInput('dynamicInput');">
+    <i class="material-icons mdl-js-ripple-effect">add</i>
+</button>
+</div>
 
-    </main>
+</div>
+
+</main>
 
 <?php inc_afooter (); ?>

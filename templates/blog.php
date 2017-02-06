@@ -16,6 +16,8 @@
         <?php
     while($row = $result->fetch_assoc()) {
         $post_id = $row["id"];
+        $post_slug = $row["post_slug"];
+        $post_url = $row["post_url"];
         $post_title = $row["post_title"];
         $image = $row["post_image"];
         $content = $row["post_content"];
@@ -55,15 +57,8 @@
 
                     <article class="card__article dot-ellipsis dot-resize-update" >
 
-                        <?php echo $excerpt; ?><a href="?post_id=<?php echo "$post_id"; ?>&action=view"> ...</a>
-                        <form name="post_view_form" action="./" method="GET">
-                        <input type="hidden" name="p" value="<?php echo "$post_id"; ?>">
-                        <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored alignright" type="submit" name="action" value="view" style="clear: both;">
-                        </form>
-                        <form name="cat_view_form" action="read" method="GET" style="display: none;" >
-                        <input type="hidden" name="post_cat" value="<?php echo "$tag"; ?>">
-                        <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored alignright" type="submit" name="action" value="view" style="clear: both;">
-                        </form>
+                        <?php echo $excerpt; ?><a href="?p=<?php echo "$post_id"; ?>"> ...</a>
+                        <a href="./?p=<?php echo "$post_url"; ?>" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored alignright" style="clear: both;">VIEW</a>
                     </article>
                 </div>
 
